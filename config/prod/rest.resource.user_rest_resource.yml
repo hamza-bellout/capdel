@@ -1,0 +1,20 @@
+uuid: 75a0bb99-f01a-459a-8c7e-4232b25a2ff5
+langcode: fr
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - serialization
+    - user
+    - user_rest
+id: user_rest_resource
+plugin_id: user_rest_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      2: json
+      3: xml
+    supported_auth:
+      - basic_auth
+      - cookie

@@ -1,0 +1,22 @@
+uuid: fb8fc929-73f2-4a57-80bb-349e3f9da5f8
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - capdel_adminimal_theme
+_core:
+  default_config_hash: jS2Vvpi0RueXqDkebc5iT7FLT6iWtS5lcwyWqsnGBfg
+id: capdel_adminimal_theme_primary_local_tasks
+theme: capdel_adminimal_theme
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

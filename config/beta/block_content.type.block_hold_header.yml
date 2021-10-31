@@ -1,0 +1,8 @@
+uuid: 661196c7-737b-4e0d-bf89-7078c8eeb27f
+langcode: en
+status: true
+dependencies: {  }
+id: block_hold_header
+label: 'Block hold (header)'
+revision: 1
+description: 'Wide image block with title, image and text used as page header'

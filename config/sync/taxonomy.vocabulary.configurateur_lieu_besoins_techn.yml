@@ -1,0 +1,9 @@
+uuid: 7c92f843-a2fc-4554-8597-3c5e35812cb6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Configurateur lieu besoins techniques'
+vid: configurateur_lieu_besoins_techn
+description: ''
+hierarchy: 0
+weight: 0

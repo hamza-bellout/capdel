@@ -1,0 +1,32 @@
+uuid: f82e0684-56c4-449d-aead-3a2d44d9d336
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.configurateur_tb_and_anim
+  module:
+    - user
+id: node.configurateur_tb_and_anim.teaser
+targetEntityType: node
+bundle: configurateur_tb_and_anim
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_conf_tb_add_val: true
+  field_conf_tb_avail: true
+  field_conf_tb_cat_sub: true
+  field_conf_tb_category: true
+  field_conf_tb_desc: true
+  field_conf_tb_destination: true
+  field_conf_tb_duration: true
+  field_conf_tb_geo_params: true
+  field_conf_tb_image: true
+  field_conf_tb_max_par: true
+  field_conf_tb_min_par: true
+  field_conf_tb_price: true
+  field_tb_short_desc: true
+  langcode: true

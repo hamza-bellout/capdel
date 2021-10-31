@@ -1,0 +1,31 @@
+uuid: 615eed37-0214-489a-acca-05c445b546ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - user
+  theme:
+    - capdel
+id: entityviewuser_2
+theme: capdel
+region: highlighted
+weight: -17
+provider: null
+plugin: 'entity_view:user'
+settings:
+  id: 'entity_view:user'
+  label: 'Entity view (User)'
+  provider: ctools
+  label_display: '0'
+  view_mode: default
+  context_mapping:
+    entity: '@user.current_user_context:current_user'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

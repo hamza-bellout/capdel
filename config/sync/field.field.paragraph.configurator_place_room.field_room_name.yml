@@ -1,0 +1,19 @@
+uuid: 8985fb5c-5e6c-401d-a31f-1f23a463bfb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_room_name
+    - paragraphs.paragraphs_type.configurator_place_room
+id: paragraph.configurator_place_room.field_room_name
+field_name: field_room_name
+entity_type: paragraph
+bundle: configurator_place_room
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

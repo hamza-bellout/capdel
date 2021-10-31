@@ -1,0 +1,13 @@
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - capdel_helper
+  module:
+    - capdel_helper
+id: capdel_helper_publish_action
+label: 'Custom publish action'
+type: node
+plugin: "capdel_helper_publish_action"
+configuration: {  }

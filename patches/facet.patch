@@ -1,0 +1,13 @@
+diff --git web/modules/contrib/facets/src/Plugin/facets/url_processor/QueryString.php web/modules/contrib/facets/src/Plugin/facets/url_processor/QueryString.php
+index 52a5ab5..723b58f 100644
+--- web/modules/contrib/facets/src/Plugin/facets/url_processor/QueryString.php
++++ web/modules/contrib/facets/src/Plugin/facets/url_processor/QueryString.php
+@@ -63,7 +63,7 @@ public function buildUrls(FacetInterface $facet, array $results) {
+     }
+ 
+     // Grab any route params from the original request.
+-    $routeParameters = Url::createFromRequest($this->request)
++    $routeParameters = Url::createFromRequest(clone $this->request)
+       ->getRouteParameters();
+ 
+     // Create a request url.

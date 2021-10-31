@@ -1,0 +1,29 @@
+uuid: 63b985a9-0d08-4e11-92ca-1fe313be5dbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_anim_category
+    - node.type.configurateur_animations
+    - taxonomy.vocabulary.configurateur_animations_categor
+id: node.configurateur_animations.field_conf_anim_category
+field_name: field_conf_anim_category
+entity_type: node
+bundle: configurateur_animations
+label: 'Animation category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      configurateur_animations_categor: configurateur_animations_categor
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

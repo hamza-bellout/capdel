@@ -1,0 +1,21 @@
+uuid: 15b30de8-462b-466c-8b36-8f9aa168a64a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_static_desc
+    - node.type.configurateur_statics
+  module:
+    - text
+id: node.configurateur_statics.field_conf_static_desc
+field_name: field_conf_static_desc
+entity_type: node
+bundle: configurateur_statics
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,310 @@
+uuid: 31b4c8b5-47eb-4125-b910-8c1911d4b711
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.field_event_activity_day
+    - field.field.node.event.field_event_activity_evening
+    - field.field.node.event.field_event_activity_indoor
+    - field.field.node.event.field_event_activity_outdoor
+    - field.field.node.event.field_event_added_value
+    - field.field.node.event.field_event_datastatus
+    - field.field.node.event.field_event_description
+    - field.field.node.event.field_event_duration
+    - field.field.node.event.field_event_duration_max
+    - field.field.node.event.field_event_home_seminaire_promo
+    - field.field.node.event.field_event_home_soiree_promo
+    - field.field.node.event.field_event_home_tb_promo
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_info_admin
+    - field.field.node.event.field_event_is_valid
+    - field.field.node.event.field_event_legacy_content
+    - field.field.node.event.field_event_legacy_id
+    - field.field.node.event.field_event_legacy_keywords
+    - field.field.node.event.field_event_meta
+    - field.field.node.event.field_event_origin
+    - field.field.node.event.field_event_price
+    - field.field.node.event.field_event_ref_variant
+    - field.field.node.event.field_event_related_events
+    - field.field.node.event.field_event_tax_diodes
+    - field.field.node.event.field_event_tax_duration_type
+    - field.field.node.event.field_event_tax_key_accounts
+    - field.field.node.event.field_event_tax_menu_types
+    - field.field.node.event.field_event_top_sales
+    - field.field.node.event.field_event_view_prices
+    - field.field.node.event.field_field_event_tax_filters
+    - node.type.event
+  module:
+    - metatag
+    - text
+    - user
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  addtoany:
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  content_moderation_control:
+    weight: -20
+    region: content
+  field_event_activity_day:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_event_activity_evening:
+    weight: 12
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_event_activity_indoor:
+    weight: 13
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_event_activity_outdoor:
+    weight: 14
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_event_added_value:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_event_datastatus:
+    weight: 16
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_event_description:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_event_duration:
+    weight: 8
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_event_duration_max:
+    weight: 9
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_event_home_seminaire_promo:
+    weight: 28
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_event_home_soiree_promo:
+    weight: 29
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_event_home_tb_promo:
+    weight: 30
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_event_image:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_event_info_admin:
+    weight: 25
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_event_is_valid:
+    weight: 15
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_event_legacy_content:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_event_legacy_keywords:
+    weight: 26
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_event_meta:
+    weight: 18
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_event_origin:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_event_price:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_event_ref_variant:
+    weight: 22
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_related_events:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_tax_diodes:
+    weight: 20
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_tax_duration_type:
+    weight: 10
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_tax_key_accounts:
+    weight: 21
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_tax_menu_types:
+    weight: 23
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_top_sales:
+    weight: 7
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_event_view_prices:
+    weight: 17
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_field_event_tax_filters:
+    weight: 24
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_event_legacy_id: true
+  langcode: true

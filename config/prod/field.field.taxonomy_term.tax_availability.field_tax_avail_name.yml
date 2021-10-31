@@ -1,0 +1,19 @@
+uuid: b13c2397-bb38-481d-8fdb-f10c63332c4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tax_avail_name
+    - taxonomy.vocabulary.tax_availability
+id: taxonomy_term.tax_availability.field_tax_avail_name
+field_name: field_tax_avail_name
+entity_type: taxonomy_term
+bundle: tax_availability
+label: Name
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

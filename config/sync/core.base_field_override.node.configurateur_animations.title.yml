@@ -1,0 +1,18 @@
+uuid: 9c253ba3-ac68-41d1-ba05-23fec26b52a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.configurateur_animations
+id: node.configurateur_animations.title
+field_name: title
+entity_type: node
+bundle: configurateur_animations
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

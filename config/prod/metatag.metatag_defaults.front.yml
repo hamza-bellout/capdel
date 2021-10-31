@@ -1,0 +1,15 @@
+uuid: b3784999-ca40-4597-87d1-caa2e6c5f095
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Page d''accueil'
+tags:
+  abstract: 'Organisation de team building, soirée d’entreprise, séminaire, voyage… de 10 à 100 pers. Près de 1000 idées sur capdel.fr  -  Devis en 1 clic - Service de recherche de lieu et d’intervenant '
+  title: 'Capdel : Organisation de séminaire et événement d''entreprise'
+  shortlink: '[site:url]'
+  description: "Capdel, facilitateur d’événement d’entreprise\r\nOrganisation de team building, soirée d’entreprise, séminaire, voyage et incentive… de 10 à 100 pers. Partout en France.  Découvrez près de 1000 idées packagées et personnalisables sur capdel.fr  -  Demande de devis en 1 clic ! - Service de recherche de lieu et d’intervenant pour vos réunions  \r\n"
+  keywords: 'séminaire, team building, soirée entreprise, voyage, incentive '
+  canonical_url: '[site:url]'

@@ -1,0 +1,21 @@
+uuid: d44f964e-db85-4e0a-9b35-33f38b681a74
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomy_block
+    - field.storage.block_content.field_tax_block_icon_3
+  module:
+    - options
+id: block_content.taxonomy_block.field_tax_block_icon_3
+field_name: field_tax_block_icon_3
+entity_type: block_content
+bundle: taxonomy_block
+label: 'Icon for the taxonomy term 3'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

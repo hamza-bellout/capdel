@@ -1,0 +1,56 @@
+uuid: 6a275a34-4140-4b5d-b505-c53a63ce67ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_page.field_lp_custom_url
+    - field.field.node.landing_page.field_lp_description
+    - field.field.node.landing_page.field_lp_meta
+    - field.field.node.landing_page.field_lp_order
+    - field.field.node.landing_page.field_lp_ref_attached_event
+    - field.field.node.landing_page.field_lp_tax_ref
+    - node.type.landing_page
+  module:
+    - metatag
+    - text
+    - user
+id: node.landing_page.default
+targetEntityType: node
+bundle: landing_page
+mode: default
+content:
+  field_lp_custom_url:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_lp_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_lp_meta:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_lp_order: true
+  field_lp_ref_attached_event: true
+  field_lp_tax_ref: true
+  langcode: true

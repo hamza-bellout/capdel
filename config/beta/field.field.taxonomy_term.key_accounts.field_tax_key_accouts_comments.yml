@@ -1,0 +1,19 @@
+uuid: 3ccc1e32-129c-43dd-b936-875e8bbcf849
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tax_key_accouts_comments
+    - taxonomy.vocabulary.key_accounts
+id: taxonomy_term.key_accounts.field_tax_key_accouts_comments
+field_name: field_tax_key_accouts_comments
+entity_type: taxonomy_term
+bundle: key_accounts
+label: tax_key_accouts_comments
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

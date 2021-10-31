@@ -1,0 +1,8 @@
+uuid: 8cc9100f-5a4d-4bfd-b2d7-e55e8073b478
+langcode: en
+status: true
+dependencies: {  }
+id: footer-second
+label: 'Footer second'
+description: 'Event type'
+locked: false

@@ -1,0 +1,34 @@
+uuid: 34d57760-4bce-4013-8745-b98a6291217b
+langcode: fr
+status: true
+dependencies: {  }
+id: guest
+label: Invité
+weight: 5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'access workbench'
+  - 'create field_event_added_value'
+  - 'create field_event_description'
+  - 'create field_event_tax_key_accounts'
+  - 'create field_tb_ref_lieu'
+  - 'display eu cookie compliance popup'
+  - 'edit any event content'
+  - 'edit any event_subpackage content'
+  - 'edit field_event_added_value'
+  - 'edit field_event_description'
+  - 'edit field_event_tax_key_accounts'
+  - 'edit own field_event_added_value'
+  - 'edit own field_event_description'
+  - 'edit own field_event_tax_key_accounts'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition moderation_ko'
+  - 'use editorial transition needs_review'
+  - 'view field_event_added_value'
+  - 'view field_event_description'
+  - 'view latest version'
+  - 'view own field_event_added_value'
+  - 'view own field_event_description'
+  - 'view the administration theme'

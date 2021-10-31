@@ -1,0 +1,18 @@
+uuid: 5bea1810-3480-4693-9de1-330aa3ee9fd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_availability
+id: taxonomy_term.tax_availability.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: tax_availability
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

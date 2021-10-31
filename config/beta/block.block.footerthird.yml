@@ -1,0 +1,24 @@
+uuid: 011b4f40-9f13-4f1b-9624-e90cf95b7479
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-third
+  module:
+    - system
+  theme:
+    - capdel
+id: footerthird
+theme: capdel
+region: footer_third
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-third'
+settings:
+  id: 'system_menu_block:footer-third'
+  label: 'Top destinations'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

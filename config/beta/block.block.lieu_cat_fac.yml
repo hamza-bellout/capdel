@@ -1,0 +1,29 @@
+uuid: 326c3ca8-719c-496f-8b37-7271432e9a87
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.lieu_cat_fac
+  module:
+    - facets
+    - system
+  theme:
+    - capdel
+id: lieu_cat_fac
+theme: capdel
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:lieu_cat_fac'
+settings:
+  id: 'facet_block:lieu_cat_fac'
+  label: '[Conf][Lieu]Lieu categories'
+  provider: facets
+  label_display: '0'
+  block_id: lieu_cat_fac
+visibility:
+  request_path:
+    id: request_path
+    pages: /configurateur
+    negate: false
+    context_mapping: {  }

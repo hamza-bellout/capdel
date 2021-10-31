@@ -1,0 +1,13 @@
+uuid: a60af38d-95e4-4386-b712-bb0e4d018ef8
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: JBptjnfuOMtsdKygklXxoOgeOCTMtQxlkymjnnj-cC0
+id: node_unpromote_action
+label: 'Supprimer le contenu de la home page'
+type: node
+plugin: node_unpromote_action
+configuration: {  }

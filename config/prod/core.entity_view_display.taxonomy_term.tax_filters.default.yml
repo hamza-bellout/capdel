@@ -1,0 +1,31 @@
+uuid: 24739b29-2d9a-446e-94c3-cf4d7de757b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tax_filters.field_tax_filters_icon
+    - taxonomy.vocabulary.tax_filters
+  module:
+    - text
+id: taxonomy_term.tax_filters.default
+targetEntityType: taxonomy_term
+bundle: tax_filters
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tax_filters_icon:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

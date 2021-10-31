@@ -1,0 +1,13 @@
+uuid: 0696fbb2-8783-4d85-8116-c36adfa0f8cd
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: C7X8h9FWlwkQ9y5mnU2JzgaZICAdc6HFbPVbhvjlAYE
+id: node_unpublish_action
+label: 'Dépulier le contenu '
+type: node
+plugin: 'entity:unpublish_action:node'
+configuration: {  }

@@ -1,0 +1,141 @@
+        <div class="modal sidebar fade" id="resumeModal" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <a class="close-modal icon-close d-md-none" data-dismiss="modal" aria-label="Close"></a>
+                    <div class="modal-header">
+                        <h1 class="modal-title">Résumé <span>de l’événement</span></h1>
+                    </div>
+                    <div class="modal-body">
+                        <!-- SINGLE POSITION -->
+                        <div class="offer">
+                            <h2>Lieu &middot; Menus &amp; Boissons </h2>
+                            <div class="item" data-tab="place">
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <h2>Animations</h2>
+                            <div class="item" data-tab="anim">
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <h2>Team Building</h2>
+                            <div class="item" data-tab="tb">
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <h2>Options</h2>
+                            <div class="item" data-tab="options">
+                            </div>
+                        </div>
+                        <div class="total">
+                            <div class="row mb-4">
+                                <div class="col-6">
+                                    <strong>Prix total :</strong>
+                                </div>
+                                <div class="col-6 text-right price budget-total-value">
+                                </div>
+                            </div>
+                            <div class="row single">
+                                <div class="col-6">
+                                  Prix par participant :
+                                </div>
+                                <div class="col-6 text-right budget-per-par-value">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="remaining">
+                            <div class="row">
+                                <div class="col-6 text-nowrap">
+                                    Budget restant :
+                                </div>
+                                <div class="col-6 text-right budget-remaining-value">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#createEventModal">Demande de devis</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <div class="image">
+                            <img src="{{ file_url(directory ~ '/images/illu_accepted.svg') }}">
+                        </div>
+                        <h2 class="modal-title mb-2">Demande de devis prise en compte</h2>
+                        <p class="main-information">Les équipes Capdel vont vérifier la disponibilité et reviendront vers vous dans les plus brefs<br>délais par mail.</p>
+                        <p>En attendant, retrouvez toutes les informations<br>de votre demande dans votre compte.</p>
+                        <button class="btn btn-primary mt-2" data-dismiss="modal" data-toggle="modal" data-target="reset">J'ai compris</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="reservationSuccess" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <div class="image">
+                            <img src="{{ file_url(directory ~ '/images/illu_accepted.svg') }}">
+                        </div>
+                        <h2 class="modal-title mb-2">Demande de devis prise en compte</h2>
+                        <p class="main-information">Les équipes Capdel vont vérifier la disponibilité et reviendront vers vous dans les plus brefs<br>délais par mail.</p>
+                        <button class="btn btn-primary mt-2" data-dismiss="modal" data-toggle="modal" data-target="reset">J'ai compris</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <div class="modal fade" id="bookingModalFail" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-body text-center">
+                              <h2 class="modal-title mb-2">Une erreur est survenue</h2>
+                              <p class="main-information">Votre demande n'a pas pu être envoyée.</p><br/>
+                              <p>Veuillez réessayer ou nous contacter par mail : contact@capdel.fr</p>
+                              <button class="btn btn-primary mt-2" data-dismiss="modal" data-toggle="modal" data-target="reload">J'ai compris</button>
+                          </div>
+                      </div>
+                  </div>
+        </div>
+
+        <div class="modal fade" id="createEventModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <div class="image">
+                            <img src="{{ file_url(directory ~ '/images/illu_congrats.svg') }}">
+                        </div>
+                        <h2 class="modal-title mb-2">Félicitations,<br>votre événement personnalisé est prêt !</h2>
+                        <p class="main-information">Il ne reste plus qu’à lui trouver un nom et votre demande sera envoyée aux équipes Capdel :</p>
+                        <form>
+                            <div class="form-group mb-5 px-sm-5 text-left">
+                                <label for="name">Nom de l’événement</label>
+                                <input type="text" class="form-control d-sm-none" id="name">
+                                <input type="text" class="form-control d-none d-sm-block" id="name" placeholder="Nommez votre événement personnalisé">
+                            </div>
+                            <button class="btn btn-primary mt-2" data-dismiss="modal" data-target="#send">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include '@capdel/partials/partials--blank-modal.html.twig' %}
+
+        <div class="modal fade" id="bookingWait" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <div class="image">
+                            <img src="{{ file_url(directory ~ '/images/illu_wait.svg') }}" class="mb-2">
+                            <h2 class="modal-title">Veuillez patienter, votre demande est en cours<br/> de traitement…</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>

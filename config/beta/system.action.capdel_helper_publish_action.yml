@@ -1,0 +1,16 @@
+uuid: d19571c9-167a-4d19-aed2-cafc85baf549
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - capdel_helper
+  module:
+    - capdel_helper
+_core:
+  default_config_hash: 0KVzsuDy9SVF86KFmlucs9YO_9lTk74fEsE1QX9EWxU
+id: capdel_helper_publish_action
+label: 'Publier un contenu'
+type: node
+plugin: capdel_helper_publish_action
+configuration: {  }

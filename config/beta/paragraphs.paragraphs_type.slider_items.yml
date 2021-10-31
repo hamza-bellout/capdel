@@ -1,0 +1,9 @@
+uuid: fbc37584-f542-40bc-8d00-577a4c235706
+langcode: en
+status: true
+dependencies: {  }
+id: slider_items
+label: 'Slider item'
+icon_uuid: null
+description: 'Paragraph for Slider block items'
+behavior_plugins: {  }

@@ -1,0 +1,28 @@
+uuid: 075b9f63-76c2-4dee-940d-21bf5d619096
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_par_lieu_tb_geo_lieu
+    - node.type.conf_distance
+    - node.type.conf_lieu
+id: node.conf_distance.field_par_lieu_tb_geo_lieu
+field_name: field_par_lieu_tb_geo_lieu
+entity_type: node
+bundle: conf_distance
+label: 'Place connected'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      conf_lieu: conf_lieu
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

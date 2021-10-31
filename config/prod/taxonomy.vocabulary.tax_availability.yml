@@ -1,0 +1,9 @@
+uuid: 74ba43cd-7cf0-4c6b-8521-eebae4a84942
+langcode: en
+status: true
+dependencies: {  }
+name: Availability
+vid: tax_availability
+description: 'All months checkboxes with ''all year'' availability option. '
+hierarchy: 0
+weight: 0

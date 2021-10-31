@@ -1,0 +1,29 @@
+uuid: 8e8ac45c-e1d1-4e33-835d-2d938c393164
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_tax_key_accounts
+    - node.type.event
+    - taxonomy.vocabulary.key_accounts
+id: node.event.field_event_tax_key_accounts
+field_name: field_event_tax_key_accounts
+entity_type: node
+bundle: event
+label: 'Event Key Accounts '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      key_accounts: key_accounts
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

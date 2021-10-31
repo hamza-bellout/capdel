@@ -1,0 +1,24 @@
+uuid: d1fba771-9437-4eef-8584-e9cbab000194
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.slider
+  module:
+    - crop
+name: slider
+label: 'Slider (1280x400)'
+effects:
+  4e36abb8-b954-44d4-8bdf-d713e8beb2a4:
+    uuid: 4e36abb8-b954-44d4-8bdf-d713e8beb2a4
+    id: crop_crop
+    weight: 2
+    data:
+      crop_type: slider
+  1ac785df-2c5f-4191-b9f9-bd37cede3ada:
+    uuid: 1ac785df-2c5f-4191-b9f9-bd37cede3ada
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1280
+      height: 400

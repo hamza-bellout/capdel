@@ -1,0 +1,112 @@
+uuid: 37252796-48e7-401e-8c69-1a5492c8acfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.configurator_place_room.field_room_cap_reunion
+    - field.field.paragraph.configurator_place_room.field_room_capacity_banquet
+    - field.field.paragraph.configurator_place_room.field_room_capacity_cabaret
+    - field.field.paragraph.configurator_place_room.field_room_capacity_cocktail
+    - field.field.paragraph.configurator_place_room.field_room_capacity_conf
+    - field.field.paragraph.configurator_place_room.field_room_capacity_lum
+    - field.field.paragraph.configurator_place_room.field_room_capacity_rang
+    - field.field.paragraph.configurator_place_room.field_room_capacity_u
+    - field.field.paragraph.configurator_place_room.field_room_name
+    - field.field.paragraph.configurator_place_room.field_room_size
+    - paragraphs.paragraphs_type.configurator_place_room
+id: paragraph.configurator_place_room.default
+targetEntityType: paragraph
+bundle: configurator_place_room
+mode: default
+content:
+  field_room_cap_reunion:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_room_capacity_banquet:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_room_capacity_cabaret:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_room_capacity_cocktail:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_room_capacity_conf:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_room_capacity_lum:
+    weight: 10
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_room_capacity_rang:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_room_capacity_u:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_room_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_room_size:
+    weight: 9
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden: {  }

@@ -1,0 +1,29 @@
+uuid: dab3a017-9536-412b-9cc6-8e7ba139c930
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_tb_category
+    - node.type.configurateur_tb_and_anim
+    - taxonomy.vocabulary.configurateur_team_building_cate
+id: node.configurateur_tb_and_anim.field_conf_tb_category
+field_name: field_conf_tb_category
+entity_type: node
+bundle: configurateur_tb_and_anim
+label: Category
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      configurateur_team_building_cate: configurateur_team_building_cate
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,26 @@
+uuid: d54b6a0c-fb6f-4790-bb40-099a0f0ff82f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - capdel
+_core:
+  default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
+id: capdel_footer
+theme: capdel
+region: footer_first
+weight: -9
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Capdel
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

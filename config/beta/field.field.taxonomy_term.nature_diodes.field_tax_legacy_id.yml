@@ -1,0 +1,23 @@
+uuid: 0a8c2c9e-1fea-4c10-955c-15b53ca40445
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tax_legacy_id
+    - taxonomy.vocabulary.nature_diodes
+id: taxonomy_term.nature_diodes.field_tax_legacy_id
+field_name: field_tax_legacy_id
+entity_type: taxonomy_term
+bundle: nature_diodes
+label: 'Legacy ID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

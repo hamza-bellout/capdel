@@ -1,0 +1,18 @@
+uuid: e1a05aeb-3e65-43ba-9447-e22ecce2176f
+langcode: en
+status: true
+dependencies:
+  config:
+    - shortcut.set.default
+id: shortcut.default.moderation_state
+field_name: moderation_state
+entity_type: shortcut
+bundle: default
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

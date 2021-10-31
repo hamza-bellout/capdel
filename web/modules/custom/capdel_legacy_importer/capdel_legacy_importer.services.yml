@@ -1,0 +1,15 @@
+services:
+  # logger channel implementation
+  capdel_legacy_importer.logger.channel.importer:
+      parent: logger.channel_base
+      arguments: ['legacy_importer']
+  capdel_legacy_importer.database_connector:
+      class: Drupal\capdel_legacy_importer\LegacyDatabaseConnector
+  capdel_legacy_importer.batch_processor:
+      class: Drupal\capdel_legacy_importer\Plugin\BatchProcessor
+      arguments: ['@capdel_legacy_importer.database_connector']
+      public: true
+  capdel_legacy_importer.image_reorder_batch_processor:
+      class: Drupal\capdel_legacy_importer\Plugin\ImageReorderBatchProcessor
+      arguments: ['@capdel_legacy_importer.database_connector']
+      public: true

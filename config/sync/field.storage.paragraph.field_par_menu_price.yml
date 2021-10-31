@@ -1,0 +1,22 @@
+uuid: 0002516b-a0d2-4bc8-bc02-00fdec6a3730
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_par_menu_price
+field_name: field_par_menu_price
+entity_type: paragraph
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 10
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

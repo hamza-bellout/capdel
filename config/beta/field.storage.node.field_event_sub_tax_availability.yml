@@ -1,0 +1,20 @@
+uuid: 0df05b3d-89dc-40c0-b2f6-a3dd4004b8f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_event_sub_tax_availability
+field_name: field_event_sub_tax_availability
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

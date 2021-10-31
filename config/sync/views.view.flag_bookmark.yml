@@ -1,0 +1,215 @@
+uuid: 9fc0e3bb-f5ef-41df-b134-17d2f987429f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - flag.flag.bookmark
+  module:
+    - flag
+    - node
+    - user
+_core:
+  default_config_hash: 5UUOR5ZpWHo0eoLRuloHMG21zvNw39j4xrVSgxce73I
+id: flag_bookmark
+label: 'Flag Bookmark list'
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+core: 8.x
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'flag bookmark'
+      cache:
+        type: none
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: full
+        options:
+          items_per_page: 0
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ previous'
+            next: 'next ›'
+            first: '« first'
+            last: 'last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 20, 40, 60'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      style:
+        type: default
+        options:
+          grouping:
+            -
+              field: title
+              rendered: true
+              rendered_strip: false
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Title
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+          plugin_id: boolean
+      sorts: {  }
+      title: 'Mes Favoris'
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          content: '<div class="heading-title mb-5"><h1><span>Mes favoris</span> (@total)</h1></div>'
+          plugin_id: result
+      footer: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<h2 class=\"ff-lato\">Aucun événement ajouté pour le moment</h2>\n<p>Organisez facilement tous vos événements grâce à vos favoris. Vous pouvez y accéder à n'importe quel moment ! \nIl vous suffit d'ajouter un événement à cette liste grâce à l'icône<i class=\"icon-heart-o align-text-bottom ml-2 mr-2\"></i>présente sur chaque événement.</p>"
+          plugin_id: text_custom
+      relationships:
+        flag_relationship:
+          id: flag_relationship
+          table: node_field_data
+          field: flag_relationship
+          relationship: none
+          group_type: group
+          admin_label: Flags
+          required: true
+          flag: bookmark
+          user_scope: current
+          plugin_id: flag_relationship
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: author
+          required: true
+          plugin_id: standard
+      arguments: {  }
+      display_extenders: {  }
+      use_ajax: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  mes_favoris:
+    display_plugin: page
+    id: mes_favoris
+    display_title: Page
+    position: 1
+    display_options:
+      path: mes-favoris
+      menu:
+        type: none
+        title: 'My Bookmarks'
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: main
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

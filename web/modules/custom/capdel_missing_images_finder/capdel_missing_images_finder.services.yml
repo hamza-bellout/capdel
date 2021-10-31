@@ -1,0 +1,4 @@
+services:
+  capdel_missing_images_finder.batch_processor:
+    class: Drupal\capdel_missing_images_finder\Plugin\BatchProcessor
+    public: true

@@ -1,0 +1,18 @@
+uuid: ab51dd83-4c78-4621-948f-06d622cc250a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_availability
+id: taxonomy_term.tax_availability.name
+field_name: name
+entity_type: taxonomy_term
+bundle: tax_availability
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

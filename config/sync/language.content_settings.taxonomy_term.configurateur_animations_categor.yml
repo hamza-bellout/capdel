@@ -1,0 +1,11 @@
+uuid: 97cdf22a-0aa3-4640-ad6c-d309db9e10aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.configurateur_animations_categor
+id: taxonomy_term.configurateur_animations_categor
+target_entity_type_id: taxonomy_term
+target_bundle: configurateur_animations_categor
+default_langcode: fr
+language_alterable: false

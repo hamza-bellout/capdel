@@ -1,0 +1,21 @@
+uuid: e2e0fc2e-9d45-4d59-8ecf-731a591448bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_origin
+    - node.type.event
+id: node.event.field_event_origin
+field_name: field_event_origin
+entity_type: node
+bundle: event
+label: Origin
+description: 'Where the offer came from (e.g. BizMeeting, legacy, current BO) '
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Current BO'
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,25 @@
+uuid: 6805a02a-f192-498d-b90e-c5e308fd330c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_room_capacity_cabaret
+    - paragraphs.paragraphs_type.configurator_place_room
+id: paragraph.configurator_place_room.field_room_capacity_cabaret
+field_name: field_room_capacity_cabaret
+entity_type: paragraph
+bundle: configurator_place_room
+label: 'Room capacity: Cabaret'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

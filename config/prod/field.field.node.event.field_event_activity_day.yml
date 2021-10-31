@@ -1,0 +1,23 @@
+uuid: 1cbaa3d9-511a-4bdc-9ebe-c56c05aeb4a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_activity_day
+    - node.type.event
+id: node.event.field_event_activity_day
+field_name: field_event_activity_day
+entity_type: node
+bundle: event
+label: 'Event activity day'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

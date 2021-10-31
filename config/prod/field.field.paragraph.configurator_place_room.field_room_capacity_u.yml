@@ -1,0 +1,25 @@
+uuid: f53ade80-b8ea-404d-b8c2-62cdff67f361
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_room_capacity_u
+    - paragraphs.paragraphs_type.configurator_place_room
+id: paragraph.configurator_place_room.field_room_capacity_u
+field_name: field_room_capacity_u
+entity_type: paragraph
+bundle: configurator_place_room
+label: 'Room capacity: U'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

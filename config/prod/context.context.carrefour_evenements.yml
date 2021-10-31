@@ -1,0 +1,274 @@
+uuid: dc15c712-9f63-4a39-ae4b-e7ecd3790f25
+langcode: fr
+status: true
+dependencies:
+  module:
+    - context_metadata
+    - system
+name: carrefour_evenements
+label: 'Carrefour Événements'
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /evenements
+    negate: 0
+    uuid: 1c943d86-5a3e-4597-8623-fc7e9b0217ac
+    context_mapping: {  }
+reactions:
+  context_metadata:
+    id: context_metadata
+    geo_placename: ''
+    geo_position: ''
+    geo_region: ''
+    icbm: ''
+    canonical_url: ''
+    content_language: ''
+    robots:
+      index: 0
+      follow: 0
+      noindex: 0
+      nofollow: 0
+      noarchive: 0
+      nosnippet: 0
+      noodp: 0
+      noydir: 0
+      noimageindex: 0
+      notranslate: 0
+    shortlink: ''
+    news_keywords: ''
+    standout: ''
+    generator: ''
+    image_src: ''
+    original_source: ''
+    google: ''
+    referrer: ''
+    rights: ''
+    set_cookie: ''
+    title: 'Organisation Evénements d’Entreprise – CAPDEL'
+    description: 'Capdel vous accompagne dans l’organisation de vos événements d’entreprise. Soirées d’entreprise, séminaires, team building… Votre événement sur-mesure, partout en France.'
+    abstract: ''
+    keywords: ''
+    og_determiner: ''
+    og_site_name: ''
+    og_type: ''
+    og_url: ''
+    og_title: ''
+    og_description: ''
+    og_image: ''
+    og_video: ''
+    og_image_url: ''
+    og_image_secure_url: ''
+    og_video_secure_url: ''
+    og_image_type: ''
+    og_video_type: ''
+    og_image_width: ''
+    og_video_width: ''
+    og_image_height: ''
+    og_video_height: ''
+    og_image_alt: ''
+    og_updated_time: ''
+    og_latitude: ''
+    og_longitude: ''
+    og_see_also: ''
+    og_street_address: ''
+    og_locality: ''
+    og_region: ''
+    og_postal_code: ''
+    og_country_name: ''
+    og_email: ''
+    og_phone_number: ''
+    og_fax_number: ''
+    og_locale: ''
+    og_locale_alternative: ''
+    article_author: ''
+    article_publisher: ''
+    article_section: ''
+    article_tag: ''
+    article_published_time: ''
+    article_modified_time: ''
+    article_expiration_time: ''
+    book_author: ''
+    book_isbn: ''
+    book_release_date: ''
+    book_tag: ''
+    schema_product_type: ''
+    schema_product_name: ''
+    schema_product_description: ''
+    schema_product_image:
+      '@type': ''
+      representativeOfPage: ''
+      url: ''
+      width: ''
+      height: ''
+    schema_product_offers:
+      pivot: ''
+      '@type': ''
+      '@id': ''
+      price: ''
+      priceCurrency: ''
+      url: ''
+      availability: ''
+      availabilityStarts: ''
+      availabilityEnds: ''
+      validFrom: ''
+      category: ''
+      eligibleRegion:
+        pivot: ''
+        '@type': ''
+        name: ''
+      ineligibleRegion:
+        pivot: ''
+        '@type': ''
+        name: ''
+    schema_product_brand:
+      '@type': ''
+      '@id': ''
+      name: ''
+      description: ''
+      url: ''
+      sameAs: ''
+      logo:
+        pivot: ''
+        '@type': ''
+        representativeOfPage: ''
+        url: ''
+        width: ''
+        height: ''
+    schema_product_aggregate_rating:
+      pivot: ''
+      '@type': ''
+      ratingValue: ''
+      ratingCount: ''
+      bestRating: ''
+      worstRating: ''
+    schema_product_review:
+      pivot: ''
+      '@type': ''
+      reviewBody: ''
+      datePublished: ''
+      author:
+        pivot: ''
+        '@type': ''
+        '@id': ''
+        name: ''
+        url: ''
+        sameAs: ''
+        logo:
+          pivot: ''
+          '@type': ''
+          representativeOfPage: ''
+          url: ''
+          width: ''
+          height: ''
+      reviewRating:
+        pivot: ''
+        '@type': ''
+        ratingValue: ''
+        ratingCount: ''
+        bestRating: ''
+        worstRating: ''
+    schema_web_page_type: ''
+    schema_web_page_id: ''
+    schema_web_page_breadcrumb: ''
+    schema_web_page_description: ''
+    schema_web_page_author:
+      pivot: ''
+      '@type': ''
+      '@id': ''
+      name: ''
+      url: ''
+      sameAs: ''
+      logo:
+        pivot: ''
+        '@type': ''
+        representativeOfPage: ''
+        url: ''
+        width: ''
+        height: ''
+    schema_web_page_publisher:
+      '@type': ''
+      '@id': ''
+      name: ''
+      url: ''
+      sameAs: ''
+      logo:
+        pivot: ''
+        '@type': ''
+        representativeOfPage: ''
+        url: ''
+        width: ''
+        height: ''
+    schema_web_page_has_part:
+      pivot: ''
+      '@type': ''
+      '@id': ''
+      name: ''
+      description: ''
+      timeRequired: ''
+      potentialAction:
+        actionType: ''
+        pivot: ''
+        ConsumeAction:
+          '@type': ''
+          target:
+            pivot: ''
+            '@type': ''
+            urlTemplate: ''
+            actionPlatform: ''
+            inLanguage: ''
+          expectsAcceptanceOf:
+            pivot: ''
+            '@type': ''
+            '@id': ''
+            price: ''
+            priceCurrency: ''
+            url: ''
+            availability: ''
+            availabilityStarts: ''
+            availabilityEnds: ''
+            validFrom: ''
+            category: ''
+            eligibleRegion:
+              pivot: ''
+              '@type': ''
+              name: ''
+            ineligibleRegion:
+              pivot: ''
+              '@type': ''
+              name: ''
+        target:
+          pivot: ''
+          '@type': ''
+          urlTemplate: ''
+          actionPlatform: ''
+          inLanguage: ''
+        expectsAcceptanceOf:
+          pivot: ''
+          '@type': ''
+          '@id': ''
+          price: ''
+          priceCurrency: ''
+          url: ''
+          availability: ''
+          availabilityStarts: ''
+          availabilityEnds: ''
+          validFrom: ''
+          category: ''
+          eligibleRegion:
+            pivot: ''
+            '@type': ''
+            name: ''
+          ineligibleRegion:
+            pivot: ''
+            '@type': ''
+            name: ''
+        '@type': ''
+      isAccessibleForFree: ''
+      cssSelector: ''
+    schema_web_page_is_accessible_for_free: ''
+    saved: false
+weight: 0

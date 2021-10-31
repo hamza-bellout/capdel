@@ -1,0 +1,33 @@
+buttons_size: 32
+additional_html: "<a class=\"a2a_button_facebook\"></a>\r\n<a class=\"a2a_button_google_plus\"></a>\r\n<a class=\"a2a_button_twitter\"></a>\r\n<a class=\"a2a_button_linkedin\"></a>\r\n<a class=\"a2a_button_email\"></a>\r\n<a class=\"a2a_button_copy_link\"></a>"
+additional_css: ''
+additional_js: ''
+universal_button: none
+custom_universal_button: ''
+universal_button_placement: after
+no_3p: false
+entities:
+  media: 0
+  node: 1
+  comment: 0
+  block_content: 0
+  contact_message: 0
+  content_moderation_state: 0
+  crop: 0
+  file: 0
+  flagging: 0
+  workspace: 0
+  profile: 0
+  redirect: 0
+  replication_log: 0
+  search_api_task: 0
+  shortcut: 0
+  taxonomy_term: 0
+  user: 0
+  menu_link_content: 0
+  workspace_pointer: 0
+  replication: 0
+  paragraph: 0
+_core:
+  default_config_hash: 9YPlBuinIKLe5jVEf-aIhZvKFn77i18yD4CrNR0BbVQ
+langcode: fr

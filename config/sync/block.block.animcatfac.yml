@@ -1,0 +1,29 @@
+uuid: 96efe726-0140-442d-a4a3-81ffcfe943ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.anim_cat_fac
+  module:
+    - facets
+    - system
+  theme:
+    - capdel
+id: animcatfac
+theme: capdel
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:anim_cat_fac'
+settings:
+  id: 'facet_block:anim_cat_fac'
+  label: '[Conf][anim]anim categories'
+  provider: facets
+  label_display: '0'
+  block_id: animcatfac
+visibility:
+  request_path:
+    id: request_path
+    pages: /configurateur/animations
+    negate: false
+    context_mapping: {  }

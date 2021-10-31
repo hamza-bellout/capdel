@@ -1,0 +1,22 @@
+uuid: a895afff-7619-40f8-90cc-e937e1381d0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_event_sub_belongs_to
+field_name: field_event_sub_belongs_to
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

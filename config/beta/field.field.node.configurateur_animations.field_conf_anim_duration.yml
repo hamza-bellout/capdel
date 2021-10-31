@@ -1,0 +1,23 @@
+uuid: e8f06144-6a36-4c98-9af2-8db61c8b547e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_anim_duration
+    - node.type.configurateur_animations
+id: node.configurateur_animations.field_conf_anim_duration
+field_name: field_conf_anim_duration
+entity_type: node
+bundle: configurateur_animations
+label: Duration
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

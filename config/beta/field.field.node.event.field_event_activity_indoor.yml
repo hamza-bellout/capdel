@@ -1,0 +1,23 @@
+uuid: e6accea3-97ed-480a-bd99-6382a68b08ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_activity_indoor
+    - node.type.event
+id: node.event.field_event_activity_indoor
+field_name: field_event_activity_indoor
+entity_type: node
+bundle: event
+label: 'Is this indoor activity'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,43 @@
+uuid: 0741a15b-89ac-4d48-aef2-81994c9a0767
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_par_menu_price
+    - paragraphs.paragraphs_type.par_menu_prices
+id: paragraph.par_menu_prices.field_par_menu_price
+field_name: field_par_menu_price
+entity_type: paragraph
+bundle: par_menu_prices
+label: 'Menu prices'
+description: "Fill in variant for each price above:\r\n<ul>\r\n<li>10-19</li>\r\n<li>20-29</li>\r\n<li>30-39</li>\r\n<li>40-49</li>\r\n<li>50-59</li>\r\n<li>60-69</li>\r\n<li>70-79</li>\r\n<li>80-89</li>\r\n<li>90-99</li>\r\n<li>100-109</li>\r\n</ul>"
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

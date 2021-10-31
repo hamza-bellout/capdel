@@ -1,0 +1,7 @@
+capdel_missing_images_finder.main_page:
+  path: '/admin/missing-images'
+  defaults:
+    _form: '\Drupal\capdel_missing_images_finder\Form\ImporterConfigurationForm'
+    _title: 'Missing images'
+  requirements:
+    _permission: 'administer site configuration'

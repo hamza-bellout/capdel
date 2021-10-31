@@ -1,0 +1,23 @@
+uuid: 5f021edf-ab5b-4c56-866f-07459ea9edeb
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - text
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_event_added_value
+field_name: field_event_added_value
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

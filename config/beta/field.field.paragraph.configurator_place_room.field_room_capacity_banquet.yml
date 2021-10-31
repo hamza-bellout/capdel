@@ -1,0 +1,25 @@
+uuid: 0cdde2ae-a57d-4f6d-ad43-587fdccaae42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_room_capacity_banquet
+    - paragraphs.paragraphs_type.configurator_place_room
+id: paragraph.configurator_place_room.field_room_capacity_banquet
+field_name: field_room_capacity_banquet
+entity_type: paragraph
+bundle: configurator_place_room
+label: 'Room capacity: Banquet'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

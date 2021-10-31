@@ -1,0 +1,24 @@
+uuid: 25dd976f-b16d-4cde-af6a-1d4840b7aab1
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - text
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_conf_anim_short_desc
+field_name: field_conf_anim_short_desc
+entity_type: node
+type: text
+settings:
+  max_length: 512
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

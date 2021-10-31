@@ -1,0 +1,21 @@
+uuid: 7742001c-da0e-4e86-ad21-3d54d53d251a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomy_block
+    - field.storage.block_content.field_tax_block_icon_2
+  module:
+    - options
+id: block_content.taxonomy_block.field_tax_block_icon_2
+field_name: field_tax_block_icon_2
+entity_type: block_content
+bundle: taxonomy_block
+label: 'Icon for the taxonomy term 2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

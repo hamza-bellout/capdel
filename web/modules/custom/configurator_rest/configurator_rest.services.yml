@@ -1,0 +1,5 @@
+services:
+  configurator_rest.denormalizer.test:
+    class: \Drupal\configurator_rest\Normalizer\TestDenormalizer
+    tags:
+      - { name: normalizer }

@@ -1,0 +1,19 @@
+uuid: 92f77cdd-a14c-4161-9308-d7ef50c0c4a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_r_pkg_item_type
+    - paragraphs.paragraphs_type.reservation_package_item
+id: paragraph.reservation_package_item.field_r_pkg_item_type
+field_name: field_r_pkg_item_type
+entity_type: paragraph
+bundle: reservation_package_item
+label: 'Item: type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

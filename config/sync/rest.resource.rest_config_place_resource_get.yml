@@ -1,0 +1,20 @@
+uuid: d6f13fb4-59ef-4192-bfa6-b8cf76c26484
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - configurator_rest
+    - serialization
+    - user
+id: rest_config_place_resource_get
+plugin_id: rest_config_place_resource_get
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - basic_auth
+    - cookie

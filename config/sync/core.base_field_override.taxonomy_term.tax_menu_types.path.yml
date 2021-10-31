@@ -1,0 +1,20 @@
+uuid: ca2d45b8-667f-42ae-bf0d-221f826182be
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_menu_types
+  module:
+    - path
+id: taxonomy_term.tax_menu_types.path
+field_name: path
+entity_type: taxonomy_term
+bundle: tax_menu_types
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

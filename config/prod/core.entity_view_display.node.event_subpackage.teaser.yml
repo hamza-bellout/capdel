@@ -1,0 +1,58 @@
+uuid: 49faecd9-84b2-4ab6-9192-4b66aa899d4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event_subpackage.field_event_sub_accomtype
+    - field.field.node.event_subpackage.field_event_sub_address
+    - field.field.node.event_subpackage.field_event_sub_city
+    - field.field.node.event_subpackage.field_event_sub_geo_params
+    - field.field.node.event_subpackage.field_event_sub_google_maps_visi
+    - field.field.node.event_subpackage.field_event_sub_is_valid
+    - field.field.node.event_subpackage.field_event_sub_legacy_id
+    - field.field.node.event_subpackage.field_event_sub_participants_max
+    - field.field.node.event_subpackage.field_event_sub_participants_min
+    - field.field.node.event_subpackage.field_event_sub_price
+    - field.field.node.event_subpackage.field_event_sub_price_extra
+    - field.field.node.event_subpackage.field_event_sub_price_info
+    - field.field.node.event_subpackage.field_event_sub_price_ppmin
+    - field.field.node.event_subpackage.field_event_sub_price_taxes
+    - field.field.node.event_subpackage.field_event_sub_price_type
+    - field.field.node.event_subpackage.field_event_sub_tax_destination
+    - field.field.node.event_subpackage.field_event_sub_zip
+    - node.type.event_subpackage
+  module:
+    - user
+id: node.event_subpackage.teaser
+targetEntityType: node
+bundle: event_subpackage
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_event_sub_accomtype: true
+  field_event_sub_address: true
+  field_event_sub_belongs_to: true
+  field_event_sub_city: true
+  field_event_sub_detail_comments: true
+  field_event_sub_geo_params: true
+  field_event_sub_google_maps_visi: true
+  field_event_sub_is_valid: true
+  field_event_sub_legacy_id: true
+  field_event_sub_origin: true
+  field_event_sub_participants_max: true
+  field_event_sub_participants_min: true
+  field_event_sub_price: true
+  field_event_sub_price_extra: true
+  field_event_sub_price_info: true
+  field_event_sub_price_ppmin: true
+  field_event_sub_price_taxes: true
+  field_event_sub_price_type: true
+  field_event_sub_tax_availability: true
+  field_event_sub_tax_destination: true
+  field_event_sub_tax_lang: true
+  field_event_sub_zip: true
+  langcode: true

@@ -1,0 +1,18 @@
+uuid: 046b0836-d71d-4928-b159-5604d9d88b73
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Conf Distance'
+type: conf_distance
+description: 'This is used to calculate distance between Place and TB'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

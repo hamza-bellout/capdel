@@ -1,0 +1,66 @@
+label: Medien
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+          tags:
+            previous: '< Zurück'
+            next: 'Weiter >'
+            first: '« Anfang'
+            last: 'Ende »'
+      fields:
+        thumbnail__target_id:
+          label: Vorschaubild
+        name:
+          label: Medienname
+        bundle:
+          label: Typ
+        uid:
+          label: Autor
+        status:
+          settings:
+            format_custom_true: Veröffentlicht
+            format_custom_false: Unveröffentlicht
+        changed:
+          label: Aktualisiert
+        operations:
+          label: Operationen
+      filters:
+        name:
+          expose:
+            label: Medienname
+        bundle:
+          expose:
+            label: Typ
+        status:
+          expose:
+            label: Wahr
+          group_info:
+            label: 'Inhalt, der den Status veröffentlicht besitzt'
+            group_items:
+              1:
+                title: Veröffentlicht
+              2:
+                title: Unveröffentlicht
+        langcode:
+          expose:
+            label: Sprache
+      title: Medien
+      empty:
+        area_text_custom:
+          content: 'Kein Inhalt verfügbar.'
+  media_page_list:
+    display_title: Medien
+    display_options:
+      menu:
+        title: Medien

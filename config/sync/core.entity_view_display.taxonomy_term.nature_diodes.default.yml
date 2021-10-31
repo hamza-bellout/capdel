@@ -1,0 +1,32 @@
+uuid: 51c130cc-2f27-4c2b-b860-8479e3da1b21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nature_diodes.field_tax_legacy_id
+    - taxonomy.vocabulary.nature_diodes
+  module:
+    - text
+id: taxonomy_term.nature_diodes.default
+targetEntityType: taxonomy_term
+bundle: nature_diodes
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tax_legacy_id:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  langcode: true

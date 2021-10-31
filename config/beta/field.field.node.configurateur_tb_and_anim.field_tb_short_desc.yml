@@ -1,0 +1,21 @@
+uuid: 6935d7b8-468c-420f-9b21-5457a97da208
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tb_short_desc
+    - node.type.configurateur_tb_and_anim
+  module:
+    - text
+id: node.configurateur_tb_and_anim.field_tb_short_desc
+field_name: field_tb_short_desc
+entity_type: node
+bundle: configurateur_tb_and_anim
+label: 'Short description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

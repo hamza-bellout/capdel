@@ -1,0 +1,4 @@
+label: 'Activité le soir'
+settings:
+  on_label: Oui
+  off_label: Non

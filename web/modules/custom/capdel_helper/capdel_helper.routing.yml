@@ -1,0 +1,170 @@
+capdel_helper.reset.login:
+  path: '/user/reset/{uid}/{timestamp}/{hash}/reset'
+  defaults:
+    _controller: '\Drupal\capdel_helper\Controller\UserController::resetPassLogin'
+    _title: 'Reset password'
+  requirements:
+    _user_is_logged_in: 'FALSE'
+  options:
+    _maintenance_access: TRUE
+    no_cache: TRUE
+
+capdel_helper.change.password:
+  path: '/user/changePassword'
+  defaults:
+    _controller: '\Drupal\capdel_helper\Controller\UserController::changePassword'
+    _title: 'Change password'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    _maintenance_access: TRUE
+    no_cache: TRUE
+
+capdel_helper.node.price_wizard:
+  path: '/node/{node}/price_wizard'
+  defaults:
+    _title: 'Price wizard'
+    _controller: '\Drupal\capdel_helper\Controller\PriceWizardController::priceWizard'
+  requirements:
+    _permission: 'edit any event content'
+    node: \d+
+  options:
+    _node_operation_route: TRUE
+
+capdel_helper.node.price_update:
+  path: '/node/{node}/price_update'
+  defaults:
+    _controller: '\Drupal\capdel_helper\Controller\PriceWizardController::priceUpdate'
+  requirements:
+    _permission: 'edit any event content'
+    _csrf_token: 'TRUE'
+    node: \d+
+  options:
+    _node_operation_route: TRUE
+
+capdel_helper.node.new_event_variant_location:
+  path: '/node/{node}/location/new'
+  defaults:
+    _controller: '\Drupal\capdel_helper\Controller\PriceWizardController::newVariantLocation'
+  requirements:
+    _permission: 'edit any event content'
+    node: \d+
+  options:
+    _node_operation_route: TRUE
+
+capdel_helper.node.new_event_variant_location_submit:
+  path: '/node/{node}/location/new'
+  defaults:
+    _controller: '\Drupal\capdel_helper\Controller\PriceWizardController::newVariantLocation'
+  requirements:
+    _permission: 'edit any event content'
+    _method: 'POST'
+    _csrf_token: 'TRUE'
+    node: \d+
+  options:
+    _node_operation_route: TRUE
+
+capdel_helper.node.edit_event_variant_location:
+  path: '/node/{event}/location/{variant}/edit'
+  defaults:
+    _controller: '\Drupal\capdel_helper\Controller\PriceWizardController::editVariantLocation'
+  requirements:
+    _permission: 'edit any event content'
+    event: \d+
+    variant: \d+
+  options:
+    _node_operation_route: TRUE
+    parameters:
+      event:
+        type: entity:node
+      variant:
+        type: entity:node
+
+capdel_helper.node.edit_event_variant_location_submit:
+  path: '/node/{event}/location/{variant}/edit'
+  defaults:
+    _controller: '\Drupal\capdel_helper\Controller\PriceWizardController::editVariantLocation'
+  requirements:
+    _permission: 'edit any event content'
+    _method: 'POST'
+    _csrf_token: 'TRUE'
+    event: \d+
+    variant: \d+
+  options:
+    _node_operation_route: TRUE
+    parameters:
+      event:
+        type: entity:node
+      variant:
+        type: entity:node
+
+capdel_helper.node.delete_event_variant_location:
+  path: '/node/{event}/location/{variant}/delete'
+  defaults:
+    _controller: '\Drupal\capdel_helper\Controller\PriceWizardController::deleteVariantLocation'
+  requirements:
+    _permission: 'edit any event content'
+    event: \d+
+    variant: \d+
+  options:
+    _node_operation_route: TRUE
+    parameters:
+      event:
+        type: entity:node
+      variant:
+        type: entity:node
+
+capdel_helper.node.delete_event_variant_location_submit:
+  path: '/node/{event}/location/{variant}/delete'
+  defaults:
+    _controller: '\Drupal\capdel_helper\Controller\PriceWizardController::deleteVariantLocation'
+  requirements:
+    _permission: 'edit any event content'
+    _method: 'POST'
+    _csrf_token: 'TRUE'
+    event: \d+
+    variant: \d+
+  options:
+    _node_operation_route: TRUE
+    parameters:
+      event:
+        type: entity:node
+      variant:
+        type: entity:node
+
+capdel_helper.votre_lieu:
+  path: '/votre_lieu'
+  defaults:
+    _form: '\Drupal\capdel_helper\Form\VotreLieuForm'
+    _title: 'Votre Lieu'
+  requirements:
+      _permission: 'access content'
+
+capdel_helper.contact:
+  path: '/contact'
+  defaults:
+    _form: '\Drupal\capdel_helper\Form\ContactForm'
+    _title: 'Nous contacter'
+  requirements:
+      _permission: 'access content'
+
+capdel_helper.chef_de_projet:
+  path: '/chef_de_projet'
+  defaults:
+    _form: '\Drupal\capdel_helper\Form\ChefDeProjetForm'
+    _title: 'Chef de projet'
+  requirements:
+      _permission: 'access content'
+
+capdel_helper.image.clone:
+  path: '/media/{media}/clone'
+  defaults:
+    _title: 'Clone'
+    _controller: '\Drupal\capdel_helper\Controller\ImageController::cloneImage'
+  requirements:
+    _permission: 'create image media'
+    media: \d+
+  options:
+    parameters:
+      media:
+        type: entity:media

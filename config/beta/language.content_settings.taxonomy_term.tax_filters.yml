@@ -1,0 +1,18 @@
+uuid: 44ed265b-2a04-49f3-9723-a577a8c6bffe
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_filters
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.tax_filters
+target_entity_type_id: taxonomy_term
+target_bundle: tax_filters
+default_langcode: fr
+language_alterable: false

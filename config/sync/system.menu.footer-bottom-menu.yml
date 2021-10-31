@@ -1,0 +1,8 @@
+uuid: 769b6052-545a-4eaf-a659-80c5eed18b25
+langcode: fr
+status: true
+dependencies: {  }
+id: footer-bottom-menu
+label: 'Footer bottom menu'
+description: 'Very bottom footer links'
+locked: false

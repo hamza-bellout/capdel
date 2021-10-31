@@ -1,0 +1,25 @@
+uuid: d76386c3-1971-4450-8d11-453a1bd6ee99
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_price
+    - node.type.conf_lieu
+id: node.conf_lieu.field_conf_price
+field_name: field_conf_price
+entity_type: node
+bundle: conf_lieu
+label: 'Prix par participant'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

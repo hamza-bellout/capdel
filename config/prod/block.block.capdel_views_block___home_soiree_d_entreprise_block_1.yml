@@ -1,0 +1,30 @@
+uuid: 3e78c85e-5a96-4ebd-939f-9eee31a51bcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view._home_soiree_d_entreprise
+  module:
+    - system
+    - views
+  theme:
+    - capdel
+id: capdel_views_block___home_soiree_d_entreprise_block_1
+theme: capdel
+region: content
+weight: -11
+provider: null
+plugin: 'views_block:_home_soiree_d_entreprise-block_1'
+settings:
+  id: 'views_block:_home_soiree_d_entreprise-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

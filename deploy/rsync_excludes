@@ -1,0 +1,13 @@
+.git
+.gitignore
+.gitattributes
+web/sites/default/services.yml
+web/sites/default/settings.php
+web/sites/default/files
+web/sites/default/translations
+deploy
+tests
+HTML
+.env
+config/sync/system.performance.yml
+

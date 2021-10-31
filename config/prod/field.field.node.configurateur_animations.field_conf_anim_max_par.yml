@@ -1,0 +1,23 @@
+uuid: 7cf0d979-1732-4450-9155-b63bd9545a97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_anim_max_par
+    - node.type.configurateur_animations
+id: node.configurateur_animations.field_conf_anim_max_par
+field_name: field_conf_anim_max_par
+entity_type: node
+bundle: configurateur_animations
+label: 'Number of max participants'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

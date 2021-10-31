@@ -1,0 +1,20 @@
+uuid: cc5f289e-7344-4d96-bee7-0e7709b05ce6
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.event_duration_type
+  module:
+    - path
+id: taxonomy_term.event_duration_type.path
+field_name: path
+entity_type: taxonomy_term
+bundle: event_duration_type
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

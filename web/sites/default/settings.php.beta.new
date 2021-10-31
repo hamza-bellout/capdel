@@ -1,0 +1,86 @@
+<?php
+
+// @codingStandardsIgnoreFile
+
+$databases = array();
+
+$config_directories = array();
+
+$settings['hash_salt'] = "z2PVVrO1IeEowcBYpaOD5IEN8jibDlxi1TA8tKYx0rWVDQv6HWyWCAJEtXPk1uOjNZkNUV0n_g";
+
+$settings['update_free_access'] = FALSE;
+
+if ($settings['hash_salt']) {
+  $prefix = 'drupal.' . hash('sha256', 'drupal.' . $settings['hash_salt']);
+  $apc_loader = new \Symfony\Component\ClassLoader\ApcClassLoader($prefix, $class_loader);
+  unset($prefix);
+  $class_loader->unregister();
+   $apc_loader->register();
+  $class_loader = $apc_loader;
+}
+
+$settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
+
+$settings['file_scan_ignore_directories'] = [
+  'node_modules',
+  'bower_components',
+];
+
+$settings['entity_update_batch_size'] = 50;
+
+$databases['default']['default'] = array (
+  'database' => $_SERVER['RDS_DB_NAME'],
+  'username' => $_SERVER['RDS_USERNAME'],
+  'password' => $_SERVER['RDS_PASSWORD'],
+  'prefix' => '',
+  'host' => $_SERVER['RDS_HOSTNAME'],
+  'port' => $_SERVER['RDS_PORT'],
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+$settings['install_profile'] = 'standard';
+$config_directories['sync'] = $config_directories['sync'] = '../config/beta';
+$settings['custom_translations_directory'] = '/sites/default/files/drush-trans';
+$settings['reverse_proxy'] = TRUE;
+$settings['reverse_proxy_addresses'] = array($_SERVER['REMOTE_ADDR']);
+
+
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&  $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+  $_SERVER['HTTPS'] = 'on';
+  // This is hardcoded because there is no header specifying the original port.
+  $_SERVER['SERVER_PORT'] = $_SERVER['HTTP_X_FORWARDED_PORT'];
+}
+
+$settings['s3fs.access_key'] = 'AKIAJJKJJAK6SQNOYN6Q';
+$settings['s3fs.secret_key'] = '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';
+$settings['s3fs.use_s3_for_public'] = true; //change to true
+$config['s3fs.settings']['bucket'] = 'capdel-web-dev';
+
+$config['maps.settings']['api_key'] = 'AIzaSyBnRetzFyjvV0eO2XPVNnK58lpxNJNz59s';
+
+// please adjust according to your host oP PROD environments
+$settings['trusted_host_patterns'] = array(
+  '^www\.beta\.capdel\.fr$',
+  '^beta\.capdel\.fr$',
+  '^capdel-development.eu-west-3.elasticbeanstalk.com$'
+);
+
+//SmartSupp Live Chat settings
+$config['chat.settings']['active'] = true;
+$config['chat.settings']['key'] = '8e5dc793ec70ae32ebe6ed6cb2abf1e1314d5a50';
+
+$settings['google_tag_manager_id'] = 'GTM-PHHJ9Q7';
+
+$settings['memcache']['servers'] = ['capdel-mem.tnz10r.0001.euw3.cache.amazonaws.com:11211' => 'default'];
+$settings['memcache']['bins'] = ['default' => 'default'];
+$settings['memcache']['key_prefix'] = 'capdel_beta_1_8';
+//MOVED TO settings.memcache - $settings['cache']['default'] = 'cache.backend.memcache';
+
+$settings['odoo_url'] = 'https://recette.hopscotchgroupe.com';
+$settings['odoo_db'] = 'hopscotchgroupe_recette';
+$settings['odoo_username'] = 'api-capdel@hopscotchgroupe.com';
+$settings['odoo_password'] = '49fD*#*WqSSd';
+
+if (file_exists($app_root . '/' . $site_path . '/settings.memcache.on.php')) {
+    include $app_root . '/' . $site_path . '/settings.memcache.on.php';
+}

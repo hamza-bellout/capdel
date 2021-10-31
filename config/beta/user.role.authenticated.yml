@@ -1,0 +1,45 @@
+uuid: 9edd1f7e-fffd-4838-b638-65e304892884
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Utilisateur authentifié'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'change own username'
+  - 'create field_conf_anim_type'
+  - 'create field_conf_tb_menu_type'
+  - 'create field_lieu_ref_tb'
+  - 'display eu cookie compliance popup'
+  - 'edit field_conf_anim_type'
+  - 'edit field_conf_tb_menu_type'
+  - 'edit field_lieu_ref_tb'
+  - 'edit own field_conf_anim_type'
+  - 'edit own field_conf_tb_menu_type'
+  - 'edit own field_lieu_ref_tb'
+  - 'flag bookmark'
+  - 'post comments'
+  - 'restful get rest_config_place_resource_get'
+  - 'restful get rest_reservation_resource_get'
+  - 'restful post rest_reservation_resource'
+  - 'restful post user_rest_resource'
+  - 'search content'
+  - 'skip comment approval'
+  - 'unflag bookmark'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'view field_conf_anim_type'
+  - 'view field_conf_tb_menu_type'
+  - 'view field_lieu_ref_tb'
+  - 'view media'
+  - 'view own field_conf_anim_type'
+  - 'view own field_conf_tb_menu_type'
+  - 'view own field_lieu_ref_tb'
+  - 'view own unpublished content'

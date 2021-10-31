@@ -1,0 +1,55 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Anwenden
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
+      pager:
+        options:
+          tags:
+            previous: '< Zurück'
+            next: 'Weiter >'
+            first: '« Anfang'
+            last: 'Ende »'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+      fields:
+        title:
+          label: Titel
+        type:
+          label: Typ
+        status:
+          label: Veröffentlicht
+        changed:
+          label: 'Zuletzt aktualisiert'
+      filters:
+        title:
+          expose:
+            label: Titel
+        type:
+          expose:
+            label: Typ
+        status:
+          expose:
+            label: Veröffentlicht
+      title: 'Meine Änderungen'
+      empty:
+        area:
+          content:
+            value: 'Sie haben noch keinen Inhalt erstellt oder bearbeitet.'
+  block_1:
+    display_options:
+      pager:
+        options:
+          tags:
+            first: '« Anfang'
+            last: 'Ende »'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+      use_more_text: 'Alle anzeigen'

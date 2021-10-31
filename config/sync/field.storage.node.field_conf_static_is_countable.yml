@@ -1,0 +1,22 @@
+uuid: 54fd3c34-5e51-464d-82f6-4824d46f91c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_conf_static_is_countable
+field_name: field_conf_static_is_countable
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

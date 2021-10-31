@@ -1,0 +1,26 @@
+uuid: cf14c652-ecac-4eaf-8795-f9ab6471eccf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.package.field_package_additional_details
+    - field.field.node.package.field_package_entities
+    - field.field.node.package.field_package_user
+    - node.type.package
+  module:
+    - user
+id: node.package.teaser
+targetEntityType: node
+bundle: package
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_package_additional_details: true
+  field_package_entities: true
+  field_package_status: true
+  field_package_user: true
+  langcode: true

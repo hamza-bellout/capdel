@@ -1,0 +1,25 @@
+uuid: 0dfae71f-1681-4043-8a7f-faafd2d4076a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.partner.field_partner_alt_desc
+    - field.field.node.partner.field_partner_cta_url
+    - field.field.node.partner.field_partner_logo
+    - node.type.partner
+  module:
+    - user
+id: node.partner.teaser
+targetEntityType: node
+bundle: partner
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_partner_alt_desc: true
+  field_partner_cta_url: true
+  field_partner_logo: true
+  langcode: true

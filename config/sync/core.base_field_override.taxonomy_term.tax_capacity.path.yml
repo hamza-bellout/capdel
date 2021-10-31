@@ -1,0 +1,20 @@
+uuid: e6160e46-4a50-4220-bfac-c005949ae071
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_capacity
+  module:
+    - path
+id: taxonomy_term.tax_capacity.path
+field_name: path
+entity_type: taxonomy_term
+bundle: tax_capacity
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

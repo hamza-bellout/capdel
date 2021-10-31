@@ -1,0 +1,89 @@
+uuid: 11287829-4e5d-4f86-a681-907a7e8ab3e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_bundle
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_category
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_count
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_dest
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_id
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_price
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_title
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_type
+    - paragraphs.paragraphs_type.reservation_package_item
+id: paragraph.reservation_package_item.default
+targetEntityType: paragraph
+bundle: reservation_package_item
+mode: default
+content:
+  field_r_pkg_item_bundle:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_r_pkg_item_category:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_r_pkg_item_count:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_r_pkg_item_dest:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_r_pkg_item_id:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_r_pkg_item_price:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_r_pkg_item_title:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_r_pkg_item_type:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

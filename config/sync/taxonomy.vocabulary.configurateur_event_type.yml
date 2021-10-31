@@ -1,0 +1,9 @@
+uuid: ae167368-acbd-42b4-9e81-c2e191acaeee
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Configurateur event type'
+vid: configurateur_event_type
+description: 'Used to fill in conf search event type'
+hierarchy: 0
+weight: 0

@@ -1,0 +1,23 @@
+uuid: de4ecf57-674f-40d0-8f57-df5a70b8c28a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_tb_max_par
+    - node.type.configurateur_tb_and_anim
+id: node.configurateur_tb_and_anim.field_conf_tb_max_par
+field_name: field_conf_tb_max_par
+entity_type: node
+bundle: configurateur_tb_and_anim
+label: 'Number of max participants'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

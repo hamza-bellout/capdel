@@ -1,0 +1,19 @@
+uuid: 419eebcd-8d4c-4de1-ac2f-f010083048b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pkg_sel_bdg_per_pax
+    - node.type.package
+id: node.package.field_pkg_sel_bdg_per_pax
+field_name: field_pkg_sel_bdg_per_pax
+entity_type: node
+bundle: package
+label: 'Selected Values: Budget per PAX number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,9 @@
+uuid: 12613600-fd29-4e14-b7ae-89d73b4f0ae9
+langcode: fr
+status: true
+dependencies: {  }
+name: Destination
+vid: tax_destination
+description: 'Destination taxonomy, e.g. Paris, etc.'
+hierarchy: 1
+weight: 0

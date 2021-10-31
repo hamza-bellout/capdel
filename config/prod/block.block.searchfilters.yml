@@ -1,0 +1,29 @@
+uuid: 56aca1d1-28bf-47b5-9565-8431348aaf4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.search_filters
+  module:
+    - facets
+    - system
+  theme:
+    - capdel
+id: searchfilters
+theme: capdel
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:search_filters'
+settings:
+  id: 'facet_block:search_filters'
+  label: 'Recherche affinée'
+  provider: facets
+  label_display: visible
+  block_id: searchfilters
+visibility:
+  request_path:
+    id: request_path
+    pages: /search
+    negate: false
+    context_mapping: {  }

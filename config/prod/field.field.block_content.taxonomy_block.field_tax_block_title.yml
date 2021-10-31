@@ -1,0 +1,19 @@
+uuid: 43b3e6e4-7eb3-40fa-904f-cc138f197050
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomy_block
+    - field.storage.block_content.field_tax_block_title
+id: block_content.taxonomy_block.field_tax_block_title
+field_name: field_tax_block_title
+entity_type: block_content
+bundle: taxonomy_block
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

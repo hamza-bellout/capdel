@@ -1,0 +1,255 @@
+uuid: 1e31c890-e276-42c2-b15c-ccd95bdc3224
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.package.field_package_additional_details
+    - field.field.node.package.field_package_entities
+    - field.field.node.package.field_package_info_json
+    - field.field.node.package.field_package_ord_date
+    - field.field.node.package.field_package_status
+    - field.field.node.package.field_package_user
+    - field.field.node.package.field_pkg_an_civility
+    - field.field.node.package.field_pkg_an_company
+    - field.field.node.package.field_pkg_an_email
+    - field.field.node.package.field_pkg_an_first_name
+    - field.field.node.package.field_pkg_an_last_name
+    - field.field.node.package.field_pkg_an_phone
+    - field.field.node.package.field_pkg_bdg_package_total
+    - field.field.node.package.field_pkg_bdg_remain
+    - field.field.node.package.field_pkg_bdg_total
+    - field.field.node.package.field_pkg_is_anonym
+    - field.field.node.package.field_pkg_links_pkg_url
+    - field.field.node.package.field_pkg_links_venue_url
+    - field.field.node.package.field_pkg_odoo_id
+    - field.field.node.package.field_pkg_par_items
+    - field.field.node.package.field_pkg_reservation_type
+    - field.field.node.package.field_pkg_sel_bdg_per_pax
+    - field.field.node.package.field_pkg_sel_date
+    - field.field.node.package.field_pkg_sel_destination
+    - field.field.node.package.field_pkg_sel_event_type
+    - field.field.node.package.field_pkg_sel_pax
+    - node.type.package
+  module:
+    - datetime
+    - paragraphs
+    - text
+id: node.package.default
+targetEntityType: node
+bundle: package
+mode: default
+content:
+  field_package_additional_details:
+    weight: 15
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_package_entities:
+    weight: 14
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_package_ord_date:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_package_status:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_package_user:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_pkg_an_civility:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_an_company:
+    weight: 30
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_an_email:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_an_first_name:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_an_last_name:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_an_phone:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_bdg_package_total:
+    weight: 12
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pkg_bdg_remain:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pkg_bdg_total:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pkg_is_anonym:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_pkg_links_pkg_url:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_links_venue_url:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_odoo_id:
+    weight: 33
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pkg_par_items:
+    type: entity_reference_paragraphs
+    weight: 13
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_pkg_reservation_type:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_sel_bdg_per_pax:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_sel_date:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_pkg_sel_destination:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_sel_event_type:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pkg_sel_pax:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_package_info_json: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

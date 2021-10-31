@@ -1,0 +1,21 @@
+uuid: 85dea5d5-dcbc-4ffb-af21-5a4beed754f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_anim_short_desc
+    - node.type.configurateur_animations
+  module:
+    - text
+id: node.configurateur_animations.field_conf_anim_short_desc
+field_name: field_conf_anim_short_desc
+entity_type: node
+bundle: configurateur_animations
+label: 'Short description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

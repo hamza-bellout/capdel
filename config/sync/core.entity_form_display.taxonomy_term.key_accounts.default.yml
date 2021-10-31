@@ -1,0 +1,82 @@
+uuid: 9b0d7767-8bef-40d0-965c-e4b6a05f21d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.key_accounts.field_tax_key_accounts_tax_lang
+    - field.field.taxonomy_term.key_accounts.field_tax_key_accouts_comments
+    - field.field.taxonomy_term.key_accounts.field_tax_legacy_id
+    - taxonomy.vocabulary.key_accounts
+  module:
+    - path
+    - text
+id: taxonomy_term.key_accounts.default
+targetEntityType: taxonomy_term
+bundle: key_accounts
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tax_key_accounts_tax_lang:
+    weight: 103
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_tax_key_accouts_comments:
+    weight: 101
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_tax_legacy_id:
+    weight: 104
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    weight: 105
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+hidden: {  }

@@ -1,0 +1,9 @@
+uuid: 56794128-185a-47c5-b1c5-4bccc7bfe3e4
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Configurateur lieu type'
+vid: configurateur_lieu_type
+description: ''
+hierarchy: 0
+weight: 0

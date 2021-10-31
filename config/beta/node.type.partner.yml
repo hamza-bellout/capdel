@@ -1,0 +1,17 @@
+uuid: 322e07c1-7d7b-41f7-ab55-1a4af9a6cacf
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Partner
+type: partner
+description: 'This entity is used to add partners to the site, with logo image, CTA button and alt description text.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

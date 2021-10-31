@@ -1,0 +1,168 @@
+uuid: 37f7ca5f-2342-4a74-97e0-bde28af7a7fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_add_val
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_avail
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_cat_sub
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_category
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_desc
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_destination
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_duration
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_geo_params
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_image
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_max_par
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_menu_type
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_min_par
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_price
+    - field.field.node.configurateur_tb_and_anim.field_tb_par_geo_dist
+    - field.field.node.configurateur_tb_and_anim.field_tb_ref_lieu
+    - field.field.node.configurateur_tb_and_anim.field_tb_short_desc
+    - node.type.configurateur_tb_and_anim
+  module:
+    - text
+    - user
+id: node.configurateur_tb_and_anim.default
+targetEntityType: node
+bundle: configurateur_tb_and_anim
+mode: default
+content:
+  field_conf_tb_add_val:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_conf_tb_avail:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_conf_tb_cat_sub:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_conf_tb_category:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_conf_tb_desc:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_conf_tb_destination:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_conf_tb_duration:
+    weight: 105
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_conf_tb_geo_params:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_conf_tb_image:
+    type: entity_reference_entity_view
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_conf_tb_max_par:
+    weight: 106
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_conf_tb_menu_type:
+    weight: 115
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_conf_tb_min_par:
+    weight: 107
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_conf_tb_price:
+    weight: 114
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_tb_par_geo_dist:
+    weight: 117
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tb_ref_lieu:
+    weight: 116
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tb_short_desc:
+    weight: 113
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  addtoany: true
+  langcode: true

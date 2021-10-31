@@ -1,0 +1,5 @@
+label: 'Top ventes'
+description: 'Check box pour afficher un événement en top vente sur la home page. '
+settings:
+  on_label: Oui
+  off_label: Non

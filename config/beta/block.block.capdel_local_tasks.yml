@@ -1,0 +1,29 @@
+uuid: 7d5a6597-d150-4f7e-b1cd-5907004e41a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - capdel
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: capdel_local_tasks
+theme: capdel
+region: content
+weight: -24
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  request_path:
+    id: request_path
+    pages: "/configurateur\r\n/configurateur/*"
+    negate: true
+    context_mapping: {  }

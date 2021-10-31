@@ -1,0 +1,97 @@
+.search-page {
+	.container {
+		max-width: 100%;
+	}
+
+	/*
+	@include media('<tablet') {
+		#two-columns {
+			display: flex;
+			flex-direction: column;
+			#sidebar {
+				order: 1;
+				margin-top: 15px;
+			}
+			#content {
+				order: 0;
+			}
+		}
+	}*/
+	@include media('<tablet') {
+		#sidebar {
+			height: 0px;
+			overflow: hidden;
+		}
+		.google-map {
+			height: 200px;
+			margin: 0 -32px 30px;
+			border-radius: 0px;
+		}
+	}
+	@include media('>=xl-widescreen') {
+		.google-map {
+			height: 614px;
+		}
+	}
+}
+
+#edit-texte {
+	@include placeholder {
+
+		color: $gray-500;
+	}
+}
+
+.show-more-button {
+	color:$blue;
+	position: relative;
+	font-weight: bold;
+	cursor: pointer;
+	transition: opacity 1s ease-out;
+
+	@include media('>=tablet') {
+		padding: 0;
+		color: $blue;
+	}
+
+		@include media('>=desktop') {
+			padding-right: 25px;
+		}
+
+		&:after {
+			content: $icon-chevron-down;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -9px;
+			font-family: 'icomoon';
+			font-size: 12px;
+			line-height: 1;
+
+
+			@include media('>=tablet') {
+				color: $blue;
+				margin-top: -7px;
+			}
+		}
+
+	&.less {
+		&:after {
+			content: $icon-chevron-up;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -9px;
+			font-family: 'icomoon';
+			font-size: 12px;
+			line-height: 1;
+
+
+			@include media('>=tablet') {
+				color: $blue;
+				margin-top: -7px;
+			}
+		}
+	}
+
+}

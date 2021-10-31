@@ -1,0 +1,33 @@
+uuid: 2b03f46b-52dd-4c05-91f1-4633f8776717
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8eeb8ae0-c656-4b94-ace5-e180f8e0db5a'
+  module:
+    - block_content
+    - user
+  theme:
+    - capdel
+id: votrecompte
+theme: capdel
+region: highlighted
+weight: -17
+provider: null
+plugin: 'block_content:8eeb8ae0-c656-4b94-ace5-e180f8e0db5a'
+settings:
+  id: 'block_content:8eeb8ae0-c656-4b94-ace5-e180f8e0db5a'
+  label: 'Account created'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

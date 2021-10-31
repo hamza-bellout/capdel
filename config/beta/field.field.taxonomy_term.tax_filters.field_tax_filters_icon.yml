@@ -1,0 +1,19 @@
+uuid: 3f28f643-af85-415b-b2ba-cd530eed50eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tax_filters_icon
+    - taxonomy.vocabulary.tax_filters
+id: taxonomy_term.tax_filters.field_tax_filters_icon
+field_name: field_tax_filters_icon
+entity_type: taxonomy_term
+bundle: tax_filters
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

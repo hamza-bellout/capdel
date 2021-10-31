@@ -1,0 +1,36 @@
+uuid: 46a079ae-f815-4f80-a2cc-3d20084ea72a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - capdel
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: capdel_page_title
+theme: capdel
+region: content
+weight: -25
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/search\r\n/configurateur\r\n/configurateur/*\r\n/profileinfo*\r\n/reservations\r\n/profileedit*\r\n/mes-favoris"
+    negate: true
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+      event_subpackage: event_subpackage
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

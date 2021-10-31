@@ -1,0 +1,22 @@
+uuid: df807a8d-6379-490c-ab53-033bdee844bb
+langcode: fr
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_conf_tb_price
+field_name: field_conf_tb_price
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 10
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

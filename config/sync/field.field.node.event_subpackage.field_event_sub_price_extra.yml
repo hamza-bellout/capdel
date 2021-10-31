@@ -1,0 +1,23 @@
+uuid: 544101a4-5e46-4dc0-a88f-35c67339744e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_sub_price_extra
+    - node.type.event_subpackage
+id: node.event_subpackage.field_event_sub_price_extra
+field_name: field_event_sub_price_extra
+entity_type: node
+bundle: event_subpackage
+label: 'Price Extra'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,314 @@
+.event-details {
+	.category-title {
+		font-weight: 500;
+		font-size: 11px;
+		color: $purple;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		margin-bottom: 7px;
+	}
+
+	.title {
+		h1 {
+			color: #001022;
+			@include media('>=tablet') {
+				font-size: 25px;
+				line-height: 29px;
+			}
+
+			@include media('>=desktop') {
+				font-size: 36px;
+				line-height: 55px;
+			}
+		}
+	}
+	.sub-title {
+		font-size: 18px;
+		color: #0C0B0A;
+		line-height: 22px;
+		font-weight: 400;
+		margin-bottom: 40px;
+		font-family: $font-roboto;
+		strong {
+			color: $purple;
+		}
+	}
+
+	.details {
+		@extend %listreset;
+		li {
+			@include media('>=tablet') {
+				display: inline-block;
+				&:not(:first-child) {
+					margin-left: 20px;
+				}
+			}
+			@include media('>=desktop') {
+				&:not(:first-child) {
+					margin-left: 40px;
+				}
+			}
+		}
+	}
+	.ajax-progress-throbber {
+		display: none
+	}
+
+	.link-more {
+		i {
+			font-size: 17px;
+		}
+	}
+
+	.favs {
+		display: inline-block;
+		vertical-align: top;
+		color: #00b0ff;
+		font-weight: 700;
+		font-size: 11px;
+		line-height: 16px;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		i {
+			font-size: 17px;
+		}
+	}
+
+	hr {
+		margin: 30px 0;
+		border: 1px solid #DEE4EA;
+	}
+
+	section {
+		h3 {
+			font-weight: 500;
+			font-size: 24px;
+			color: $purple;
+			letter-spacing: 0;
+			font-family: $font-roboto;
+		}
+		&.description {
+			.description-text {
+				color: #778895;
+        h4 {
+          font-size: inherit;
+          font-weight: inherit;
+          font-family: inherit;
+          color: inherit;
+        }
+			}
+		}
+
+		&.offer {
+			h4 {
+				font-family: $font-roboto;
+				font-weight: 500;
+				font-size: 14px;
+				color: #1B2A39;
+				letter-spacing: 0;
+				i {
+					font-size: 20px;
+				}
+			}
+			ul {
+				@extend %listreset;
+				margin-bottom: 30px;
+				li {
+					margin-bottom: 20px;
+					padding-left: 28px;
+					position: relative;
+					color: #778895;
+					font-size: 14px;
+					line-height: 16px;
+
+					&:before {
+						content: $icon-check;
+						color: $blue;
+						font-size: 8px;
+						position: absolute;
+						left: 3px;
+						font-family: 'icomoon' !important;
+					}
+				}
+			}
+		}
+
+		&.extra {
+			.card {
+				border: 0;
+				.card-category {
+					font-weight: 500;
+					font-size: 11px;
+					color: $purple;
+					letter-spacing: 0.5px;
+					text-transform: uppercase;
+				}
+				.card-img {
+					max-width: 120px;
+					background-size: cover;
+					background-position: center;
+					border-radius: 3px 0 0 3px;
+				}
+				.card-title {
+					font-size: 20px;
+					color: $light-black;
+				}
+				.card-title-roboto {
+					font-family: $font-roboto;
+					font-size: 20px;
+					font-weight: 400;
+				}
+				.card-border-right {
+					border: 1px solid #ECEFF2;
+					border-left: 0;
+					border-radius: 0 3px 3px 0;
+				}
+				.card-list {
+					@extend %listreset;
+					color: #778895;
+					li {
+						&:before {
+							content: '•';
+							margin-right: 5px;
+						}
+					}
+				}
+				&.shadow {
+					box-shadow: 0 2px 13px 0 rgba(144,163,180,0.34);
+				}
+			}
+		}
+	}
+
+  #blankModal {
+    .modal-icon {
+      font-size: 72px;
+      color: $blue;
+    }
+  }
+
+}
+
+.badge {
+	border-radius: 3px;
+	font-size: 11px;
+	padding: 9px 15px;
+}
+
+.badge-purple {
+    color: #fff;
+    background-color: $purple;
+}
+
+
+#comments {
+	h1 {
+		font-weight: 500;
+		font-size: 24px;
+		color: $light-black;
+		letter-spacing: 0;
+		font-family: $font-roboto;
+	}
+	h2 {
+		font-weight: 500;
+		font-size: 14px;
+		color: $light-black;
+		letter-spacing: 0;
+		line-height: 42px;
+		border-bottom: 1px solid rgba(27,42,57,0.20);
+		font-family: $font-roboto;
+	}
+	.content {
+		@include media('>=tablet') {
+			float: left;
+			padding: 20px 0 30px 20px;
+			width: calc(100% - 250px);
+		}
+
+		@include media('>=desktop') {
+			padding-right: 90px;
+			width: calc(100% - 300px);
+		}
+	}
+
+	.comment-list {
+		@extend %listreset;
+		li {
+			color: #778895;
+			font-size: 14px;
+			letter-spacing: 0;
+			line-height: 22px;
+			margin-bottom: 20px;
+			.title {
+				margin-bottom: 5px;
+				letter-spacing: 0.5px;
+				font-size: 11px;
+				color: $light-black;
+				text-transform: uppercase;
+				font-weight: 500;
+			}
+		}
+	}
+
+	.comment-form {
+		label {
+			font-family: $font-lato;
+			font-size: 14px;
+			color: rgba(27,42,57,.5);
+			letter-spacing: 0;
+			margin-left: 15px;
+		}
+		.form-control {
+			border-color: transparent;
+			border-radius: 3px;
+		}
+	}
+}
+
+.reservation-form {
+	.link-fav {
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 20;
+		color: $white;
+		font-weight: normal;
+		font-style: normal;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+		font-size:0;
+		line-height:0;
+		margin: 10px 15px;
+		&.active {
+			&:before {
+				content: $icon-heart;
+			}
+			&:hover {
+				&:before {
+					content: $icon-heart-o;
+				}
+			}
+		}
+
+		@include media('>=tablet') {
+			margin: 15px;
+		}
+
+		&:hover {
+			&:before {
+				content: $icon-heart;
+			}
+		}
+
+		&:before {
+			content: $icon-heart-o;
+			display: block;
+			font-family: 'icomoon';
+			font-size: 16px;
+			line-height: 1;
+
+			@include media('>=tablet') {
+				font-size: 20px;
+			}
+		}
+	}
+}

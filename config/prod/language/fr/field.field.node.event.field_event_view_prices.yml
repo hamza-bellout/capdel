@@ -1,0 +1,4 @@
+label: 'Afficher le prix'
+settings:
+  on_label: Oui
+  off_label: Non

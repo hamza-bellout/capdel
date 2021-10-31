@@ -1,0 +1,29 @@
+uuid: f12c2916-1d6c-476d-b057-41e2d70ff082
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_tb_menu_type
+    - node.type.configurateur_tb_and_anim
+    - taxonomy.vocabulary.configurateur_event_type
+id: node.configurateur_tb_and_anim.field_conf_tb_menu_type
+field_name: field_conf_tb_menu_type
+entity_type: node
+bundle: configurateur_tb_and_anim
+label: 'Menu type'
+description: 'The same as in the place'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      configurateur_event_type: configurateur_event_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

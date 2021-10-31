@@ -1,0 +1,19 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function capdel_legacy_importer_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        case 'help.page.capdel_legacy_importer':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('This will be help for the CLI.') . '</p>';
+            return $output;
+
+        default:
+    }
+}

@@ -1,0 +1,23 @@
+uuid: 79438dc2-75e8-401e-a4e9-c53d8dea7493
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pkg_bdg_package_total
+    - node.type.package
+id: node.package.field_pkg_bdg_package_total
+field_name: field_pkg_bdg_package_total
+entity_type: node
+bundle: package
+label: 'Budget: Total package budget'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

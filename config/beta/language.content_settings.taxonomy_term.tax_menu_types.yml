@@ -1,0 +1,18 @@
+uuid: 8b2357a3-e1f0-4ce9-970b-7bb258498191
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_menu_types
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.tax_menu_types
+target_entity_type_id: taxonomy_term
+target_bundle: tax_menu_types
+default_langcode: fr
+language_alterable: false

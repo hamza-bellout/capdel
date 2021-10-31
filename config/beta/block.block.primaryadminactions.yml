@@ -1,0 +1,18 @@
+uuid: 74199a86-1853-475b-9cc4-81c7f4ade425
+langcode: en
+status: true
+dependencies:
+  theme:
+    - capdel
+id: primaryadminactions
+theme: capdel
+region: content
+weight: -23
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

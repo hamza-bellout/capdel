@@ -1,0 +1,25 @@
+uuid: 9daec519-d8d9-4fbd-9552-8d38a415f80c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_room_size
+    - paragraphs.paragraphs_type.configurator_place_room
+id: paragraph.configurator_place_room.field_room_size
+field_name: field_room_size
+entity_type: paragraph
+bundle: configurator_place_room
+label: 'Room size'
+description: 'Room size in square meters '
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

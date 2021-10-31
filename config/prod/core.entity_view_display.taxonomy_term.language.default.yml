@@ -1,0 +1,50 @@
+uuid: 03a7bf3a-b13a-40f7-8423-e588aa64fbe2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.language.field_tax_lang_comment
+    - field.field.taxonomy_term.language.field_tax_lang_name
+    - field.field.taxonomy_term.language.field_tax_legacy_id
+    - taxonomy.vocabulary.language
+  module:
+    - text
+id: taxonomy_term.language.default
+targetEntityType: taxonomy_term
+bundle: language
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tax_lang_comment:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_tax_lang_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_tax_legacy_id:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  langcode: true

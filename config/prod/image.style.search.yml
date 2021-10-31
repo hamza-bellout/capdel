@@ -1,0 +1,24 @@
+uuid: 8e058b85-9696-4b23-bab2-6294221f589e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.search
+  module:
+    - crop
+name: search
+label: 'Search (405x228)'
+effects:
+  65bf5b4f-58b5-492f-9ffd-c8773deb68f9:
+    uuid: 65bf5b4f-58b5-492f-9ffd-c8773deb68f9
+    id: crop_crop
+    weight: 2
+    data:
+      crop_type: search
+  3fa2241b-c5c4-44c8-a876-d66161a15990:
+    uuid: 3fa2241b-c5c4-44c8-a876-d66161a15990
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 405
+      height: 228

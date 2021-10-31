@@ -1,0 +1,32 @@
+uuid: 5f2962e0-c356-438a-8d20-df428590485a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_civility
+    - field.field.user.user.field_company
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_function
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_newsletter_subscription
+    - field.field.user.user.field_phone
+  module:
+    - user
+_core:
+  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content: {  }
+hidden:
+  field_civility: true
+  field_company: true
+  field_first_name: true
+  field_function: true
+  field_last_name: true
+  field_newsletter_subscription: true
+  field_phone: true
+  langcode: true
+  member_for: true

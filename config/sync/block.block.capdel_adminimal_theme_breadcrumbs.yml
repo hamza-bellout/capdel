@@ -1,0 +1,22 @@
+uuid: 3dc4fb95-6d98-45b3-9cea-bceedca8e022
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - capdel_adminimal_theme
+_core:
+  default_config_hash: esHZ12E4d6feUP3I3N6MXiPDJSZmWfJDsS4WrMup-F8
+id: capdel_adminimal_theme_breadcrumbs
+theme: capdel_adminimal_theme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Fil d''ariane'
+  provider: system
+  label_display: '0'
+visibility: {  }

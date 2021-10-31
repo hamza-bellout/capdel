@@ -1,0 +1,19 @@
+uuid: e86010c0-aec6-4fad-9350-ae35f966ab1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pkg_links_pkg_url
+    - node.type.package
+id: node.package.field_pkg_links_pkg_url
+field_name: field_pkg_links_pkg_url
+entity_type: node
+bundle: package
+label: 'Links: package URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

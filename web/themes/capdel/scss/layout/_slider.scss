@@ -1,0 +1,118 @@
+.header-slider {
+	height: 400px;
+	position: relative;
+	&:before,
+	.carousel-item:after {
+		content: '';
+		position: absolute;
+		height: 128px;
+		left: 0;
+		right: 0;
+		display: block;
+		z-index: 1;
+	}
+	&:before {
+		top: 0;
+		background-image: linear-gradient(-180deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.65) 21%, rgba(0,0,0,0.12) 73%, rgba(0,0,0,0.00) 100%);
+	}
+	.carousel-item:after {
+		bottom: 0;
+		background-image: linear-gradient(0deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.65) 21%, rgba(0,0,0,0.12) 73%, rgba(0,0,0,0.00) 100%);
+	}
+
+	.carousel {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		.carousel-item {
+			height: 400px;
+			background-position: center;
+			background-size: cover;
+			.credits {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				color: #90a3b4;
+        		font-size: 12px;
+				padding-bottom: 10px;
+				z-index: 2;
+			}
+		}
+		.carousel-control-prev,
+		.carousel-control-next {
+			z-index: 2;
+		}
+	}
+
+	nav .breadcrumb {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.slider-block {
+  height: 560px;
+  position: relative;
+  &:before,
+  .carousel-item:after {
+    content: '';
+    position: absolute;
+    height: 128px;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 1;
+  }
+  .carousel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    .carousel-item {
+      height: 560px;
+      background-position: center;
+      background-size: cover;
+      .link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .content-holder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 560px;
+        background-color: rgba(0,0,0,0.15);
+        .content {
+          text-align: center;
+          color: #ffffff;
+          h1 {
+            color: inherit;
+            em {
+              font-style: italic;
+              font-weight: 400;
+              position: relative;
+            }
+            em:after {
+              content: '';
+              position: absolute;
+              bottom: 7px;
+              border-bottom: 2px solid #2e34b9;
+              left: 0;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      z-index: 2;
+    }
+  }
+
+  nav .breadcrumb {
+    position: relative;
+    z-index: 1;
+  }
+}

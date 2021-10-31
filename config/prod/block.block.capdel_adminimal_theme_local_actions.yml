@@ -1,0 +1,20 @@
+uuid: 087ce7e0-07d7-43ed-b4d7-94e58e5c7793
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - capdel_adminimal_theme
+_core:
+  default_config_hash: Al_b_keoGOz8UTh9_X0R3lrNNb_T8fEY-k4yOlahaik
+id: capdel_adminimal_theme_local_actions
+theme: capdel_adminimal_theme
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

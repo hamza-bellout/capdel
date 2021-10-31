@@ -1,0 +1,23 @@
+uuid: 07ec3ce2-89d0-434d-91d2-2d2ea87b3545
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_static_is_option
+    - node.type.configurateur_statics
+id: node.configurateur_statics.field_conf_static_is_option
+field_name: field_conf_static_is_option
+entity_type: node
+bundle: configurateur_statics
+label: 'Is this an option item? '
+description: 'If checked it will display in options tab'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

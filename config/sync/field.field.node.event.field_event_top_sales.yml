@@ -1,0 +1,23 @@
+uuid: 9ad10785-5e3d-4b94-aca8-3ca33db45b61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_top_sales
+    - node.type.event
+id: node.event.field_event_top_sales
+field_name: field_event_top_sales
+entity_type: node
+bundle: event
+label: 'Top Sales'
+description: 'Flag to display the offer in the Top Ventes box'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

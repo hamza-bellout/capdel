@@ -1,0 +1,8 @@
+uuid: 3138e043-9bc5-4d7f-b82f-e69767c22c10
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_block
+label: 'Taxonomy block'
+revision: 1
+description: 'Displays the taxonomy terms in the view, with the image and the icon. '

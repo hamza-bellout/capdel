@@ -1,0 +1,17 @@
+uuid: 0a2bb908-7e21-4fba-9d42-7696dde93994
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Event
+type: event
+description: 'The main entity in the system'
+help: ''
+new_revision: null
+preview_mode: 1
+display_submitted: false

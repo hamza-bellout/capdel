@@ -1,0 +1,12 @@
+uuid: e711d8e4-11b1-41d6-9b61-38bf51515f45
+langcode: en
+status: true
+dependencies: {  }
+label: 'Slider (1280x400)'
+id: slider
+description: ''
+aspect_ratio: '1280:400'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

@@ -1,0 +1,19 @@
+uuid: cecab2e9-0cd8-4fa1-83c6-ac3adcfa3d15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_anim_geo_params
+    - node.type.configurateur_animations
+id: node.configurateur_animations.field_conf_anim_geo_params
+field_name: field_conf_anim_geo_params
+entity_type: node
+bundle: configurateur_animations
+label: 'Geolocation parameters'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: 28c99c0a-bf29-46bb-903f-9d1d68bbf1cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_menu_types
+id: taxonomy_term.tax_menu_types.name
+field_name: name
+entity_type: taxonomy_term
+bundle: tax_menu_types
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

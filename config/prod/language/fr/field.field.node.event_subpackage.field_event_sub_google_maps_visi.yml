@@ -1,0 +1,4 @@
+label: 'Visible sur Google Maps ? '
+settings:
+  on_label: Oui
+  off_label: Non

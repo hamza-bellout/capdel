@@ -1,0 +1,18 @@
+uuid: 58482cc3-789e-4f8d-a1c6-f7315e7d2e15
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_capacity
+id: taxonomy_term.tax_capacity.name
+field_name: name
+entity_type: taxonomy_term
+bundle: tax_capacity
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

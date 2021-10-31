@@ -1,0 +1,8 @@
+uuid: f75780ba-cd3a-4efa-a448-4ffbe6dca607
+langcode: en
+status: true
+dependencies: {  }
+id: footer-fourth
+label: 'Footer fourth'
+description: 'Intervenants,  Configurateur, Votre lieu'
+locked: false

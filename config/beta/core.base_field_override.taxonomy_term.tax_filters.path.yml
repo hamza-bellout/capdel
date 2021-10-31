@@ -1,0 +1,20 @@
+uuid: 226975a7-2a7e-4a18-b74e-2bac4663340a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_filters
+  module:
+    - path
+id: taxonomy_term.tax_filters.path
+field_name: path
+entity_type: taxonomy_term
+bundle: tax_filters
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

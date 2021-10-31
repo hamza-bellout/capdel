@@ -1,0 +1,19 @@
+uuid: 64ec705e-dd51-4f55-96d2-b309450c1f43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pkg_reservation_type
+    - node.type.package
+id: node.package.field_pkg_reservation_type
+field_name: field_pkg_reservation_type
+entity_type: node
+bundle: package
+label: 'Reservation type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

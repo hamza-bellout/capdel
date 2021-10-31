@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+
+{% if url('<current>')['#markup'] matches '/.*profileinfo.*/' %}
+<article{{ attributes.addClass('profile') }}>
+  {% if content %}
+    <div class="container content-holder">
+      <div class="row justify-content-center">
+        <div class="col-md-7 personal-form mb-2">
+          <div class="text-information text-right mb-5 mt-5">
+            <a class="fw300" href="/profileedit"><i>Editer mes informations personnelles</i> <span class="ico icon-pencil fs16 ml-2"></span></a>
+          </div>
+          <div class="disabled">
+          <form>
+            {{ content.field_company }}
+
+            <div class="form-group">
+              <label for="field_email">Email</label>
+              <input disabled id="field_email" type="text" class="form-control" value="{{ content.field_email }}">
+            </div>
+
+            {{ content.field_civility }}
+            {{ content.field_phone }}
+            {{ content.field_last_name }}
+            {{ content.field_first_name }}
+            {{ content.field_function }}
+            {{ content.field_newsletter_subscription }}
+          </form>
+            <script type="text/javascript">
+              jcf.replaceAll();
+            </script>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</article>
+{% else %}
+  {% include '@bootstrap_barrio/user/user.html.twig' %}
+{% endif %}

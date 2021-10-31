@@ -1,0 +1,18 @@
+uuid: 33b97875-f980-40c9-bc71-b7b482a0d298
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.event_duration_type
+id: taxonomy_term.event_duration_type.name
+field_name: name
+entity_type: taxonomy_term
+bundle: event_duration_type
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

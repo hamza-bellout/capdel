@@ -1,0 +1,22 @@
+uuid: 660efbef-3cc8-40ca-bf2c-84f3dfa434e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.configurateur_statics
+id: node.configurateur_statics.promote
+field_name: promote
+entity_type: node
+bundle: configurateur_statics
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

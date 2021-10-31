@@ -1,0 +1,31 @@
+uuid: bd5d4948-b0d8-4a98-abda-ce83312c4ca9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_lieu_ref_par_menu
+    - node.type.conf_lieu
+    - paragraphs.paragraphs_type.par_menu_prices
+  module:
+    - entity_reference_revisions
+id: node.conf_lieu.field_conf_lieu_ref_par_menu
+field_name: field_conf_lieu_ref_par_menu
+entity_type: node
+bundle: conf_lieu
+label: 'Menu prices'
+description: 'Fill in the referenced menu and allowed prices for it.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      par_menu_prices: par_menu_prices
+    target_bundles_drag_drop:
+      par_menu_prices:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

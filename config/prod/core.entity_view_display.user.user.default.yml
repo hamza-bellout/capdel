@@ -1,0 +1,82 @@
+uuid: f148b0d3-138e-4940-8272-89f729ad8cc3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_civility
+    - field.field.user.user.field_company
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_function
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_newsletter_subscription
+    - field.field.user.user.field_phone
+  module:
+    - options
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_civility:
+    type: list_default
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_company:
+    type: string
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_first_name:
+    type: string
+    weight: 4
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_function:
+    type: string
+    weight: 5
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_last_name:
+    type: string
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_newsletter_subscription:
+    type: boolean
+    weight: 6
+    region: content
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_phone:
+    type: string
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  member_for: true

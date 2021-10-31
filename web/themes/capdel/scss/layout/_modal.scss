@@ -1,0 +1,480 @@
+.modal {
+	.mh-530 {
+		min-height: 530px;
+	}
+	.close {
+		font-size: 28px;
+		color: $blue;
+		float: right;
+	    font-weight: 700;
+	    line-height: 1;
+	    text-shadow: none;
+	    opacity: 1;
+	    position: absolute;
+		top: 25px;
+		right: 27px;
+	}
+	.modal-dialog {
+		.modal-body {
+			padding: 40px;
+		}
+		&.modal-lg {
+			.modal-body {
+				padding: 60px;
+			}
+		}
+	}
+	.modal-content {
+		overflow: hidden;
+		border-radius: 3px;
+		&.left-image {
+			.modal-image {
+				background-position: center;
+				background-size: cover;
+				@include media('<tablet') {
+					display: none;
+				}
+				@include media('>=tablet') {
+					width: 20%;
+
+				}
+				@include media('>=desktop') {
+					width: 40%;
+
+				}
+			}
+			.modal-body {
+				width: 100%;
+				padding: 45px 80px 45px 55px;
+
+				@include media('>=tablet') {
+					width: 80%;
+				}
+				@include media('>=desktop') {
+					width: 60%;
+				}
+			}
+		}
+	}
+	.modal-header {
+		padding: 45px 45px 5px 45px;
+		h1.modal-title,
+		.h1.modal-title{
+			color: $purple;
+			@include media('>=desktop') {
+				font-size: 34px;
+			}
+			span {
+				font-weight: 400;
+				font-style: italic;
+			}
+		}
+	}
+	.modal-footer {
+		padding: 5px 45px 45px 45px;
+	}
+	.modal-body {
+		color: $light-black;
+		h1.modal-title,
+		.h1.modal-title{
+			margin-bottom: 40px;
+			color: $purple;
+			@include media('>=desktop') {
+				font-size: 34px;
+			}
+			span {
+				font-weight: 400;
+				font-style: italic;
+			}
+		}
+		h2.modal-title,
+		.h2.modal-title
+		{
+			font-size: 20px;
+			color: $light-black;
+			letter-spacing: 0;
+			line-height: 28px;
+		}
+
+		.category {
+			font-weight: 500;
+			font-size: 11px;
+			color: $purple;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+		}
+
+		.image {
+			margin-top: 15px;
+			margin-bottom: 45px;
+		}
+
+		.information {
+			font-size: 16px;
+			color: #0C0B0A;
+			letter-spacing: 0.73px;
+			margin-bottom: 40px;
+		}
+
+		.main-information {
+			font-size: 18px;
+			color: $light-black;
+			letter-spacing: 0.73px;
+			margin-bottom: 40px;
+		}
+
+		.link-muted {
+			font-weight: 500;
+			font-size: 12px;
+			color: #778895;
+			letter-spacing: 0;
+		}
+		.link {
+			color: #0C0B0A;
+		}
+		.separate-or {
+			text-align: center;
+			font-size: 12px;
+			position: relative;
+			color: #001022;
+			margin: 35px 0;
+			&:before {
+				content: '';
+				background: #DEDEDE;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				height: 1px;
+			}
+			span {
+				display: inline-block;
+				padding: 0 30px;
+				position: relative;
+				font-weight: 500;
+				background: $white;
+			}
+		}
+		.offer {
+			margin-bottom: 20px;
+			@include media('>=tablet') {
+				margin-bottom: 40px;
+			}
+			h2 {
+				font-weight: $font-roboto;
+				font-weight: 300;
+				margin-bottom: 15px;
+			}
+		}
+		.total {
+			border-top: 1px solid #DEE4EA;
+			border-bottom: 1px solid #DEE4EA;
+			margin-bottom: 20px;
+			padding: 30px 0;
+			color: $light-black;
+			@include media('>=desktop') {
+				font-size: 26px;
+			}
+			.price {
+				font-family: $font-tex;
+			}
+			.single {
+				font-size: 14px;
+				color: #778895;
+				font-weight: 300;
+			}
+		}
+		.remaining {
+			font-size: 16px;
+			color: #1B2A39;
+		}
+		.card {
+			border: 1px solid #ECEFF2;
+			border-radius: 3px;
+			padding: 15px;
+			.remove {
+				position: absolute;
+				top: -10px;
+				right: -10px;
+				font-size: 20px;
+				background: white;
+				color: #ECEFF2;
+				padding: 2px;
+				line-height: 16px;
+			}
+			.title {
+				font-family: $font-tex;
+				font-weight: 700;
+				font-size: 20px;
+				color: $light-black;
+				letter-spacing: 0;
+				line-height: 28px;
+				display: block;
+			}
+			.category {
+				font-weight: 500;
+				font-size: 11px;
+				color: $purple;
+				letter-spacing: 0.5px;
+				display: block;
+				text-transform: uppercase;
+			}
+			.single {
+				font-size: 14px;
+				color: #778895;
+				font-weight: 300;
+				line-height: 22px;
+			}
+			.price {
+				font-family: $font-tex;
+				color: $blue;
+				text-align: right;
+				line-height: 28px;
+				font-size: 20px;
+			}
+			.info-location {
+				font-style: italic;
+				font-weight: 500;
+				text-align: right;
+				&:before {
+					content: $icon-pin;
+					font-family: 'icomoon';
+					font-size: 16px;
+					line-height: 1;
+					font-weight: normal;
+					font-style: normal;
+					display: inline-block;
+					vertical-align: middle;
+					margin: 0 10px 0 0;
+
+					@include media('>=desktop') {
+						margin: 0 15px 0 0;
+					}
+				}
+			}
+		}
+	}
+
+	&.sidebar {
+		padding-right: 0 !important;
+		.close-modal {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			font-size: 24px;
+			color: $blue;
+		}
+		.modal-header {
+			border-bottom: 0;
+			display: block;
+		}
+		.modal-footer {
+			border-top: 0;
+			@include media('<tablet') {
+				.btn {
+					position: fixed;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					border-radius: 0;
+				}
+			}
+		}
+		.modal-body {
+			padding: 45px 45px 35px;
+		}
+		.modal-dialog {
+			margin: 0 0 0 auto;
+			width: 530px;
+			max-width: 90%;
+			height: 100%;
+			transform: translate3d(0%, 0, 0);
+			@include media('<tablet') {
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+		&.fade {
+			.modal-dialog {
+				right: -530px;
+				transition: opacity 0.3s linear, right 0.3s ease-out;
+			}
+			&.show .modal-dialog {
+				right: 0;
+			}
+		}
+		.modal-content {
+			height: 100%;
+			overflow-y: auto;
+			border: none;
+			border-radius: 0;
+		}
+	}
+
+
+	.modal-share {
+		@media (min-width: 576px){
+			max-width: 280px;
+		}
+		.close-modal {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			font-size: 24px;
+			color: $blue;
+		}
+		.modal-header {
+			padding: 48px 33px 14px;
+			border-bottom: 0;
+			h1, .h1 {
+				font-size: 24px;
+				margin: 0;
+				font-family: $font-roboto;
+				font-weight: 500;
+			}
+		}
+		.modal-body {
+			padding: 0 31px 18px;
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				li {
+					&:not(:last-child){
+						border-bottom: 1px solid rgba(0,0,0,0.20);
+					}
+					a {
+						color: $text-muted;
+						font-size: 14px;
+						transition: color .4s;
+						padding: 15px 0;
+						display: block;
+						i {
+							color: $blue;
+							width: 18px;
+							display: inline-block;
+							text-align: center;
+							font-size: 13px;
+							margin-right: 10px;
+							&.fs10 {
+								font-size: 10px;
+							}
+							&.fs12 {
+								font-size: 10px;
+							}
+							&.fs14 {
+								font-size: 14px;
+							}
+						}
+						&:hover {
+							color: $blue;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.modal,
+.personal-form {
+	form {
+		label {
+			font-weight: 500;
+			font-size: 12px;
+			color: #778895;
+			letter-spacing: 0.55px;
+			text-transform: uppercase;
+			margin-bottom: 0;
+
+      &.btn-outline {
+        label {
+          text-transform: none;
+          font-size: inherit;
+        }
+
+        &.active label{
+          color: #fff;
+        }
+      }
+
+		}
+		.form-row {
+			&.mb-4-5 {
+				margin-bottom: 2.25rem;
+			}
+		}
+		.form-group {
+			margin-bottom: 20px;
+			&.field--widget-boolean-checkbox {
+				label {
+					width: calc(100% - 35px);
+				}
+			}
+			&.mb-4-5 {
+				margin-bottom: 2.25rem;
+			}
+		}
+		.form-control {
+			color: $light-black;
+			font-weight: 500;
+			border: 0;
+			border-bottom: 1px solid #DEDEDE;
+			border-radius: 0;
+			padding: 10px 0;
+			&.jcf-select-is-valid,
+			&.is-valid {
+				border-bottom-color: $blue;
+			}
+			&.is-invalid {
+				color: #ED1C24;
+				border-bottom-color: #ED1C24;
+				&:focus {
+					border-bottom-color: #ED1C24;
+				}
+			}
+			&[disabled] {
+				background: transparent;
+				border-color: $light-black;
+			}
+			&:focus {
+				box-shadow: none;
+				border-bottom-color: $blue;
+			}
+			&::placeholder {
+				font-weight: 100;
+			    color: #778895;
+			    opacity: 1;
+			    font-style: italic;
+			}
+			&:-ms-input-placeholder {
+			font-weight: 100;
+			    color: #778895;
+			    font-style: italic;
+			}
+
+			&::-ms-input-placeholder {
+				font-weight: 100;
+			    color: #778895;
+			    font-style: italic;
+			}
+		}
+		textarea.form-control {
+			height: 100px;
+		}
+	}
+	.jcf-checkbox.jcf-checked {
+		background: $blue;
+	    border-color: $blue;
+	}
+}
+
+// Added big z-index, as it is displayed on the modal
+.datepicker-dropdown {
+	z-index: 100000 !important;
+}
+
+// Added big z-index, as it must cover the chat button
+.sliding-popup-bottom {
+	z-index: 100000003 !important;
+}

@@ -1,0 +1,21 @@
+uuid: 40d2c230-3781-4b12-92fe-fdf639237a6a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lp_custom_url
+    - node.type.landing_page
+id: node.landing_page.field_lp_custom_url
+field_name: field_lp_custom_url
+entity_type: node
+bundle: landing_page
+label: 'Custom URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

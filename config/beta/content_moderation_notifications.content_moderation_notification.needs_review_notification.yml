@@ -1,0 +1,17 @@
+uuid: ee04437a-a9f0-44a0-aad7-30c286964dbd
+langcode: fr
+status: true
+dependencies: {  }
+id: needs_review_notification
+workflow: editorial
+transitions:
+  needs_review: needs_review
+roles:
+  administrator: administrator
+author: false
+emails: ''
+subject: '[user:display-name] a modifié un contenu'
+body:
+  value: "<ul>\r\n\t<li>Type de contenu :&nbsp;[node:type]</li>\r\n\t<li>Titre :&nbsp;[node:title]</li>\r\n\t<li>URL :&nbsp;[current-page:url]</li>\r\n\t<li>La modification a été faite par [user:display-name]</li>\r\n</ul>\r\n"
+  format: full_html
+label: 'Needs review notification'

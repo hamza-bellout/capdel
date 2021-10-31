@@ -1,0 +1,23 @@
+uuid: 3af31d39-a4f5-49ea-81f7-8c007fb75f21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_view_prices
+    - node.type.event
+id: node.event.field_event_view_prices
+field_name: field_event_view_prices
+entity_type: node
+bundle: event
+label: 'Display prices '
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

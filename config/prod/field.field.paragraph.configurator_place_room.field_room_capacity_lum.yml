@@ -1,0 +1,23 @@
+uuid: fe4a1e60-8de4-477a-9875-b059dd108b19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_room_capacity_lum
+    - paragraphs.paragraphs_type.configurator_place_room
+id: paragraph.configurator_place_room.field_room_capacity_lum
+field_name: field_room_capacity_lum
+entity_type: paragraph
+bundle: configurator_place_room
+label: 'Room capacity: Lumière du jour'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Oui
+  off_label: Non
+field_type: boolean

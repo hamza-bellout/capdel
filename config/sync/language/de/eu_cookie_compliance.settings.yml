@@ -1,0 +1,8 @@
+popup_agreed:
+  value: '<h2>Vielen Dank für das Akzeptieren der Cookies</h2><p>Sie können diese Meldung jetzt ausblenden oder mehr über Cookies erfahren.</p>'
+popup_disagree_button_message: 'Weitere Informationen'
+popup_find_more_button_message: 'Weitere Informationen'
+popup_hide_button_message: Ausblenden
+disagree_button_label: 'Nein, danke'
+withdraw_action_button_label: 'Zustimmung zurückziehen'
+withdraw_tab_button_label: Datenschutzeinstellungen

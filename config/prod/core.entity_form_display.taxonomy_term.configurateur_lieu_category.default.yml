@@ -1,0 +1,59 @@
+uuid: c25ec89c-7af5-48e3-9fd8-6d3b531a0f38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.configurateur_lieu_category.field_tax_conf_lieu_cat_icon
+    - taxonomy.vocabulary.configurateur_lieu_category
+  module:
+    - path
+    - text
+id: taxonomy_term.configurateur_lieu_category.default
+targetEntityType: taxonomy_term
+bundle: configurateur_lieu_category
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tax_conf_lieu_cat_icon:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    weight: 102
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

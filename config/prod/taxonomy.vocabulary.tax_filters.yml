@@ -1,0 +1,9 @@
+uuid: 2e76578b-57fd-4916-9ae0-ddb772c94584
+langcode: en
+status: true
+dependencies: {  }
+name: Filters
+vid: tax_filters
+description: 'Filters taxonomy used to display specific sidebar with filters while selecting proper first level taxonomy'
+hierarchy: 1
+weight: 0

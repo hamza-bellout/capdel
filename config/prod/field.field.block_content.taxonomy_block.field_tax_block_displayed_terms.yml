@@ -1,0 +1,29 @@
+uuid: 8004d7e8-b926-4d03-befb-ef95df5f4163
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomy_block
+    - field.storage.block_content.field_tax_block_displayed_terms
+    - taxonomy.vocabulary.tax_menu_types
+id: block_content.taxonomy_block.field_tax_block_displayed_terms
+field_name: field_tax_block_displayed_terms
+entity_type: block_content
+bundle: taxonomy_block
+label: 'Displayed terms'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tax_menu_types: tax_menu_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

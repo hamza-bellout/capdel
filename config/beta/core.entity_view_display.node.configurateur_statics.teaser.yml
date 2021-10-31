@@ -1,0 +1,28 @@
+uuid: d0e3f293-7996-45ec-9f13-0d876a9654b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.configurateur_statics
+  module:
+    - user
+id: node.configurateur_statics.teaser
+targetEntityType: node
+bundle: configurateur_statics
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_conf_static_desc: true
+  field_conf_static_image: true
+  field_conf_static_is_countable: true
+  field_conf_static_is_drink_item: true
+  field_conf_static_is_menu: true
+  field_conf_static_is_menu_item: true
+  field_conf_static_is_option: true
+  field_conf_static_price: true
+  field_conf_static_short_desc: true
+  langcode: true

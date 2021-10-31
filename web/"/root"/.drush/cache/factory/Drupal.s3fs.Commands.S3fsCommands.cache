@@ -1,0 +1,120 @@
+{
+    "cid": "Drupal\\s3fs\\Commands\\S3fsCommands",
+    "data": {
+        "refreshCache": {
+            "schema": 4,
+            "class": "Drupal\\s3fs\\Commands\\S3fsCommands",
+            "method_name": "refreshCache",
+            "mtime": 1531114268,
+            "injected_classes": [],
+            "name": "s3fs:refresh-cache",
+            "description": "Refresh the S3 File System metadata cache.",
+            "help": "",
+            "aliases": [
+                "s3fs-rc",
+                "s3fs-refresh-cache"
+            ],
+            "annotations": {
+                "command": "s3fs:refresh-cache"
+            },
+            "example_usages": [],
+            "return_type": null,
+            "arguments": [],
+            "options": []
+        },
+        "copyLocal": {
+            "schema": 4,
+            "class": "Drupal\\s3fs\\Commands\\S3fsCommands",
+            "method_name": "copyLocal",
+            "mtime": 1531114268,
+            "injected_classes": [],
+            "name": "s3fs:copy-local",
+            "description": "Copy local files from your public and\/or private file system(s) into your S3 bucket, if s3fs is configured to take them over.",
+            "help": "",
+            "aliases": [
+                "s3fs-cl",
+                "s3fs-copy-local"
+            ],
+            "annotations": {
+                "command": "s3fs:copy-local"
+            },
+            "example_usages": {
+                "drush s3fs-copy-local": "Copy local files from your public and\/or private file system(s) into your S3 bucket.",
+                "drush s3fs-copy-local --scheme=public": "Copy local files only from your public file system into your S3 bucket."
+            },
+            "return_type": null,
+            "arguments": [],
+            "options": {
+                "scheme": {
+                    "description": "Limit the process to an specific scheme. E.g. (public or private), all by default.",
+                    "default": "all"
+                }
+            }
+        },
+        "setProcessManager": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setProcessManager",
+            "mtime": 1552412184,
+            "injected_classes": []
+        },
+        "processManager": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "processManager",
+            "mtime": 1552412184,
+            "injected_classes": []
+        },
+        "hasProcessManager": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "hasProcessManager",
+            "mtime": 1552412184,
+            "injected_classes": []
+        },
+        "setLogger": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setLogger",
+            "mtime": 1542727624,
+            "injected_classes": []
+        },
+        "getConfig": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "getConfig",
+            "mtime": 1553592948,
+            "injected_classes": []
+        },
+        "setConfig": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setConfig",
+            "mtime": 1553018839,
+            "injected_classes": []
+        },
+        "parentgetconfig": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "parentgetconfig",
+            "mtime": 1553018839,
+            "injected_classes": []
+        },
+        "setInput": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setInput",
+            "mtime": 1553018839,
+            "injected_classes": []
+        },
+        "setOutput": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setOutput",
+            "mtime": 1553018839,
+            "injected_classes": []
+        }
+    },
+    "created": 1605276927,
+    "expire": 0
+}

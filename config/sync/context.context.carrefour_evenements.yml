@@ -1,0 +1,13 @@
+uuid: dc15c712-9f63-4a39-ae4b-e7ecd3790f25
+langcode: fr
+status: true
+dependencies: {  }
+name: carrefour_evenements
+label: 'Carrefour Événements'
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions: {  }
+reactions: {  }
+weight: 0

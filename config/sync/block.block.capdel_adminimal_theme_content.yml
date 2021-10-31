@@ -1,0 +1,22 @@
+uuid: 2f1d4073-0162-4309-9982-abef56af86ad
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - capdel_adminimal_theme
+_core:
+  default_config_hash: fzHByjJRVU-H7L-uwddIVhsuZ5_7uIXKxWecMlY62N4
+id: capdel_adminimal_theme_content
+theme: capdel_adminimal_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenu de la page principale'
+  provider: system
+  label_display: '0'
+visibility: {  }

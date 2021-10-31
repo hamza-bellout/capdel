@@ -1,0 +1,56 @@
+uuid: 038d4191-c15a-4540-b744-717a735d6ae0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_hold
+    - field.field.block_content.block_hold.body
+    - field.field.block_content.block_hold.field_block_hold_button
+    - field.field.block_content.block_hold.field_block_hold_image
+    - field.field.block_content.block_hold.field_block_hold_title
+  module:
+    - image
+    - link
+    - text
+id: block_content.block_hold.default
+targetEntityType: block_content
+bundle: block_hold
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_block_hold_button:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_block_hold_image:
+    weight: 5
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_block_hold_title:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

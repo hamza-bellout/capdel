@@ -1,0 +1,24 @@
+uuid: a50ec1ca-eb36-44b5-b506-f685b7b4a0ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_event_tax_diodes
+field_name: field_event_tax_diodes
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

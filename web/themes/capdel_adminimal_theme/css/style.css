@@ -1,0 +1,11 @@
+.ml-0 {
+  margin-left: 0;
+}
+
+#price-wizard-form th:first-child {
+  width: 50px;
+}
+
+#price-wizard-form input[type=text] {
+  width: 50px;
+}

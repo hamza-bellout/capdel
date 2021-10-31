@@ -1,0 +1,536 @@
+uuid: a63ebc86-1119-4cd9-bb70-14869546b3e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_anim_add_val
+    - field.storage.node.field_conf_anim_category
+    - field.storage.node.field_conf_anim_avail
+    - field.storage.node.field_conf_anim_desc
+    - field.storage.node.field_conf_anim_place
+    - field.storage.node.field_conf_anim_duration
+    - field.storage.node.field_conf_anim_geo_params
+    - field.storage.node.field_conf_anim_image
+    - field.storage.node.field_conf_anim_max_par
+    - field.storage.node.field_conf_anim_min_par
+    - field.storage.node.field_conf_anim_price
+    - field.storage.node.field_conf_lieu_avail
+    - field.storage.node.field_conf_lieu_category
+    - field.storage.node.field_conf_lieu_tax_conf
+    - field.storage.node.field_conf_lieu_desc
+    - field.storage.node.field_conf_lieu_dest
+    - field.storage.node.field_conf_lieu_tax_details
+    - field.storage.node.field_conf_lieu_format
+    - field.storage.node.field_conf_lieu_image
+    - field.storage.node.field_conf_lieu_geo_params
+    - field.storage.node.field_conf_lieu_max_par
+    - field.storage.node.field_conf_lieu_menu_type
+    - field.storage.node.field_conf_lieu_min_par
+    - field.storage.node.field_conf_price
+    - field.storage.node.field_conf_lieu_type
+    - field.storage.node.field_conf_lieu_ref_par_menu
+    - field.storage.paragraph.field_par_ref_statics
+    - field.storage.node.field_lieu_ref_tb
+    - field.storage.node.field_conf_static_desc
+    - field.storage.node.field_conf_static_is_drink_item
+    - field.storage.node.field_conf_static_image
+    - field.storage.node.field_conf_static_is_menu
+    - field.storage.node.field_conf_static_is_option
+    - field.storage.node.field_conf_static_is_menu_item
+    - field.storage.node.field_conf_static_price
+    - field.storage.node.field_conf_tb_add_val
+    - field.storage.node.field_conf_tb_avail
+    - field.storage.node.field_conf_tb_category
+    - field.storage.node.field_conf_tb_desc
+    - field.storage.node.field_conf_tb_destination
+    - field.storage.node.field_conf_tb_duration
+    - field.storage.node.field_conf_tb_geo_params
+    - field.storage.node.field_conf_tb_image
+    - field.storage.node.field_conf_tb_menu_type
+    - field.storage.node.field_conf_tb_max_par
+    - field.storage.node.field_conf_tb_min_par
+    - field.storage.node.field_conf_tb_price
+    - field.storage.node.field_tb_ref_lieu
+    - field.storage.node.field_conf_tb_cat_sub
+    - field.storage.node.field_ref_lieu
+    - search_api.server.local_search_server
+  module:
+    - paragraphs
+    - node
+    - search_api
+    - capdel_helper
+id: configurateur_index
+name: 'Configurateur index'
+description: ''
+read_only: false
+field_settings:
+  field_conf_anim_add_val:
+    label: 'ANIM Added value description'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_add_val
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_add_val
+  field_conf_anim_avail:
+    label: 'ANIM Availability'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_avail
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_avail
+  field_conf_anim_category:
+    label: 'ANIM Animation category'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_category
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_category
+  field_conf_anim_desc:
+    label: 'ANIM Description'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_desc
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_desc
+  field_conf_anim_duration:
+    label: 'ANIM Duration'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_duration
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_duration
+  field_conf_anim_geo_params:
+    label: 'ANIM Geolocation parameters'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_geo_params
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_geo_params
+  field_conf_anim_image:
+    label: 'ANIM Image'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_image
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_image
+  field_conf_anim_max_par:
+    label: 'ANIM Number of max participants'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_max_par
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_max_par
+  field_conf_anim_min_par:
+    label: 'ANIM Number of min participants'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_min_par
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_min_par
+  field_conf_anim_place:
+    label: 'ANIM Destination'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_place
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_place
+  field_conf_anim_price:
+    label: 'ANIM Price per person min'
+    datasource_id: 'entity:node'
+    property_path: field_conf_anim_price
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_conf_anim_price
+  field_conf_lieu_avail:
+    label: 'LIEU Availability'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_avail
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_avail
+  field_conf_lieu_category:
+    label: 'LIEU Category '
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_category
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_category
+  field_conf_lieu_desc:
+    label: 'LIEU Description'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_desc
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_desc
+  field_conf_lieu_dest:
+    label: 'LIEU Destination'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_dest
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_dest
+  field_conf_lieu_format:
+    label: 'LIEU Format lieu'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_format
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_format
+  field_conf_lieu_geo_params:
+    label: 'LIEU Location coordinates'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_geo_params
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_geo_params
+  field_conf_lieu_image:
+    label: 'LIEU Image'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_image
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_image
+  field_conf_lieu_max_par:
+    label: 'LIEU Max participants'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_max_par
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_max_par
+  field_conf_lieu_menu_type:
+    label: 'LIEU Menu type'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_menu_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_menu_type
+  field_conf_lieu_min_par:
+    label: 'LIEU Min participants'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_min_par
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_min_par
+  field_conf_lieu_tax_conf:
+    label: 'LIEU Configuration'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_tax_conf
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_tax_conf
+  field_conf_lieu_tax_details:
+    label: 'LIEU Details lieu'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_tax_details
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_tax_details
+  field_conf_lieu_type:
+    label: 'LIEU Type'
+    datasource_id: 'entity:node'
+    property_path: field_conf_lieu_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_type
+  field_conf_price:
+    label: 'LIEU Price'
+    datasource_id: 'entity:node'
+    property_path: field_conf_price
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_conf_price
+  field_conf_static_desc:
+    label: 'STAT Description'
+    datasource_id: 'entity:node'
+    property_path: field_conf_static_desc
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conf_static_desc
+  field_conf_static_image:
+    label: 'STAT Image'
+    datasource_id: 'entity:node'
+    property_path: field_conf_static_image
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_static_image
+  field_conf_static_is_drink_item:
+    label: 'STAT Drink type'
+    datasource_id: 'entity:node'
+    property_path: field_conf_static_is_drink_item
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_conf_static_is_drink_item
+  field_conf_static_is_menu:
+    label: 'STAT Is this a menu item? '
+    datasource_id: 'entity:node'
+    property_path: field_conf_static_is_menu
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_conf_static_is_menu
+  field_conf_static_is_menu_item:
+    label: 'STAT Menu type'
+    datasource_id: 'entity:node'
+    property_path: field_conf_static_is_menu_item
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_conf_static_is_menu_item
+  field_conf_static_is_option:
+    label: 'STAT Is this an option item? '
+    datasource_id: 'entity:node'
+    property_path: field_conf_static_is_option
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_conf_static_is_option
+  field_conf_static_price:
+    label: 'STAT Price per person min static'
+    datasource_id: 'entity:node'
+    property_path: field_conf_static_price
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_conf_static_price
+  field_conf_tb_add_val:
+    label: 'TB Added value description'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_add_val
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_add_val
+  field_conf_tb_avail:
+    label: 'TB Availability'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_avail
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_avail
+  field_conf_tb_cat_sub:
+    label: 'TB Subcategory'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_cat_sub
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_cat_sub
+  field_conf_tb_category:
+    label: 'TB Category'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_category
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_category
+  field_conf_tb_desc:
+    label: 'TB Description'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_desc
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_desc
+  field_conf_tb_destination:
+    label: 'TB Destination'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_destination
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_destination
+  field_conf_tb_duration:
+    label: 'TB Duration'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_duration
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_duration
+  field_conf_tb_geo_params:
+    label: 'TB Geolocation parameters'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_geo_params
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_geo_params
+  field_conf_tb_image:
+    label: 'TB Image'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_image
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_image
+  field_conf_tb_max_par:
+    label: 'TB Number of max participants'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_max_par
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_max_par
+  field_conf_tb_menu_type:
+    label: 'TB Menu type'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_menu_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_menu_type
+  field_conf_tb_min_par:
+    label: 'TB Number of min participants'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_min_par
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_min_par
+  field_conf_tb_price:
+    label: 'TB Price'
+    datasource_id: 'entity:node'
+    property_path: field_conf_tb_price
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_conf_tb_price
+  field_lieu_ref_tb:
+    label: 'Referenced TB'
+    datasource_id: 'entity:node'
+    property_path: field_lieu_ref_tb
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_lieu_ref_tb
+  field_lieu_ref_tb_entity_nid:
+    label: 'Referenced TB » Content » ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_lieu_ref_tb:entity:nid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_lieu_ref_tb
+      module:
+        - node
+  field_ref_lieu:
+    label: '[C] STATIC Place connected'
+    datasource_id: 'entity:node'
+    property_path: field_ref_lieu
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_ref_lieu
+  field_ref_par_menu_stat_nid:
+    label: 'Menu prices » Paragraph » Menu reference » Content » ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_conf_lieu_ref_par_menu:entity:field_par_ref_statics:entity:nid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_conf_lieu_ref_par_menu
+        - field.storage.paragraph.field_par_ref_statics
+      module:
+        - paragraphs
+        - node
+  field_tb_ref_lieu:
+    label: 'TB Referenced Lieu'
+    datasource_id: 'entity:node'
+    property_path: field_tb_ref_lieu
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_tb_ref_lieu
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - conf_lieu
+        - configurateur_animations
+        - configurateur_statics
+        - configurateur_tb_and_anim
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  hierarchy:
+    fields:
+      field_conf_anim_category: taxonomy_term-parent
+      field_conf_anim_place: taxonomy_term-parent
+      field_conf_lieu_category: taxonomy_term-parent
+      field_conf_lieu_dest: taxonomy_term-parent
+      field_conf_lieu_menu_type: taxonomy_term-parent
+      field_conf_tb_cat_sub: taxonomy_term-parent
+      field_conf_tb_category: taxonomy_term-parent
+      field_conf_tb_destination: taxonomy_term-parent
+    weights:
+      preprocess_index: -50
+  rendered_item: {  }
+  tokenizer:
+    all_fields: false
+    fields: {  }
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '1'
+    weights:
+      preprocess_index: -49
+      preprocess_query: -6
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local_search_server

@@ -1,0 +1,4 @@
+label: 'Activité à l''extérieur'
+settings:
+  on_label: Oui
+  off_label: Non

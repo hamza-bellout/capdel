@@ -1,0 +1,25 @@
+uuid: 3c2ebafb-0bf0-4a35-8ca4-a1c0eee51630
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pkg_odoo_id
+    - node.type.package
+id: node.package.field_pkg_odoo_id
+field_name: field_pkg_odoo_id
+entity_type: node
+bundle: package
+label: 'Odoo ID'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

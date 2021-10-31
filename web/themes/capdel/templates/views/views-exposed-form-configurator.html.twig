@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override for a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+{{ q }}
+{% endif %}
+<div class="row cols ">
+  <div class="col-lg-12">
+    <div class="form--inline clearfix row align-items-end">
+      {% for field_name,field in form['#info'] %}
+        {% if field['value'] == 'date' %}
+          <div class="visually-hidden">
+            {{ form[field['value']] }}
+          </div>
+        {% else %}
+          {{ form[field['value']] }}
+        {% endif %}
+      {% endfor %}
+      <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-group" id="edit-actions">
+        {{ form.actions.submit }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  //override for cache loaded form issue
+  jcf.replaceAll();
+  initConfiguratorSearchForm();
+</script>

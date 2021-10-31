@@ -1,0 +1,12 @@
+uuid: 6852e74d-b3f6-4b3e-a7b2-b2e64c2402fb
+langcode: fr
+status: true
+dependencies: {  }
+id: node__event
+label: 'Contenu: Offre'
+tags:
+  schema_product_type: Product
+  schema_product_description: '[node:field_event_description:summary]'
+  schema_product_name: '[node:title]'
+  schema_web_page_breadcrumb: 'Yes'
+  schema_web_page_type: ItemPage

@@ -1,0 +1,69 @@
+uuid: 025861b8-58f0-4ad2-a781-160af0e2ab5d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_image_
+    - field.field.media.image.field_media_image_is_valid
+    - field.field.media.image.field_media_image_legacy_name
+    - field.field.media.image.field_media_image_title
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: jOwnt_yq6AKAfqU6f0xKnxEkFQ2eTPJWxrk3WMLbL68
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  field_media_image:
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: file
+    third_party_settings: {  }
+    type: image
+    weight: 1
+    region: content
+  field_media_image_:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_media_image_is_valid:
+    weight: 4
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_media_image_legacy_name:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_media_image_title:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

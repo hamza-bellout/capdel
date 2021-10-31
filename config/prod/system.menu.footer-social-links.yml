@@ -1,0 +1,8 @@
+uuid: d0678f1f-cbf9-48a3-a671-7dec40f378a0
+langcode: en
+status: true
+dependencies: {  }
+id: footer-social-links
+label: 'Footer social links'
+description: 'Links to Facebook, Twitter etc.'
+locked: false

@@ -1,0 +1,7 @@
+#contact-form {
+  label {
+    &.checkbox {
+      width: calc(100% - 35px);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+uuid: e06b5d99-e296-4ea2-bb84-937ed322b58b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Landing page'
+type: landing_page
+description: 'The content type used to display landing page (previously rubriques)'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

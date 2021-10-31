@@ -1,0 +1,21 @@
+uuid: 6ebac58e-1534-472b-8c56-7567339d73e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_package_ord_date
+    - node.type.package
+  module:
+    - datetime
+id: node.package.field_package_ord_date
+field_name: field_package_ord_date
+entity_type: node
+bundle: package
+label: 'Package order date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

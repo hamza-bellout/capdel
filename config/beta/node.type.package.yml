@@ -1,0 +1,17 @@
+uuid: 0aef1692-545c-4794-8d17-703eff996faa
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Package
+type: package
+description: 'The entity created to keep the configured events from the configurator'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

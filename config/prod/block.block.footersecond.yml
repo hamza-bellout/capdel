@@ -1,0 +1,24 @@
+uuid: 6d293d24-7ed5-40b1-9062-f9869bbc79fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-second
+  module:
+    - system
+  theme:
+    - capdel
+id: footersecond
+theme: capdel
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-second'
+settings:
+  id: 'system_menu_block:footer-second'
+  label: 'Nos événements'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

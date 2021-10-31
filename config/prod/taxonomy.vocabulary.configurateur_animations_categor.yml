@@ -1,0 +1,9 @@
+uuid: 8425777d-48d9-4873-973a-76f209c2a596
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Configurateur animations categories'
+vid: configurateur_animations_categor
+description: ''
+hierarchy: 0
+weight: 0

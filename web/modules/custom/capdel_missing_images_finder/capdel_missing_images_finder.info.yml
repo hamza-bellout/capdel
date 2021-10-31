@@ -1,0 +1,5 @@
+name: Capdel Missing images finder
+description: Finds and list missing images
+type: module
+core: 8.x
+package: Custom

@@ -1,0 +1,19 @@
+uuid: 46e27af4-b897-47d7-8e9a-70b82e88c771
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pkg_sel_event_type
+    - node.type.package
+id: node.package.field_pkg_sel_event_type
+field_name: field_pkg_sel_event_type
+entity_type: node
+bundle: package
+label: 'Selected Values: event type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

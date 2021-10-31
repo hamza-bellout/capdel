@@ -1,0 +1,29 @@
+uuid: 6b2349da-fb40-40d4-9945-0492242db8ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_field_event_tax_filters
+    - node.type.event
+    - taxonomy.vocabulary.tax_filters
+id: node.event.field_field_event_tax_filters
+field_name: field_field_event_tax_filters
+entity_type: node
+bundle: event
+label: 'Search filters'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tax_filters: tax_filters
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

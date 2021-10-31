@@ -1,0 +1,189 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+    set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+]
+%}
+
+
+{% set displayArray = [] %}
+{% for row in rows[0]['#rows'] %}
+    {% set item = resolveSearchResultRow(row['#row']) %}
+
+    {% set query = getQueryParams() %}
+    {% set priceCount = query['raw']['participant'] %}
+    {% set selectedPlace = query['raw']['sel_place'] %}
+
+    {# if the item is the menu item, pass the place entity to get proper price #}
+    {% set itemEnt = getConfigurateurEntityInfo(item,selectedPlace) %}
+
+    {% if (priceCount is not null)  %}
+        {# get number of participants and transform it to proper price group,
+         with transp. to int and align to 0 array count #}
+        {% set priceCount = (((priceCount/10)|round(0,'floor')|number_format) - 1) %}
+    {% else %}
+        {# set first price group #}
+        {% set priceCount = 0 %}
+    {% endif %}
+
+    {# check if availability - if the price = 0, we do not display the item #}
+    {% if itemEnt['price'] %}
+        {% if priceCount == 0 or ((itemEnt['price'] is iterable) and itemEnt['price'][priceCount]['value'] == 0) or (itemEnt['price'] == 0)  %}
+        {% else %}
+            {% set displayArray = displayArray|merge([row])  %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+<div class="main">
+    <div class="{{ dom_id ? 'js-view-dom-id-' ~ dom_id }}">
+        {{ title_prefix }}
+        {% if title %}
+            {{ title }}
+        {% endif %}
+        {{ title_suffix }}
+        {% if header %}
+            <div class="view-header heading-title">
+                {{ header }}
+            </div>
+        {% endif %}
+        {% if exposed %}
+            <div class="view-filters hidden">
+                {{ exposed }}
+            </div>
+        {% endif %}
+        {% if attachment_before %}
+            <div class="attachment attachment-before">
+                {{ attachment_before }}
+            </div>
+        {% endif %}
+        {% if rows %}
+            <input class="view_dom_id" type="hidden" value="{{ dom_id }}"/>
+
+            {% set menuItems = [] %}
+            {% set drinkItems = [] %}
+
+            {% for row in displayArray %}
+                {% set rowEntity = resolveSearchResultRow(row['#row']) %}
+                {% if rowEntity.field_conf_static_is_drink_item.value == 1 %}
+                    {% set drinkItems = drinkItems|merge([rowEntity]) %}
+                {% endif %}
+                {% if rowEntity.field_conf_static_is_menu_item.value == 1 %}
+                    {% set menuItems = menuItems|merge([rowEntity]) %}
+                {% endif %}
+            {% endfor %}
+
+            {% if menuItems is not empty %}
+            <div class="container content-holder">
+                <div class="pt-0">
+                    <div class="heading-title">
+                        <div class="row">
+                            <div class="col-9 col-lg-10">
+                                <h2 class="mt-1">Choisissez <span>votre menu</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row article-row configurator menu">
+                        {% for entity in menuItems %}
+                            <div class="col-sm-6 col-md-4 col-xl-3">
+                                {% include '@capdel/views/configurateur-card.html.twig' with {
+                                    'item' : entity,
+                                    'type' : 'menu'
+                                } %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if drinkItems is not empty %}
+                <div class="container content-holder ralative line-top">
+                    <div class="pt-0">
+                        <div class="heading-title">
+                            <div class="row">
+                                <div class="col-9 col-lg-10">
+                                    <h2 class="mt-1">Choisissez <span>vos boissons</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row article-row configurator menu line-top">
+                            {% for entity in drinkItems %}
+                                <div class="col-sm-6 col-md-4 col-xl-3">
+                                    {% include '@capdel/views/configurateur-card.html.twig' with {
+                                        'item' : entity,
+                                        'type' : 'drink',
+                                        'show_category' : true
+                                    } %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% elseif empty %}
+          <div class="container content-holder">
+            <div class="view-empty heading-title">
+                <h2>{{ empty }}</h2>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if pager %}
+            {{ pager }}
+        {% endif %}
+        {% if attachment_after %}
+            <div class="attachment attachment-after">
+                {{ attachment_after }}
+            </div>
+        {% endif %}
+        {% if more %}
+            {{ more }}
+        {% endif %}
+        {% if footer %}
+            <div class="view-footer">
+                {{ footer }}
+            </div>
+        {% endif %}
+        {% if feed_icons %}
+            <div class="feed-icons">
+                {{ feed_icons }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+

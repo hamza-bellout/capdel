@@ -1,0 +1,42 @@
+uuid: d08d4b24-0c93-42a1-8357-15707f28dc9e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.configurateur_animations.field_conf_anim_add_val
+    - field.field.node.configurateur_animations.field_conf_anim_avail
+    - field.field.node.configurateur_animations.field_conf_anim_category
+    - field.field.node.configurateur_animations.field_conf_anim_desc
+    - field.field.node.configurateur_animations.field_conf_anim_duration
+    - field.field.node.configurateur_animations.field_conf_anim_geo_params
+    - field.field.node.configurateur_animations.field_conf_anim_image
+    - field.field.node.configurateur_animations.field_conf_anim_max_par
+    - field.field.node.configurateur_animations.field_conf_anim_min_par
+    - field.field.node.configurateur_animations.field_conf_anim_place
+    - field.field.node.configurateur_animations.field_conf_anim_price
+    - node.type.configurateur_animations
+  module:
+    - user
+id: node.configurateur_animations.teaser
+targetEntityType: node
+bundle: configurateur_animations
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_conf_anim_add_val: true
+  field_conf_anim_avail: true
+  field_conf_anim_category: true
+  field_conf_anim_desc: true
+  field_conf_anim_duration: true
+  field_conf_anim_geo_params: true
+  field_conf_anim_image: true
+  field_conf_anim_max_par: true
+  field_conf_anim_min_par: true
+  field_conf_anim_place: true
+  field_conf_anim_price: true
+  field_conf_anim_short_desc: true
+  langcode: true

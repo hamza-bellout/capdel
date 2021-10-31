@@ -1,0 +1,30 @@
+uuid: 64c15fca-2c73-4d72-bf8c-dc6ecf422ddf
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.configurator_menu_types_description
+  module:
+    - system
+    - views
+  theme:
+    - capdel
+id: views_block__conf_menu_types_desc_helper
+theme: capdel
+region: breadcrumb
+weight: 0
+provider: null
+plugin: 'views_block:configurator_menu_types_description-conf_menu_types_desc_helper'
+settings:
+  id: 'views_block:configurator_menu_types_description-conf_menu_types_desc_helper'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/configurateur\r\n/configurateur/*"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,14 @@
+uuid: 47c29b48-9655-41ee-9da3-567f7121a868
+langcode: en
+status: true
+dependencies: {  }
+id: rest_user
+label: 'REST user'
+weight: 4
+is_admin: null
+permissions:
+  - 'create package content'
+  - 'display eu cookie compliance popup'
+  - 'restful get rest_reservation_resource_get'
+  - 'restful post rest_reservation_resource'
+  - 'view package revisions'

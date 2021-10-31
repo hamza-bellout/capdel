@@ -1,0 +1,28 @@
+uuid: c6ed1688-87ae-4e2d-8e6e-7d7d9a9e92f7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_par_lieu_tb_geo_tb
+    - node.type.conf_distance
+    - node.type.configurateur_tb_and_anim
+id: node.conf_distance.field_par_lieu_tb_geo_tb
+field_name: field_par_lieu_tb_geo_tb
+entity_type: node
+bundle: conf_distance
+label: 'TB connected'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      configurateur_tb_and_anim: configurateur_tb_and_anim
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

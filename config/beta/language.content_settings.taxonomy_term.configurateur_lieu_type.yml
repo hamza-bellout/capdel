@@ -1,0 +1,11 @@
+uuid: 3c217a72-4f61-431e-a667-0e59f07cebde
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.configurateur_lieu_type
+id: taxonomy_term.configurateur_lieu_type
+target_entity_type_id: taxonomy_term
+target_bundle: configurateur_lieu_type
+default_langcode: fr
+language_alterable: false

@@ -1,0 +1,28 @@
+uuid: fa220be9-69bb-4175-ae4e-202a09354efd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lieu_ref_tb
+    - node.type.conf_lieu
+    - node.type.configurateur_tb_and_anim
+id: node.conf_lieu.field_lieu_ref_tb
+field_name: field_lieu_ref_tb
+entity_type: node
+bundle: conf_lieu
+label: 'Referenced TB'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      configurateur_tb_and_anim: configurateur_tb_and_anim
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

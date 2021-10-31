@@ -1,0 +1,9 @@
+uuid: d6e31458-cf0d-44bb-a69b-6e9ed5d66234
+langcode: en
+status: true
+dependencies: {  }
+id: configurator_place_room
+label: 'Configurator place room'
+icon_uuid: null
+description: 'This entity is used to fill in place details. '
+behavior_plugins: {  }

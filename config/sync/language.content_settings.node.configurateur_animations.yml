@@ -1,0 +1,16 @@
+uuid: 498be04f-7e8f-4da8-8239-720df3537470
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.configurateur_animations
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.configurateur_animations
+target_entity_type_id: node
+target_bundle: configurateur_animations
+default_langcode: fr
+language_alterable: false

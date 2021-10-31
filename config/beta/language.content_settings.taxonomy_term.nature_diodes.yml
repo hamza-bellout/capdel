@@ -1,0 +1,18 @@
+uuid: c5ddcade-08c7-4f7f-9f54-9ff6c7200fba
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nature_diodes
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.nature_diodes
+target_entity_type_id: taxonomy_term
+target_bundle: nature_diodes
+default_langcode: fr
+language_alterable: false

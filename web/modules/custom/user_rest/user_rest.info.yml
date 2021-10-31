@@ -1,0 +1,5 @@
+name: User REST
+type: module
+description: Enables REST POST endpoint for checking if user with this email exists
+core: 8.x
+package: REST user

@@ -1,0 +1,5 @@
+name: Capdel Legacy Importer
+description: Imports the events from the legacy Database.
+type: module
+core: 8.x
+package: Custom

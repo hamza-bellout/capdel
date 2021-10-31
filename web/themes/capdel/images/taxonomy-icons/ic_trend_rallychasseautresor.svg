@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="34px" viewBox="0 0 32 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_trend_rallychasseautresor</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-6.7%" y="-3.1%" width="116.7%" height="112.5%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.7 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-651.000000, -57.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="ic_trend_rallychasseautresor" filter="url(#filter-1)" transform="translate(652.000000, 57.000000)">
+                <path d="M29.6066667,9.72666667 L24.2733333,4.39333333 C24.0244331,4.14294148 23.6863846,4.00148853 23.3333333,4 L15.3333333,4 L15.3333333,1.33333333 C15.3333333,0.596953667 14.7363797,0 14,0 C13.2636203,0 12.6666667,0.596953667 12.6666667,1.33333333 L12.6666667,4 L2,4 C1.46092389,3.99887736 0.97421025,4.32247616 0.766666667,4.82 C0.561254201,5.31916022 0.677059582,5.89292324 1.06,6.27333333 L5.44666667,10.6666667 L1.06,15.06 C0.677059582,15.4404101 0.561254201,16.0141731 0.766666667,16.5133333 C0.97421025,17.0108572 1.46092389,17.334456 2,17.3333333 L12.6666667,17.3333333 L12.6666667,24 L11.3333333,24 C9.12419433,24 7.33333333,25.790861 7.33333333,28 L7.33333333,30.6666667 C7.33333333,31.4030463 7.930287,32 8.66666667,32 L19.3333333,32 C20.069713,32 20.6666667,31.4030463 20.6666667,30.6666667 L20.6666667,28 C20.6666667,25.790861 18.8758057,24 16.6666667,24 L15.3333333,24 L15.3333333,17.3333333 L23.3333333,17.3333333 C23.6863846,17.3318448 24.0244331,17.1903919 24.2733333,16.94 L29.6066667,11.6066667 C30.1236315,11.0866167 30.1236315,10.2467166 29.6066667,9.72666667 Z M18,28 L18,29.3333333 L10,29.3333333 L10,28 C10,27.2636203 10.5969537,26.6666667 11.3333333,26.6666667 L16.6666667,26.6666667 C17.4030463,26.6666667 18,27.2636203 18,28 Z M22.78,14.6666667 L5.22,14.6666667 L8.27333333,11.6066667 C8.79029813,11.0866167 8.79029813,10.2467166 8.27333333,9.72666667 L5.22,6.66666667 L22.78,6.66666667 L26.78,10.6666667 L22.78,14.6666667 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

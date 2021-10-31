@@ -1,0 +1,43 @@
+uuid: 8bd2cdee-a950-4236-936c-49b02c1992aa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_tb_price
+    - node.type.configurateur_tb_and_anim
+id: node.configurateur_tb_and_anim.field_conf_tb_price
+field_name: field_conf_tb_price
+entity_type: node
+bundle: configurateur_tb_and_anim
+label: Prix
+description: "Fill in variant for each price above:\r\n<ul>\r\n<li>10-19</li>\r\n<li>20-29</li>\r\n<li>30-39</li>\r\n<li>40-49</li>\r\n<li>50-59</li>\r\n<li>60-69</li>\r\n<li>70-79</li>\r\n<li>80-89</li>\r\n<li>90-99</li>\r\n<li>100-109</li>\r\n</ul>"
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

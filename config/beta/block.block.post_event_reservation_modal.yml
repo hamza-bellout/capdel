@@ -1,0 +1,41 @@
+uuid: 2b770226-360e-43c3-8c81-2a34330eb17b
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:03b06789-71e0-42cf-95c0-626adcfa6afa'
+  module:
+    - block_content
+    - node
+    - user
+  theme:
+    - capdel
+id: post_event_reservation_modal
+theme: capdel
+region: highlighted
+weight: 0
+provider: null
+plugin: 'block_content:03b06789-71e0-42cf-95c0-626adcfa6afa'
+settings:
+  id: 'block_content:03b06789-71e0-42cf-95c0-626adcfa6afa'
+  label: 'Post event reservation modal'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

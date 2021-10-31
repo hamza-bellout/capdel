@@ -1,0 +1,4 @@
+label: 'Est-ce que l''offre est valide'
+settings:
+  on_label: Oui
+  off_label: Non

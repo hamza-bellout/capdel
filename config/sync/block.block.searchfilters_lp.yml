@@ -1,0 +1,31 @@
+uuid: b5b2a7aa-fdd1-4055-a78d-cfe70d7e61bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.search_filters
+  module:
+    - ctools
+    - facets
+  theme:
+    - capdel
+id: searchfilters_lp
+theme: capdel
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:search_filters'
+settings:
+  id: 'facet_block:search_filters'
+  label: 'Recherche affinée'
+  provider: facets
+  label_display: visible
+  block_id: searchfilters_lp
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      landing_page: landing_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

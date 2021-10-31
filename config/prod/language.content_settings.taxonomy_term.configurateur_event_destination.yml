@@ -1,0 +1,11 @@
+uuid: e228267a-28a5-46b2-96fc-4e5b566ae650
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.configurateur_event_destination
+id: taxonomy_term.configurateur_event_destination
+target_entity_type_id: taxonomy_term
+target_bundle: configurateur_event_destination
+default_langcode: site_default
+language_alterable: false

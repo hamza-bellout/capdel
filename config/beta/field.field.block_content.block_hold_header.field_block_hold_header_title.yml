@@ -1,0 +1,21 @@
+uuid: 88efee32-3937-4587-b24a-19b2e360d7a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_hold_header
+    - field.storage.block_content.field_block_hold_header_title
+  module:
+    - text
+id: block_content.block_hold_header.field_block_hold_header_title
+field_name: field_block_hold_header_title
+entity_type: block_content
+bundle: block_hold_header
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

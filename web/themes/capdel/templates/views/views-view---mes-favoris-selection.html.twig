@@ -1,0 +1,73 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+
+
+{%
+    set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+]
+%}
+{% if rows %}
+<section class="bg-purple promo-section article-holder">
+    <div class="container">
+        <div class="intro-caption">
+            <h2 class="white">Pas le temps de tout préparer <span>vous-même </span>?</h2>
+            <div class="text-holder px-0">
+                <p>Organiser un évènement demande du temps et de l’expérience. C’est pour cela que Capdel a sélectionné le meilleur et vous propose de le découvrir à travers nos packages avec tous les services dont vous aurez besoin. Pas d’inquiètude, laissez-vous guider !</p>
+            </div>
+        </div>
+        <header class="intro text-center">
+            <h3 class="ff-lato white">Découvrez nos packages</h3>
+        </header>
+        <div class="info-slider article-slider">
+            {% for row in rows[0]['#rows'] %}
+                {% set event = resolveFavResultRow(row['#row']) %}
+                {% if event != false %}
+                    <div class="slide">
+                        {% include '@capdel/views/event-card.html.twig' with {
+                            'event' : event,
+                            'fav' : true,
+                            'removeQuery' : true
+                        } %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+{% endif %}

@@ -1,0 +1,21 @@
+uuid: cd782550-1f5f-4ad9-9216-000b25ead1eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_package_additional_details
+    - node.type.package
+  module:
+    - text
+id: node.package.field_package_additional_details
+field_name: field_package_additional_details
+entity_type: node
+bundle: package
+label: 'Additional Details'
+description: 'The additional details included in the package. Can be filled by the admin.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

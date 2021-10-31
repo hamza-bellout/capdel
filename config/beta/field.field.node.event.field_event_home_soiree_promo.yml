@@ -1,0 +1,23 @@
+uuid: a2e2a206-5dcf-4939-ad55-929738a0494f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_home_soiree_promo
+    - node.type.event
+id: node.event.field_event_home_soiree_promo
+field_name: field_event_home_soiree_promo
+entity_type: node
+bundle: event
+label: 'Home - Soirée d''entreprise'
+description: 'Remonte en home page dans le bloc Soirée d''entreprise'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

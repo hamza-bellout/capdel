@@ -1,0 +1,37 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+
+#block-capdel-main-menu {
+  position: inherit;
+}
+
+#reservations #block-capdel-content {
+  display: none;
+}
+
+#user-register-form .form .form-control {
+  font-size: 16px;
+}
+
+#user-register-form .jcf-checkbox {
+  margin-top: 2px
+}
+
+#user-form .password-parent,
+#user-form .confirm-parent {
+  max-width: none;
+}
+
+#user-form .password-parent label {
+  display: none;
+}
+
+#error-page-links {
+  display: inline-block;
+}
+#error-page-links li {
+  text-align: left;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7O0FBRUg7RUFDRSxrQkFBa0I7Q0FDbkI7O0FBRUQ7RUFDRSxjQUFjO0NBQ2Y7O0FBRUQ7RUFDRSxnQkFBZ0I7Q0FDakI7O0FBRUQ7RUFDRSxlQUFlO0NBQ2hCOztBQUVEOztFQUVFLGdCQUFnQjtDQUNqQjs7QUFFRDtFQUNFLGNBQWM7Q0FDZjs7QUFFRDtFQUNFLHNCQUFzQjtDQUN2QjtBQUNEO0VBQ0UsaUJBQWlCO0NBQ2xCIiwiZmlsZSI6InN0eWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogQGZpbGVcbiAqIFN1YnRoZW1lIHNwZWNpZmljIENTUy5cbiAqL1xuXG4jYmxvY2stY2FwZGVsLW1haW4tbWVudSB7XG4gIHBvc2l0aW9uOiBpbmhlcml0O1xufVxuXG4jcmVzZXJ2YXRpb25zICNibG9jay1jYXBkZWwtY29udGVudCB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiN1c2VyLXJlZ2lzdGVyLWZvcm0gLmZvcm0gLmZvcm0tY29udHJvbCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbn1cblxuI3VzZXItcmVnaXN0ZXItZm9ybSAuamNmLWNoZWNrYm94IHtcbiAgbWFyZ2luLXRvcDogMnB4XG59XG5cbiN1c2VyLWZvcm0gLnBhc3N3b3JkLXBhcmVudCxcbiN1c2VyLWZvcm0gLmNvbmZpcm0tcGFyZW50IHtcbiAgbWF4LXdpZHRoOiBub25lO1xufVxuXG4jdXNlci1mb3JtIC5wYXNzd29yZC1wYXJlbnQgbGFiZWwge1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4jZXJyb3ItcGFnZS1saW5rcyB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbn1cbiNlcnJvci1wYWdlLWxpbmtzIGxpIHtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbn0iXX0= */

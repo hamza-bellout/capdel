@@ -1,0 +1,40 @@
+Index: web/modules/contrib/context_metadata/context_metadata.module
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/context_metadata/context_metadata.module	(date 1562840604000)
++++ web/modules/contrib/context_metadata/context_metadata.module	(revision )
+@@ -5,14 +5,14 @@
+  * Contains context_metadata.module.
+  */
+ 
+- /**
+-  * Alter the metatags for pages that are not of content entities.
+-  *
+-  * @param array $metatags
+-  *   The special metatags to be added to the page.
+-  * @param array $context
+-  *   The context, containing the entity used for token replacements.
+-  */
++/**
++ * Alter the metatags for pages that are not of content entities.
++ *
++ * @param array $metatags
++ *   The special metatags to be added to the page.
++ * @param array $context
++ *   The context, containing the entity used for token replacements.
++ */
+ function context_metadata_metatags_alter(array &$metatags, array $context) {
+ 
+   /** @var \Drupal\context\ContextManager $contextManager */
+@@ -36,6 +36,9 @@
+           // Only add if there are any values.
+           if (!empty($values)) {
+             $originalValues = $metatags[$key];
++            if ($key == 'robots' && empty($originalValues)) {
++              $originalValues = [];
++            }
+             $metatags[$key] = array_merge($originalValues, $values);
+           }
+         }

@@ -1,0 +1,21 @@
+uuid: 9dac6b9a-f7e7-4641-a015-0d4594521117
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pkg_sel_date
+    - node.type.package
+  module:
+    - datetime
+id: node.package.field_pkg_sel_date
+field_name: field_pkg_sel_date
+entity_type: node
+bundle: package
+label: 'Selected Values:event date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

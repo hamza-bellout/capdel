@@ -1,0 +1,75 @@
+global-styling:
+  version: 1.1.4
+  js:
+    'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js': { type: external }
+    js/bootstrap.min.js: {}
+    js/bootstrap-datepicker.min.js: {}
+    js/bootstrap-datepicker.fr.js: {}
+    js/url.min.js: {}
+    js/hideShowPassword.min.js: {}
+    js/jquery.main.js: {}
+    js/jquery.validate.js: {}
+    js/custom.js: {}
+    js/buttonActions.js: {}
+    js/fav/favs-manager-main.js: {}
+    js/conf/conf-mobile.js: {}
+    js/facets-mobile-ajax.js: {}
+  dependencies:
+      - core/jquery
+      - core/jquery.once
+  css:
+    component:
+      css/bootstrap.css: {}
+      css/main.css: {}
+      'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i': { type: external }
+      css/style.css: {}
+configurateur:
+  version: 1.1.4
+  js:
+    js/configurateur-main.js: {}
+  dependencies:
+      - core/jquery
+      - core/jquery.once
+event-detail-reservation:
+  version: 1.x
+  js:
+    js/reservation-main.js: {}
+  dependencies:
+      - core/jquery
+      - core/jquery.once
+get-package-info:
+  version: 1.x
+  js:
+    js/package-info-main.js: {}
+  dependencies:
+      - core/jquery
+      - core/jquery.once
+reservation-page:
+  version: 1.x
+  js:
+    js/reservation-page-main.js: {}
+  dependencies:
+      - core/jquery
+      - core/jquery.once
+favourites-page:
+  version: 1.x
+  js:
+    js/fav/favs-local-page.js: {}
+  dependencies:
+      - core/jquery
+      - core/jquery.once
+place-detail-reservation:
+  version: 1.x
+  js:
+    js/conf/configurateur-place-details.js: {}
+  dependencies:
+  - core/jquery
+  - core/jquery.once
+share-links:
+  version: 1.x
+  js:
+    js/share-manager-main.js: {}
+    js/clipboard.min.js: {}
+  dependencies:
+  - core/jquery
+  - core/jquery.once

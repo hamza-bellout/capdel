@@ -1,0 +1,19 @@
+uuid: 4d920295-6742-42b5-a94f-edc0b4029ad8
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_par_slider_item_desc
+field_name: field_par_slider_item_desc
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

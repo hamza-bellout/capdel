@@ -1,0 +1,29 @@
+uuid: d0d204aa-b507-45b9-94f7-d4a39f0183a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_tax_menu_types
+    - node.type.event
+    - taxonomy.vocabulary.tax_menu_types
+id: node.event.field_event_tax_menu_types
+field_name: field_event_tax_menu_types
+entity_type: node
+bundle: event
+label: 'Menu types'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tax_menu_types: tax_menu_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

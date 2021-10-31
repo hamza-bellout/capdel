@@ -1,0 +1,18 @@
+uuid: 4500c8bf-9ac4-4d63-ad08-65ba74fc2d14
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_capacity
+id: taxonomy_term.tax_capacity.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: tax_capacity
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,21 @@
+uuid: 788df7b9-4c02-4541-9465-3381a4c20a56
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_tax_lang_comment
+field_name: field_tax_lang_comment
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

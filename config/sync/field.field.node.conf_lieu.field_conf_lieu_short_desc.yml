@@ -1,0 +1,21 @@
+uuid: 7104d9fc-ad7e-4f16-890f-76523cd1a35e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_lieu_short_desc
+    - node.type.conf_lieu
+  module:
+    - text
+id: node.conf_lieu.field_conf_lieu_short_desc
+field_name: field_conf_lieu_short_desc
+entity_type: node
+bundle: conf_lieu
+label: 'Short description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

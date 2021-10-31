@@ -1,0 +1,28 @@
+uuid: e63b983a-3148-41f6-97c3-f465b6869517
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partner_logo
+    - media.type.image
+    - node.type.partner
+id: node.partner.field_partner_logo
+field_name: field_partner_logo
+entity_type: node
+bundle: partner
+label: 'Logotype image'
+description: 'This will be displayed along with CTA button on the sidebar'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

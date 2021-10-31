@@ -1,0 +1,19 @@
+uuid: 704f714d-c26e-4f11-a346-47dbb440a2c8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pkg_an_phone
+    - node.type.package
+id: node.package.field_pkg_an_phone
+field_name: field_pkg_an_phone
+entity_type: node
+bundle: package
+label: 'Anonym Phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

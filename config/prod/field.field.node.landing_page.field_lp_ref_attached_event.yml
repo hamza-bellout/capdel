@@ -1,0 +1,28 @@
+uuid: 77f10ae3-6115-4bc1-b2d6-9394a69d8c53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lp_ref_attached_event
+    - node.type.event
+    - node.type.landing_page
+id: node.landing_page.field_lp_ref_attached_event
+field_name: field_lp_ref_attached_event
+entity_type: node
+bundle: landing_page
+label: 'Referenced Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event: event
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

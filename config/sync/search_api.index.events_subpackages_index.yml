@@ -1,0 +1,336 @@
+uuid: d261fd51-93c1-4f22-88f4-0102cc110b9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_added_value
+    - field.storage.node.field_event_description
+    - field.storage.node.field_event_ref_variant
+    - field.storage.node.field_event_sub_tax_availability
+    - field.storage.node.field_event_sub_participants_max
+    - field.storage.node.field_event_sub_participants_min
+    - field.storage.node.field_event_sub_tax_destination
+    - field.storage.node.field_event_sub_price_ppmin
+    - field.storage.node.field_event_tax_menu_types
+    - field.storage.node.field_field_event_tax_filters
+    - search_api.server.local_search_server
+  module:
+    - node
+    - search_api
+    - capdel_helper
+    - flag_search_api
+id: events_subpackages_index
+name: 'events + subpackages index'
+description: ''
+read_only: false
+field_settings:
+  field_event_added_value:
+    label: 'Added value description'
+    datasource_id: 'entity:node'
+    property_path: field_event_added_value
+    type: text
+    boost: 0.5
+    dependencies:
+      config:
+        - field.storage.node.field_event_added_value
+  field_event_description:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: field_event_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_event_description
+  field_event_sub_participants_max:
+    label: 'Event Variant » Content » Number of max participants'
+    datasource_id: 'entity:node'
+    property_path: 'field_event_ref_variant:entity:field_event_sub_participants_max'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_event_ref_variant
+        - field.storage.node.field_event_sub_participants_max
+      module:
+        - node
+  field_event_sub_participants_min:
+    label: 'Event Variant » Content » Number of min participants'
+    datasource_id: 'entity:node'
+    property_path: 'field_event_ref_variant:entity:field_event_sub_participants_min'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_event_ref_variant
+        - field.storage.node.field_event_sub_participants_min
+      module:
+        - node
+  field_event_sub_price_ppmin:
+    label: 'Event Variant » Content » Price per person min'
+    datasource_id: 'entity:node'
+    property_path: 'field_event_ref_variant:entity:field_event_sub_price_ppmin'
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_event_ref_variant
+        - field.storage.node.field_event_sub_price_ppmin
+      module:
+        - node
+  field_event_sub_tax_availability:
+    label: 'Event Variant » Content » Availability'
+    datasource_id: 'entity:node'
+    property_path: 'field_event_ref_variant:entity:field_event_sub_tax_availability'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_event_ref_variant
+        - field.storage.node.field_event_sub_tax_availability
+      module:
+        - node
+  field_event_sub_tax_destination:
+    label: 'Event Variant » Content » Package Destination'
+    datasource_id: 'entity:node'
+    property_path: 'field_event_ref_variant:entity:field_event_sub_tax_destination'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_event_ref_variant
+        - field.storage.node.field_event_sub_tax_destination
+      module:
+        - node
+  field_event_tax_menu_types:
+    label: 'Menu types'
+    datasource_id: 'entity:node'
+    property_path: field_event_tax_menu_types
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_event_tax_menu_types
+  field_field_event_tax_filters:
+    label: 'Search filters'
+    datasource_id: 'entity:node'
+    property_path: field_field_event_tax_filters
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_field_event_tax_filters
+  flag_bookmark:
+    label: Bookmark
+    property_path: flag_bookmark
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  pax_price:
+    label: 'PaxPrice 0'
+    property_path: pax_price
+    type: decimal
+  pax_price_1:
+    label: 'PaxPrice 1'
+    property_path: pax_price
+    type: decimal
+  pax_price_10:
+    label: 'PaxPrice 10'
+    property_path: pax_price
+    type: decimal
+  pax_price_11:
+    label: 'PaxPrice 11'
+    property_path: pax_price
+    type: decimal
+  pax_price_12:
+    label: 'PaxPrice 12'
+    property_path: pax_price
+    type: decimal
+  pax_price_13:
+    label: 'PaxPrice 13'
+    property_path: pax_price
+    type: decimal
+  pax_price_14:
+    label: 'PaxPrice 14'
+    property_path: pax_price
+    type: decimal
+  pax_price_15:
+    label: 'PaxPrice 15'
+    property_path: pax_price
+    type: decimal
+  pax_price_2:
+    label: 'PaxPrice 2'
+    property_path: pax_price
+    type: decimal
+  pax_price_3:
+    label: 'PaxPrice 3'
+    property_path: pax_price
+    type: decimal
+  pax_price_4:
+    label: 'PaxPrice 4'
+    property_path: pax_price
+    type: decimal
+  pax_price_5:
+    label: 'PaxPrice 5'
+    property_path: pax_price
+    type: decimal
+  pax_price_6:
+    label: 'PaxPrice 6'
+    property_path: pax_price
+    type: decimal
+  pax_price_7:
+    label: 'PaxPrice 7'
+    property_path: pax_price
+    type: decimal
+  pax_price_8:
+    label: 'PaxPrice 8'
+    property_path: pax_price
+    type: decimal
+  pax_price_9:
+    label: 'PaxPrice 9'
+    property_path: pax_price
+    type: decimal
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  summary:
+    label: 'Description » Résumé'
+    datasource_id: 'entity:node'
+    property_path: 'field_event_description:summary'
+    type: text
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.node.field_event_description
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 8
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - event
+    languages:
+      default: false
+      selected:
+        - fr
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  flag_indexer:
+    flag_index:
+      - bookmark
+    weights:
+      preprocess_index: -30
+  hierarchy:
+    fields:
+      field_event_sub_tax_destination: taxonomy_term-parent
+      field_event_tax_menu_types: taxonomy_term-parent
+      field_field_event_tax_filters: taxonomy_term-parent
+    weights:
+      preprocess_index: -45
+  ignore_character:
+    all_fields: false
+    fields:
+      - field_event_added_value
+      - field_event_description
+      - field_event_sub_tax_availability
+      - field_event_tax_menu_types
+      - summary
+      - title
+    ignorable: '[''¿¡!?,.:;]'
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+  ignorecase:
+    all_fields: false
+    fields:
+      - field_event_added_value
+      - field_event_description
+      - field_event_sub_tax_availability
+      - field_event_tax_menu_types
+      - summary
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  pax_price: {  }
+  rendered_item: {  }
+  stopwords:
+    all_fields: false
+    fields:
+      - field_event_added_value
+      - field_event_description
+      - summary
+      - title
+    stopwords:
+      - après
+      - ce
+      - ceci
+      - cela
+      - comme
+      - dans
+      - de
+      - dedans
+      - des
+      - et
+      - la
+      - le
+      - leur
+      - mais
+      - or
+      - ou
+      - par
+      - pour
+      - sur
+      - un
+      - une
+      - ça
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
+  tokenizer:
+    all_fields: false
+    fields:
+      - field_event_added_value
+      - field_event_description
+      - summary
+      - title
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '1'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  transliteration:
+    all_fields: false
+    fields:
+      - field_event_added_value
+      - field_event_description
+      - field_event_sub_tax_availability
+      - field_event_tax_menu_types
+      - summary
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local_search_server

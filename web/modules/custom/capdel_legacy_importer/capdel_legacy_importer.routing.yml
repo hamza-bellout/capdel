@@ -1,0 +1,16 @@
+capdel_legacy_importer.config_form:
+  path: '/admin/config/legacy-importer-configuration'
+  defaults:
+    _form: '\Drupal\capdel_legacy_importer\Form\ImporterConfigurationForm'
+    _title: 'Legacy Importer configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+capdel_legacy_importer.image_reorder_form:
+  path: '/admin/config/legacy-importer-reorder-images'
+  defaults:
+    _form: '\Drupal\capdel_legacy_importer\Form\ImageReorderConfigurationForm'
+    _title: 'Legacy Importer - reorder images'
+  requirements:
+    _permission: 'administer site configuration'
+

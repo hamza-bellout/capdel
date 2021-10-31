@@ -1,0 +1,11 @@
+uuid: 5fad45ad-8964-461e-b772-c241b9799168
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.configurateur_lieu_configuration
+id: taxonomy_term.configurateur_lieu_configuration
+target_entity_type_id: taxonomy_term
+target_bundle: configurateur_lieu_configuration
+default_langcode: fr
+language_alterable: false

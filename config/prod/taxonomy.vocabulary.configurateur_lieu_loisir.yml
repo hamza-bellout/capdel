@@ -1,0 +1,9 @@
+uuid: ffdba50f-bcea-451f-87ac-714139366c4f
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Configurateur lieu loisir'
+vid: configurateur_lieu_loisir
+description: ''
+hierarchy: 0
+weight: 0

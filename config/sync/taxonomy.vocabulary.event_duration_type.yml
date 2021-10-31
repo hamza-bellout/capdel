@@ -1,0 +1,9 @@
+uuid: 12430183-f4d5-4a7b-ab09-83a42b1f344c
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Type de durée de l''offre'
+vid: event_duration_type
+description: 'journee / heure, etc.'
+hierarchy: 0
+weight: 0

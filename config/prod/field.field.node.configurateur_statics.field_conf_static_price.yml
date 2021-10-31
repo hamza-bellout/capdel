@@ -1,0 +1,23 @@
+uuid: 05e2a1bf-35bc-4432-a1f9-8dc302b4ea59
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_static_price
+    - node.type.configurateur_statics
+id: node.configurateur_statics.field_conf_static_price
+field_name: field_conf_static_price
+entity_type: node
+bundle: configurateur_statics
+label: 'Prix par personne minimum'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

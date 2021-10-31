@@ -1,0 +1,41 @@
+uuid: 2d42df63-a193-4964-85a9-ecd219c5408c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.conf_lieu.field_conf_lieu_dest
+    - field.field.node.conf_lieu.field_conf_lieu_format
+    - field.field.node.conf_lieu.field_conf_lieu_image
+    - field.field.node.conf_lieu.field_conf_lieu_tax_conf
+    - field.field.node.conf_lieu.field_conf_lieu_tax_details
+    - field.field.node.conf_lieu.field_conf_lieu_type
+    - field.field.node.conf_lieu.field_conf_price
+    - node.type.conf_lieu
+  module:
+    - user
+id: node.conf_lieu.teaser
+targetEntityType: node
+bundle: conf_lieu
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_conf_lieu_avail: true
+  field_conf_lieu_category: true
+  field_conf_lieu_desc: true
+  field_conf_lieu_dest: true
+  field_conf_lieu_format: true
+  field_conf_lieu_geo_params: true
+  field_conf_lieu_image: true
+  field_conf_lieu_max_par: true
+  field_conf_lieu_menu_type: true
+  field_conf_lieu_min_par: true
+  field_conf_lieu_short_desc: true
+  field_conf_lieu_tax_conf: true
+  field_conf_lieu_tax_details: true
+  field_conf_lieu_type: true
+  field_conf_price: true
+  langcode: true

@@ -1,0 +1,8 @@
+uuid: a6f394a7-aa9f-498d-823f-63cdaf642072
+langcode: fr
+status: true
+dependencies: {  }
+id: configurateur-menu
+label: 'Configurateur menu'
+description: ''
+locked: false

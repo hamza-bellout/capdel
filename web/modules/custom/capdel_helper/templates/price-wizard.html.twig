@@ -1,0 +1,44 @@
+<div class="form-item">
+  <a href="/node/{{ event.id }}/location/new" class="button button--primary js-form-submit form-submit">{{ 'Add location'|t }}</a>
+</div>
+
+{% if variants is not empty %}
+  <form method="post" action="{{ update_action }}" id="price-wizard-form">
+    <table>
+      <thead>
+        <th/>
+        {% for location,variant in variants %}
+          <th>
+            {{ variant.field_event_sub_city.value }}
+            {% if variant.field_event_sub_address.value is not empty %}
+              ({{ variant.field_event_sub_address.value }})
+            {% endif %}
+            <div class="form-item">
+              <a href="/node/{{ event.id }}/location/{{ variant.id }}/edit" class="button button--primary js-form-submit form-submit m">{{ 'Edit'|t }}</a>
+              <a href="/node/{{ event.id }}/location/{{ variant.id }}/delete" class="button button--danger" data-drupal-selector="edit-delete" id="edit-delete" hreflang="fr">{{ 'Delete'|t }}</a>
+            </div>
+          </th>
+        {% endfor %}
+      </thead>
+      {% for i in 0..15 %}
+        <tbody>
+        <tr>
+          {% if loop.last %}
+            <th>150+</th>
+          {% else %}
+          <th>{{ i*10 }}-{{ (i+1)*10 - 1 }}</th>
+          {% endif %}
+          {% for location,variant in variants %}
+            <td><input type="text" name="price[{{ variant.id }}][{{ i }}]" value="{{ variant.field_event_sub_price_ppmin[i].value }}"/></td>
+          {% endfor %}
+        </tr>
+        </tbody>
+      {% endfor %}
+    </table>
+
+    <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+      <input type="submit" class="button button--primary js-form-submit form-submit" value="{{ 'Save'|t }}"/>
+      <a href="/node/{{ event.id }}/edit" class="button js-form-submit form-submit">{{ 'Cancel'|t }}</a>
+    </div>
+  </form>
+{% endif %}

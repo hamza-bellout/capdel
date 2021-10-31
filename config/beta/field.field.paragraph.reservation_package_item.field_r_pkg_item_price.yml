@@ -1,0 +1,23 @@
+uuid: 867e9a6d-8964-45f8-9821-3e1c427e0cc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_r_pkg_item_price
+    - paragraphs.paragraphs_type.reservation_package_item
+id: paragraph.reservation_package_item.field_r_pkg_item_price
+field_name: field_r_pkg_item_price
+entity_type: paragraph
+bundle: reservation_package_item
+label: 'Item: price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

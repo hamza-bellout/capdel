@@ -1,0 +1,31 @@
+uuid: bbe8e2a0-221d-4c26-9665-fdf54e747886
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_hold:1fbcc2bb-1b33-4cf9-8eb3-65496602abea'
+  module:
+    - block_content
+    - system
+  theme:
+    - capdel
+id: homemiddleblockhold
+theme: capdel
+region: content
+weight: -14
+provider: null
+plugin: 'block_content:1fbcc2bb-1b33-4cf9-8eb3-65496602abea'
+settings:
+  id: 'block_content:1fbcc2bb-1b33-4cf9-8eb3-65496602abea'
+  label: '[Home] Middle block hold'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

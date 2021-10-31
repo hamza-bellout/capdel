@@ -1,0 +1,19 @@
+uuid: b85dd8ae-2ef7-4b5c-9dea-fe42f1604843
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pkg_an_company
+    - node.type.package
+id: node.package.field_pkg_an_company
+field_name: field_pkg_an_company
+entity_type: node
+bundle: package
+label: 'Anonym Company'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+uuid: 30741c6b-1f3a-49de-a8bb-2014d2757fa6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_lieu_menu_type
+    - node.type.conf_lieu
+    - taxonomy.vocabulary.configurateur_event_type
+id: node.conf_lieu.field_conf_lieu_menu_type
+field_name: field_conf_lieu_menu_type
+entity_type: node
+bundle: conf_lieu
+label: 'Menu type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      configurateur_event_type: configurateur_event_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,4 @@
+label: 'Variant du produit valide ? '
+settings:
+  on_label: Oui
+  off_label: Non

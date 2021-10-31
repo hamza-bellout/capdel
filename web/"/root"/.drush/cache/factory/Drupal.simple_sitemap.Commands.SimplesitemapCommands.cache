@@ -1,0 +1,94 @@
+{
+    "cid": "Drupal\\simple_sitemap\\Commands\\SimplesitemapCommands",
+    "data": {
+        "generate": {
+            "schema": 4,
+            "class": "Drupal\\simple_sitemap\\Commands\\SimplesitemapCommands",
+            "method_name": "generate",
+            "mtime": 1522611816,
+            "injected_classes": [],
+            "name": "simple-sitemap:generate",
+            "description": "Regenerate the XML sitemap according to the module settings.",
+            "help": "",
+            "aliases": [
+                "ss:generate",
+                "ssg",
+                "simple_sitemap:generate",
+                "simple_sitemap-generate"
+            ],
+            "annotations": {
+                "command": "simple-sitemap:generate",
+                "validate-module-enabled": "simple_sitemap"
+            },
+            "example_usages": [],
+            "return_type": null,
+            "arguments": [],
+            "options": []
+        },
+        "setProcessManager": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setProcessManager",
+            "mtime": 1552412184,
+            "injected_classes": []
+        },
+        "processManager": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "processManager",
+            "mtime": 1552412184,
+            "injected_classes": []
+        },
+        "hasProcessManager": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "hasProcessManager",
+            "mtime": 1552412184,
+            "injected_classes": []
+        },
+        "setLogger": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setLogger",
+            "mtime": 1542727624,
+            "injected_classes": []
+        },
+        "getConfig": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "getConfig",
+            "mtime": 1553592948,
+            "injected_classes": []
+        },
+        "setConfig": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setConfig",
+            "mtime": 1553018839,
+            "injected_classes": []
+        },
+        "parentgetconfig": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "parentgetconfig",
+            "mtime": 1553018839,
+            "injected_classes": []
+        },
+        "setInput": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setInput",
+            "mtime": 1553018839,
+            "injected_classes": []
+        },
+        "setOutput": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setOutput",
+            "mtime": 1553018839,
+            "injected_classes": []
+        }
+    },
+    "created": 1605276927,
+    "expire": 0
+}

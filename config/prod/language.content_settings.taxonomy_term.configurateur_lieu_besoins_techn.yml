@@ -1,0 +1,11 @@
+uuid: 60dc57eb-30d5-4e91-882c-0f3027cc0161
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.configurateur_lieu_besoins_techn
+id: taxonomy_term.configurateur_lieu_besoins_techn
+target_entity_type_id: taxonomy_term
+target_bundle: configurateur_lieu_besoins_techn
+default_langcode: fr
+language_alterable: false

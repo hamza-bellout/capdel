@@ -1,0 +1,9 @@
+services:
+  capdel_helper.twig.CapdelTwigExtension:
+    class: Drupal\capdel_helper\Twig\CapdelTwigExtension
+    tags:
+      - { name: twig.extension }
+  capdel_helper.event_subscriber:
+    class: '\Drupal\capdel_helper\EventSubscriber\CapdelEventSubscriber'
+    tags:
+    - { name: 'event_subscriber' }

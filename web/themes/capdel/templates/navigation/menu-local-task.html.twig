@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Bootstrap Barrio's Theme override for a local task link.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper element.
+ * - is_active: Whether the task item is an active tab.
+ * - link: A rendered link element.
+ * - item.text: Text for the link
+ * - item.url: URL object for link
+ *
+ * Note: This template renders the content for each task item in
+ * menu-local-tasks.html.twig.
+ *
+ * @see template_preprocess_menu_local_task()
+ */
+#}
+
+<!-- @TODO: CLASS:selected - configurator-place.html -->
+{%
+  set classes = [
+    'nav-link',
+    is_active ? 'active',
+  ]
+%}
+
+{%
+set description = {
+    'Lieu' : ['Choisir un lieu', 'icon-pin'],
+    'Menu & Boissons' : ['Ajouter un menu', 'icon-restaurant'],
+    'Team Building & Activités' : ['Ajouter une activité', 'icon-team'],
+    'Animations' : ['Ajouter une animation', 'icon-animation'],
+    'Options' : ['Ajouter une option', 'icon-config']
+}
+ %}
+
+{% set counter = 0 %}
+
+{% set query_params = getQueryParams() %}
+
+{% if url('<current>')['#markup'] matches '/.*configurateur.*/' %}
+  <div class="col col-lg-2">
+    <a href="{{ item.url }}{{ query_params.params }}" class="step align-items-center {{ is_active ? 'active' }} {{ item.classes ? item.classes : '' }} " {{ item.attributes ?  item.attributes : '' }} >
+      <i class="ico {{ description[item.text][1] }}"></i>
+      <div class="w-100">
+        <h4>{{ item.text }}</h4>
+        <p class="step-desc">{{ description[item.text][0] }}</p>
+      </div>
+      <div class="btn-circle {{ item.icon  ? '' : 'ico-plus'}}">
+        {% if item.icon %}
+          <i class="icon-eye"></i>
+        {% endif %}
+      </div>
+      <span class="hidden counter"></span>
+    </a>
+  </div>
+{% else %}
+  <li{{ attributes.addClass(is_active ? 'active', 'nav-item') }}>{{ link(item.text, item.url, {'class': classes}) }}</li>
+{% endif %}
+

@@ -1,0 +1,9 @@
+uuid: 5d8f6842-c949-4d93-ac0f-92c5a02e9229
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Configurateur team building sous-categories'
+vid: configurateur_team_building_sub_
+description: ''
+hierarchy: 0
+weight: 0

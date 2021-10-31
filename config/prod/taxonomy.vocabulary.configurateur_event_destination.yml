@@ -1,0 +1,9 @@
+uuid: b317a2cd-e7a7-482d-aad4-73736b9ed8b6
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Configurateur event destination'
+vid: configurateur_event_destination
+description: 'Used to fill in conf search event destination'
+hierarchy: 0
+weight: 0

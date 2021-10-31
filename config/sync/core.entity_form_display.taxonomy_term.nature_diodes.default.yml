@@ -1,0 +1,63 @@
+uuid: 9101f778-fef1-42f0-8d29-064c77cb70c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nature_diodes.field_tax_legacy_id
+    - taxonomy.vocabulary.nature_diodes
+  module:
+    - path
+    - text
+id: taxonomy_term.nature_diodes.default
+targetEntityType: taxonomy_term
+bundle: nature_diodes
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tax_legacy_id:
+    weight: 101
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    weight: 102
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+hidden: {  }

@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override for a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+<div class="visually-hidden">
+  {{ form[field['value']] }}
+</div>
+<div class="info-block m-b-0">
+  <div class="title-block">
+    <div class="column"><strong class="title">Budget par participant</strong></div>
+  </div>
+  <div class="range-slider">
+    <div class="range-info"><span class="range-value">500</span>€ HT</div>
+    <input id="slider-field-event-sub-price-ppmin" value="{{ form[field['value']]['#value'] }}" type="range" min="0" max="500" data-jcf='{"valueBox": ".range-value", "range": "min"}'/>
+  </div>
+</div>

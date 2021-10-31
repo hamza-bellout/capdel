@@ -1,0 +1,9 @@
+uuid: d072e9f2-bf64-4f7f-b676-0d58ea70446a
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Configurateur lieu categories supplémentaires'
+vid: configurateur_lieu_category
+description: ''
+hierarchy: 0
+weight: 0

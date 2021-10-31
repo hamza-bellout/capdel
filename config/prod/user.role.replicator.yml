@@ -1,0 +1,15 @@
+uuid: 7b1f829c-16bd-45e4-82a3-e3c844ed8c66
+langcode: en
+status: true
+dependencies: {  }
+id: replicator
+label: Replicator
+weight: 0
+is_admin: false
+permissions:
+  - 'administer users'
+  - 'administer workspaces'
+  - 'bypass node access'
+  - 'display eu cookie compliance popup'
+  - 'perform push replication'
+  - 'restful post user_rest_resource'

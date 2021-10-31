@@ -1,0 +1,21 @@
+uuid: b13e7dd1-7177-4262-ab34-82d6695dcf90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_legacy_content
+    - node.type.event
+  module:
+    - text
+id: node.event.field_event_legacy_content
+field_name: field_event_legacy_content
+entity_type: node
+bundle: event
+label: 'Legacy content'
+description: 'Data imported from the legacy DB, not used in the current BO.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

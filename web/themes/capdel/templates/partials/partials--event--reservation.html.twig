@@ -1,0 +1,206 @@
+{#
+
+    Twig partial template to render
+    blue reservation box on the event detail page.
+    It gets the UID from the currently logged in user,
+    if empty, displays the login form
+
+#}
+
+{% set uid = getUserID() %}
+
+{{ attach_library('capdel/event-detail-reservation') }}
+
+{% set pax_selected = 0 %}
+{% if(event['get_params'] is not empty and event['get_params']['participant'] is not empty) %}
+  {% set pax_selected = event['get_params']['participant'] %}
+{% endif %}
+{% if(getPaxParticipantsCookie()) %}
+  {% set pax_selected = getPaxParticipantsCookie() %}
+{% endif %}
+
+{% if(event['get_params'] is not empty and event['get_params']['reservation_date'] is not empty) %}
+    {% set reservation_date = event['get_params']['reservation_date'] %}
+{% endif %}
+<!-- SIDEBAR FROM CONFIGURATOR -->
+<form id="reservation-form" class="form" action="#">
+    <fieldset>
+        <div class="side-block search-block-form">
+            <h2 class="white">Devis</h2>
+            <div class="block-row">
+                {% if event['price'] %}
+                    <div class="info-block price-wrapper">
+                        <div class="title-block d-block white ">
+                            <strong>A partir de <span class="price-tag">{{ event['price'] }}</span>€ HT </strong>par participant
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="form-hold reservation-form">
+                    <div class="form-group">
+                        <label>Dates</label>
+                        <div class="datepicker-holder event-date">
+                            <input type="text" class="datepicker form-control reservation-date" placeholder="" value="{{ reservation_date }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-par">Nombre de participants</label>
+                        {% if(pax_selected == 0 or pax_selected == 'All') %}
+                          <input class="event-par" value="10" min="0" type="number" data-price="{{ event['all_prices'][0] }}">
+                        {% endif %}
+                        {% if(pax_selected == 1) %}
+                            <input class="event-par" value="1" min="0" type="number" data-price="{{ event['all_prices'][0] }}">
+                        {% endif %}
+                        {% if(pax_selected == 2) %}
+                            <input class="event-par"  value="10" min="0" type="number" data-price="{{ event['all_prices'][1] }}">
+                        {% endif %}
+                        {% if(pax_selected == 3) %}
+                            <input class="event-par"  value="20" min="0" type="number" data-price="{{ event['all_prices'][2] }}">
+                        {% endif %}
+                        {% if(pax_selected == 4) %}
+                            <input class="event-par"  min="0" type="number" value="30" data-price="{{ event['all_prices'][3] }}">
+                        {% endif %}
+                        {% if(pax_selected == 5) %}
+                            <input class="event-par" min="0" type="number" value="40" data-price="{{ event['all_prices'][4] }}">
+                        {% endif %}
+                        {% if(pax_selected == 6) %}
+                            <input class="event-par"  min="0" type="number" value="50" data-price="{{ event['all_prices'][5] }}">
+                        {% endif %}
+                        {% if(pax_selected == 7) %}
+                            <input class="event-par"  min="0" type="number" value="60" data-price="{{ event['all_prices'][6] }}">
+                        {% endif %}
+                        {% if(pax_selected == 8) %}
+                            <input class="event-par"  min="0" type="number" value="70" data-price="{{ event['all_prices'][7] }}">
+                        {% endif %}
+                        {% if(pax_selected == 9) %}
+                            <input class="event-par"  min="0" type="number" value="80" data-price="{{ event['all_prices'][8] }}">
+                        {% endif %}
+                        {% if(pax_selected == 10) %}
+                            <input class="event-par"  min="0" type="number" value="90" data-price="{{ event['all_prices'][9] }}">
+                        {% endif %}
+                        {% if(pax_selected == 11) %}
+                            <input class="event-par"  min="0" type="number" value="100" data-price="{{ event['all_prices'][10] }}">
+                        {% endif %}
+                        {% if(pax_selected == 12) %}
+                            <input class="event-par"  min="0" type="number" value="110" data-price="{{ event['all_prices'][11] }}">
+                        {% endif %}
+                        {% if(pax_selected == 13) %}
+                            <input class="event-par"  min="0" type="number" value="120" data-price="{{ event['all_prices'][12] }}">
+                        {% endif %}
+                        {% if(pax_selected == 14) %}
+                            <input class="event-par"  min="0" type="number" value="130" data-price="{{ event['all_prices'][13] }}">
+                        {% endif %}
+                        {% if(pax_selected == 15) %}
+                            <input class="event-par"  min="0" type="number" value="140" data-price="{{ event['all_prices'][14] }}">
+                        {% endif %}
+                        {% if(pax_selected == 16) %}
+                            <input class="event-par"  min="0" type="number"  value="150" data-price="{{ event['all_prices'][15] }}">
+                        {% endif %}
+                    </div>
+                    <div class="form-group d-none">
+                        <select id="event-par-data" name="event-par-data">
+                            {% if(event['pax_groups'][0]) %}
+                                <option value="1" {% if(pax_selected == 1) %}selected{% endif %} data-price="{{ event['all_prices'][0] }}">0-9</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][1]) %}
+                                <option value="2" {% if(pax_selected == 2) %}selected{% endif %} data-price="{{ event['all_prices'][1] }}">10-19</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][2]) %}
+                                <option value="3" {% if(pax_selected == 3) %}selected{% endif %} data-price="{{ event['all_prices'][2] }}">20-29</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][3]) %}
+                                <option value="4" {% if(pax_selected == 4) %}selected{% endif %} data-price="{{ event['all_prices'][3] }}">30-39</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][4]) %}
+                                <option value="5" {% if(pax_selected == 5) %}selected{% endif %} data-price="{{ event['all_prices'][4] }}">40-49</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][5]) %}
+                                <option value="6" {% if(pax_selected == 6) %}selected{% endif %} data-price="{{ event['all_prices'][5] }}">50-59</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][6]) %}
+                                <option value="7" {% if(pax_selected == 7) %}selected{% endif %} data-price="{{ event['all_prices'][6] }}">60-69</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][7]) %}
+                                <option value="8" {% if(pax_selected == 8) %}selected{% endif %} data-price="{{ event['all_prices'][7] }}">70-79</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][8]) %}
+                                <option value="9" {% if(pax_selected == 9) %}selected{% endif %} data-price="{{ event['all_prices'][8] }}">80-89</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][9]) %}
+                                <option value="10" {% if(pax_selected == 10) %}selected{% endif %} data-price="{{ event['all_prices'][9] }}">90-99</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][10]) %}
+                                <option value="11" {% if(pax_selected == 11) %}selected{% endif %} data-price="{{ event['all_prices'][10] }}">100-109</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][11]) %}
+                                <option value="12" {% if(pax_selected == 12) %}selected{% endif %} data-price="{{ event['all_prices'][11] }}">110-119</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][12]) %}
+                                <option value="13" {% if(pax_selected == 13) %}selected{% endif %} data-price="{{ event['all_prices'][12] }}">120-129</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][13]) %}
+                                <option value="14" {% if(pax_selected == 14) %}selected{% endif %} data-price="{{ event['all_prices'][13] }}">130-139</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][14]) %}
+                                <option value="15" {% if(pax_selected == 15) %}selected{% endif %} data-price="{{ event['all_prices'][14] }}">140-149</option>
+                            {% endif %}
+                            {% if(event['pax_groups'][15]) %}
+                                <option value="16" {% if(pax_selected == 16) %}selected{% endif %} data-price="{{ event['all_prices'][15] }}">+ de 150</option>
+                            {% endif %}
+                        </select>
+                    </div>
+
+                    {# Useful with select for variants ranges #}
+                    {#{% if event['participants_range'] is not empty %}
+                        {% if event['participants_range']['variants']|length > 1 %}
+                            <div class="form-group">
+                                <label>Nombre de participants</label>
+                                <select name="participants" class="jcf-hidden">
+                                    {% for variant in event['participants_range']['variants'] %}
+                                        <option value="{{ variant.id }}">{{ variant.min }} - {{ variant.max }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        {% else %}
+                        {% endif %}
+                    {% endif %}#}
+
+                    <div class="form-group text-center reservation-form">
+                        {% if uid == 0 %}
+                            <button type="submit"
+                                    class="btn btn-primary reservation-button-anonym"
+                                    data-toggle="modal"
+                                    data-target="#eventReservationForm"
+                                    data-title="{{ node.title.value }}"
+                                    data-nid="{{ node.nid.value }}"
+                                    data-uid="{{ uid }}">Demande de devis
+                            </button>
+                        {% else %}
+                            <button type="submit"
+                                    class="btn btn-primary reservation-button"
+                                    data-toggle="modal"
+                                    data-title="{{ node.title.value }}"
+                                    data-nid="{{ node.nid.value }}"
+                                    data-uid="{{ uid }}">Demande de devis
+                            </button>
+                        {% endif %}
+                    </div>
+                    <div class="text-center event-fav-box">
+                        {% set userId = getUserID() %}
+                        {% set eventFav = getFavLink(node) %}
+                        <div class="fav-wrapper">
+                            {% if userId != 0 %}
+                                {{ eventFav }}
+                                <a href="#" class="event-fav favs" data-nid="{{ node.nid.value }}">Ajouter à mes favoris <i class="icon-heart-o align-text-bottom ml-3"></i></a>
+                            {% else %}
+                                <a href="#" class="event-fav anonym favs" data-nid="{{ node.nid.value }}">Ajouter à mes favoris <i class="icon-heart-o align-text-bottom ml-3"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<!-- END SIDEBAR FROM CONFIGURATOR -->
+
+{% include '@capdel/partials/partials--blank-modal.html.twig' %}

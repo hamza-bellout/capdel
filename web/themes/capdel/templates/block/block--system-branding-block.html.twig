@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Bootstrap Barrio's theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+{% set attributes = attributes.addClass('site-branding') %}
+  {% if site_logo %}
+    <div class="logo">
+      <a href="{{ path('<front>') }}">
+	      <img src="{{ site_logo }}" alt="CAPDEL EASY EVENTS SERVICES" width="129" height="35">
+      </a>
+    </div>
+    <div class="info-support d-none d-md-block">
+      <br/>
+    </div>
+    <div class="logo2 d-none d-md-block">
+      <img src="{{ file_url(directory ~ '/images/hopscotch_logo.svg') }}" alt="CAPDEL est une agence de HOPSCOTCH Groupe" width="48" height="48">
+    </div>
+  {% endif %}
+  {% if site_name or site_slogan %}
+    <div class="float-left site-name-slogan">
+      {% if site_name %}
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+      {% endif %}
+      {% if site_slogan %}
+        <div class="site-branding__slogan">{{ site_slogan }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="info-support d-none d-md-block ml-1">
+    <br/>
+  </div>
+<div class="d-none d-md-block header-info-links">
+  <div>
+    {# Font streach hack as the proper CSS property is not supported in the Chrome yet #}
+    <span class="text">D&nbsp;E&nbsp;M&nbsp;A&nbsp;N&nbsp;D&nbsp;E&nbsp;Z&nbsp;&nbsp;&nbsp;U&nbsp;N&nbsp;&nbsp;&nbsp;D&nbsp;E&nbsp;V&nbsp;I&nbsp;S</span>
+  </div>
+  <a href="tel:33141342100" class="phone"><span class="icon-phone"></span> <u>+33 1 41 34 21 00</u></a>
+  <span class="ml-1">&#183;</span>
+  <a href="/contact" class="mail ml-1"><span class="icon-envelope"></span> <u>EN 1 CLIC</u></a>
+</div>

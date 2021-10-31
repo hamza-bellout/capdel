@@ -1,0 +1,18 @@
+uuid: 08bf439b-1868-4820-b975-f7ab44d59d88
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_filters
+id: taxonomy_term.tax_filters.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: tax_filters
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

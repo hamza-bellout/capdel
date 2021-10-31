@@ -1,0 +1,109 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a facets item list.
+ *
+ * Available variables:
+ * - items: A list of items. Each item contains:
+ *   - attributes: HTML attributes to be applied to each list item.
+ *   - value: The content of the list element.
+ * - title: The title of the list.
+ * - list_type: The tag for list element ("ul" or "ol").
+ * - wrapper_attributes: HTML attributes to be applied to the list wrapper.
+ * - attributes: HTML attributes to be applied to the list.
+ * - empty: A message to display when there are no items. Allowed value is a
+ *   string or render array.
+ * - context: A list of contextual data associated with the list. May contain:
+ *   - list_style: The ID of the widget plugin this facet uses.
+ * - facet: The facet for this result item.
+ *   - id: the machine name for the facet.
+ *   - label: The facet label.
+ *
+ * @see facets_preprocess_facets_item_list()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% import _self as facets_tree %}
+
+{% set attributes = create_attribute(attributes) %}
+
+<div class="facets-widget- {{- list_style -}} ">
+  {% if list_style %}
+    {%- set attributes = attributes.addClass('item-list__' ~ list_style) %}
+  {% endif %}
+  {% if items or empty %}
+    {%- if title is not empty -%}
+      <h3>{{ title }}</h3>
+    {%- endif -%}
+
+    {%- if items -%}
+
+      {% set level = 1 %}
+      {% for item in items %}
+        {% if item['children']['#items'] is not empty %}
+          {% set level = 0 %}
+        {% endif %}
+      {% endfor %}
+
+      {{ facets_tree.facet_links(items, attributes, level) }}
+    {%- else -%}
+      {{- empty -}}
+    {%- endif -%}
+  {%- endif %}
+</div>
+<button type="submit" value="Rechercher" class="mobile-trigger button btn btn-primary d-md-none btn-lg btn-block">Rechercher</button>
+
+
+{% macro facet_links(items, attributes, menu_level) %}
+  {% import _self as facets_tree %}
+  {% set counter = 0 %}
+
+  <ul {{ attributes.addClass('facets-' ~ menu_level) }}>
+
+    {%- for item in items -%}
+        {% set children = item['children']['#items'] %}
+        {% set item = item|merge({'children': []}) %}
+        {% set exec = _self.facet_links(children, create_attribute(item['#attributes']), menu_level + 1) %}
+        {% set elementObject %}
+            {{ item }}
+            {% if children is not empty %}
+                {{ exec }}
+            {% endif %}
+        {% endset %}
+        {% if (menu_level > 0) %}
+            {# first 5 only are visible #}
+            {% if(counter < 5) %}
+              <li class="facet-item d-none d-md-block">
+                  {{ elementObject }}
+              </li>
+              <li class="facet-item mobile-ajax-hold d-md-none">
+                  {{ elementObject }}
+              </li>
+            {% else %}
+              <li class="facet-item d-none">
+                  {{ elementObject }}
+              </li>
+              <li class="facet-item mobile-ajax-hold d-none">
+                  {{ elementObject }}
+              </li>
+            {% endif %}
+            {% set counter = counter + 1 %}
+
+        {% else %}
+          <li class="facet-item">
+              {{ elementObject }}
+          </li>
+        {% endif %}
+
+
+    {%- endfor -%}
+  </ul>
+    {# we display the show-more button on the first level elements and
+        for the lists that have more than 5 elems.
+    #}
+    {% if (menu_level == 1 and items|length > 5) %}
+        <p class="show-more-button jcf-ignore" data-action="more">AFFICHER PLUS</p>
+    {% endif %}
+{% endmacro %}

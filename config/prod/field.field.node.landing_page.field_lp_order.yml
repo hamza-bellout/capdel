@@ -1,0 +1,25 @@
+uuid: 26b6a08c-4541-420e-8ce4-a8de444060fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lp_order
+    - node.type.landing_page
+id: node.landing_page.field_lp_order
+field_name: field_lp_order
+entity_type: node
+bundle: landing_page
+label: 'Order number'
+description: 'The number of order in which the landing page will appear on the search result page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

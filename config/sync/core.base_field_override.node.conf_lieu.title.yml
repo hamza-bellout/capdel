@@ -1,0 +1,18 @@
+uuid: f98b722f-cc44-4146-9637-439e1fbb4fb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.conf_lieu
+id: node.conf_lieu.title
+field_name: title
+entity_type: node
+bundle: conf_lieu
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

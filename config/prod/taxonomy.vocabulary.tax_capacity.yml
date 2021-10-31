@@ -1,0 +1,9 @@
+uuid: f70e2763-3962-4530-b54b-f2033b0c2e39
+langcode: en
+status: true
+dependencies: {  }
+name: Capacity
+vid: tax_capacity
+description: 'Taxonomy used to select the size of the event. '
+hierarchy: 0
+weight: 0

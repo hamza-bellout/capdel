@@ -1,0 +1,31 @@
+uuid: 8a7d67a3-01f3-4452-8cb2-9190c9ca8a55
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:taxonomy_block:9b1517ae-c806-44e3-ac5c-4b82ead32b31'
+  module:
+    - block_content
+    - system
+  theme:
+    - capdel
+id: _home_taxonomy_term_block
+theme: capdel
+region: content
+weight: -16
+provider: null
+plugin: 'block_content:9b1517ae-c806-44e3-ac5c-4b82ead32b31'
+settings:
+  id: 'block_content:9b1517ae-c806-44e3-ac5c-4b82ead32b31'
+  label: '[Home] Taxonomy term block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

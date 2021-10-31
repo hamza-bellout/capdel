@@ -1,0 +1,18 @@
+uuid: 57a4495a-b7ab-43ba-a917-bbc289471aaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_availability
+id: taxonomy_term.tax_availability.moderation_state
+field_name: moderation_state
+entity_type: taxonomy_term
+bundle: tax_availability
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

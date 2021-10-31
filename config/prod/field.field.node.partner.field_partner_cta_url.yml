@@ -1,0 +1,23 @@
+uuid: 220ae428-7593-4b1d-87eb-e6fdfb449323
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partner_cta_url
+    - node.type.partner
+  module:
+    - link
+id: node.partner.field_partner_cta_url
+field_name: field_partner_cta_url
+entity_type: node
+bundle: partner
+label: 'CTA button URL '
+description: 'If the user clicks on the logotype, this link provides the path where the user is redirected.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

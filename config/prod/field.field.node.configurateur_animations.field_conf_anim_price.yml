@@ -1,0 +1,23 @@
+uuid: 6acb6113-a7ba-487b-bf3b-478fea30c6f9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_anim_price
+    - node.type.configurateur_animations
+id: node.configurateur_animations.field_conf_anim_price
+field_name: field_conf_anim_price
+entity_type: node
+bundle: configurateur_animations
+label: 'Prix par participant'
+description: "Fill in variant for each price above:\r\n<ul>\r\n<li>10-19</li>\r\n<li>20-29</li>\r\n<li>30-39</li>\r\n<li>40-49</li>\r\n<li>50-59</li>\r\n<li>60-69</li>\r\n<li>70-79</li>\r\n<li>80-89</li>\r\n<li>90-99</li>\r\n<li>100-109</li>\r\n</ul>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

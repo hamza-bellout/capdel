@@ -1,0 +1,21 @@
+uuid: 981484ed-faac-494e-803c-022c73577d5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_field_sub_tax_type
+    - node.type.event_subpackage
+id: node.event_subpackage.field_field_sub_tax_type
+field_name: field_field_sub_tax_type
+entity_type: node
+bundle: event_subpackage
+label: field_sub_tax_type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

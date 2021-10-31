@@ -1,0 +1,22 @@
+uuid: 38ad804f-682f-417d-bfd0-6a41c2b37f1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_event_activity_indoor
+field_name: field_event_activity_indoor
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

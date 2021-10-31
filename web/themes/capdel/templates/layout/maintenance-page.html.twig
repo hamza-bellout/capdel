@@ -1,0 +1,100 @@
+{#
+/**
+ * @file
+ * Bootstrap Barrio's theme implementation to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+ #}
+<header id="header" class="header" role="banner" aria-label="Site header">
+  <div class="top-bar">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="/themes/capdel/logo.svg" alt="CAPDEL EASY EVENTS SERVICES" width="129" height="35">
+        </a>
+      </div>
+      <div class="info-support d-none d-md-block">
+        <span class="text">Plus d’informations au</span> <a href="tel:33141342100" class="phone"><span class="icon-phone"></span> <u>+33 1 41 34 21 00</u></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="main-wrapper" class="layout-main-wrapper clearfix">
+  <main id="main" class="mt-0">
+    <div class="container content-holder">
+      <div class="row justify-content-center mt-4 error_page">
+
+        <div class="col-auto">
+          <img src="/themes/capdel/images/img_error_500.svg">
+        </div>
+        <div class="w-100"></div>
+        <div class="col text-center mt-5">
+          <div class="heading-title">
+            <h1>
+              <span>Site en maintenance</span>
+            </h1>
+          </div>
+          <p>Pour un meilleur service, notre site <a href="#">capdel.fr</a> fait une mise à jour. Cela ne durera pas longtemps.</p>
+          <p>Nous vous invitons à revenir plus tard ou à nous contacter au 01 41 34 21 00</p>
+          <p>Vous préférez par e-mail ? Écrivez-nous à <a href="mailto:votreprojet@capdel.com">votreprojet@capdel.com</a></p>
+          <p>__</p>
+          <p>Merci pour votre compréhension,</p>
+          <p>A bientôt,</p>
+          <p>__</p>
+          <p>L’équipe Capdel</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer id="footer">
+  <div class="container footer-info">
+    <div class="row footer-holder">
+      <div class="col-md-3 d-none d-md-block">
+        <div class="logo"><a href="/"><img src="/themes/capdel/logo.svg" alt="CAPDEL EASY EVENTS SERVICES" width="152" height="42"></a></div>
+        <div class="address-info">
+          <address>
+            <strong>Adresse</strong><br>
+            25, rue Notre-Dame-des-Victoires<br>
+            75002 Paris<br>
+            France
+          </address>
+          <address>
+            <strong>Téléphone</strong><br>
+            <a href="tel:33141342100">+(33) 1 41 34 21 00</a>
+          </address>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="social-info">
+            <strong class="title">Nous suivre sur</strong>
+            <ul class="list-inline social-networks">
+              <li>
+                <a href="https://www.facebook.com/capdel.events/" class="item-title">
+                  <span class="icon-facebook"></span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/capdel---hopscotch-groupe/" class="item-title">
+                  <span class="icon-linkedin"></span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/capdel_events?lang=fr" class="item-title">
+                  <span class="icon-twitter"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

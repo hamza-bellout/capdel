@@ -1,0 +1,27 @@
+uuid: 5663ec96-dad2-4ef0-b5cc-fc59b8d92daf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_lieu_tax_details
+    - node.type.conf_lieu
+id: node.conf_lieu.field_conf_lieu_tax_details
+field_name: field_conf_lieu_tax_details
+entity_type: node
+bundle: conf_lieu
+label: Details
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

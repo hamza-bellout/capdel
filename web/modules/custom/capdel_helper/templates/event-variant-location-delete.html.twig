@@ -1,0 +1,13 @@
+{% if variant is not empty %}
+  <form method="post" action="{{ update_action }}" id="event-variant-location-form">
+    <input data-drupal-selector="edit-node-event-subpackage-edit-form-form-token" type="hidden" name="token" value="{{ token }}"/>
+
+    {{ 'This action cannot be undone.'|t }}
+
+    <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+      <input type="submit" class="button button--primary js-form-submit form-submit" value="{{ 'Delete'|t }}"/>
+      <a href="/node/{{ event.id }}/price_wizard" class="button js-form-submit form-submit">{{ 'Cancel'|t }}</a>
+    </div>
+
+  </form>
+{% endif %}

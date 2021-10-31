@@ -1,0 +1,18 @@
+uuid: f99273a2-e3f2-4eaf-91f8-6df7a2ab73c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_filters
+id: taxonomy_term.tax_filters.name
+field_name: name
+entity_type: taxonomy_term
+bundle: tax_filters
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

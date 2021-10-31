@@ -1,0 +1,23 @@
+uuid: 8e59e074-8d06-4c5e-9a5e-f458dce2bf53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_tb_duration
+    - node.type.configurateur_tb_and_anim
+id: node.configurateur_tb_and_anim.field_conf_tb_duration
+field_name: field_conf_tb_duration
+entity_type: node
+bundle: configurateur_tb_and_anim
+label: Duration
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,25 @@
+uuid: ce64b3c6-3b86-49af-a4f5-d45a884c6225
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomy_block
+    - field.storage.block_content.field_tax_block_url
+id: block_content.taxonomy_block.field_tax_block_url
+field_name: field_tax_block_url
+entity_type: block_content
+bundle: taxonomy_block
+label: Url
+description: 'Fill in urls where the user should be redirected after click on the taxonomy tile'
+required: false
+translatable: false
+default_value:
+  -
+    value: '#'
+  -
+    value: '#'
+  -
+    value: '#'
+default_value_callback: ''
+settings: {  }
+field_type: string

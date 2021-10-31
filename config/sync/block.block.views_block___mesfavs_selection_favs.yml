@@ -1,0 +1,30 @@
+uuid: efa9043e-8c00-4bf6-a74c-3a2beef9c112
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view._mesfavs_selection
+  module:
+    - system
+    - views
+  theme:
+    - capdel
+id: views_block___mesfavs_selection_favs
+theme: capdel
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:_mesfavs_selection-favs'
+settings:
+  id: 'views_block:_mesfavs_selection-favs'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /mes-favoris
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,28 @@
+uuid: a81c3509-a2f4-43e6-922e-13e762889df0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tb_ref_lieu
+    - node.type.conf_lieu
+    - node.type.configurateur_tb_and_anim
+id: node.configurateur_tb_and_anim.field_tb_ref_lieu
+field_name: field_tb_ref_lieu
+entity_type: node
+bundle: configurateur_tb_and_anim
+label: 'Referenced Lieu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      conf_lieu: conf_lieu
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

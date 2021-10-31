@@ -1,0 +1,194 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+    set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+]
+%}
+
+{% if display_id == 'conf_activities' or display_id == 'conf_animations' %}
+    {% set displayArray = [] %}
+    {% set headerCounter = 0 %}
+    {% for row in rows[0]['#rows'] %}
+        {% set item = resolveSearchResultRow(row['#row']) %}
+
+        {% set query = getQueryParams() %}
+        {% set priceCount = query['raw']['participant'] %}
+        {% set selectedPlace = query['raw']['sel_place'] %}
+        {% set itemEnt = getConfigurateurEntityInfo(item) %}
+
+        {% if (priceCount is not null)  %}
+            {# get number of participants and transform it to proper price group,
+             with transp. to int and align to 0 array count #}
+            {% set priceCount = (((priceCount/10)|round(0,'floor')|number_format) - 1) %}
+        {% else %}
+            {# set first price group #}
+            {% set priceCount = 0 %}
+        {% endif %}
+
+        {# check if availability - if the price = 0, we do not display the item #}
+        {% if itemEnt['price'] %}
+            {% if priceCount == 0 or ((itemEnt['price'] is iterable) and itemEnt['price'][priceCount]['value'] == 0) or (itemEnt['price'] == 0)  %}
+                {% set headerCounter = headerCounter - 1 %}
+            {% else %}
+                {% set displayArray = displayArray|merge([row])  %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% if headerCounter < 0 and header %}
+        {% set header = removeValueFromHeader(header,headerCounter) %}
+    {% endif %}
+{% endif %}
+
+<div class="container">
+    <div class="{{ dom_id ? 'js-view-dom-id-' ~ dom_id }}">
+        {{ title_prefix }}
+        {% if title %}
+            {{ title }}
+        {% endif %}
+        {{ title_suffix }}
+        {% if header %}
+            <div class="view-header heading-title">
+              {% if header['result']['#markup'] == '<h2><span>0 lieux</span> correspondants</h2>'%}
+                <h2>Aucun lieu ne correspond à votre recherche</h2>
+              {% elseif header['result']['#markup'] == '<h2><span>1 lieux</span> correspondants</h2>' %}
+                <h2><span>1 lieu</span> correspondant</h2>
+              {% elseif header['result']['#markup'] == '<h2><span>0 team building &amp; activités</span> correspondantes</h2>' %}
+                <h2>Aucune activité ne correspond à votre recherche</h2>
+              {% elseif header['result']['#markup'] == '<h2><span>1 team building &amp; activités</span> correspondantes</h2>' %}
+                <h2><span>1 team building &amp; activité</span> correspondant</h2>
+              {% elseif header['result']['#markup'] == '<h2><span>0 animations</span> correspondantes</h2>' %}
+                <h2>Aucune animation ne correspond à votre recherche</h2>
+              {% elseif header['result']['#markup'] == '<h2><span>1 animations</span> correspondantes</h2>' %}
+                <h2><span>1 animation</span> correspondante</h2>
+              {% else %}
+                {{ header }}
+              {% endif %}
+            </div>
+        {% endif %}
+        {% if exposed %}
+            <div class="view-filters hidden">
+                {{ exposed }}
+            </div>
+        {% endif %}
+        {% if attachment_before %}
+            <div class="attachment attachment-before">
+                {{ attachment_before }}
+            </div>
+        {% endif %}
+        {% if rows %}
+        <div class="row">
+            {% set coords = extractCoordinatesFromSearch(rows[0]['#rows']) %}
+            {% set coordJson %}
+              [
+              {% for coord in coords %}
+                {
+                "location": [{{ coord }}],
+                "icon": "{{ file_url(directory ~ '/images/ico-pin.svg') }}"
+                }
+                {% if not loop.last %},{% endif %}
+              {% endfor %}
+              ]
+            {% endset %}
+            {% if display_id != 'conf_animations' %}
+                <div class="col-xxl-3 order-xxl-2">
+                    <div class="google-map" style="background-image: url({{ file_url(directory ~ '/images/img-map.jpg') }}">
+                        <div class="map" data-markers="{{ coordJson|escape }}" data-icon="images/ico-pin.svg"></div>
+                    </div>
+                </div>
+            {% endif %}
+            <input class="view_dom_id" type="hidden" value="{{ dom_id }}"/>
+        <div class="col-xxl-9 order-xxl-1">
+            <div class="row article-row configurator">
+                {% if display_id == 'conf_activities' or display_id == 'conf_animations' %}
+                    {% for row in displayArray %}
+                        {% set rowEntity = resolveSearchResultRow(row['#row']) %}
+                        <div class="col-md-6">
+                            {% include '@capdel/views/configurateur-card.html.twig' with {
+                                'item' : rowEntity,
+                                'type' : 'place',
+                                'show_category' : true
+                            } %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {% for row in rows[0]['#rows'] %}
+                        {% set rowEntity = resolveSearchResultRow(row['#row']) %}
+                        <div class="col-md-6">
+                            {% include '@capdel/views/configurateur-card.html.twig' with {
+                                'item' : rowEntity,
+                                'type' : 'place'
+                            } %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            {% if pager %}
+                {{ pager }}
+            {% endif %}
+        </div>
+        </div>
+        {% elseif empty %}
+          <div class="container content-holder">
+            <div class="view-empty heading-title">
+              <h2>{{ empty }}</h2>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if attachment_after %}
+            <div class="attachment attachment-after">
+                {{ attachment_after }}
+            </div>
+        {% endif %}
+        {% if more %}
+            {{ more }}
+        {% endif %}
+        {% if footer %}
+            <div class="view-footer">
+                {{ footer }}
+            </div>
+        {% endif %}
+        {% if feed_icons %}
+            <div class="feed-icons">
+                {{ feed_icons }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+

@@ -1,0 +1,28 @@
+uuid: 5e01869c-d831-4f40-8067-3cb420a8f8c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_lieu
+    - node.type.conf_lieu
+    - node.type.configurateur_statics
+id: node.configurateur_statics.field_ref_lieu
+field_name: field_ref_lieu
+entity_type: node
+bundle: configurateur_statics
+label: 'Place connected'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      conf_lieu: conf_lieu
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

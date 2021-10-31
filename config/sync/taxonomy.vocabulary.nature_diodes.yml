@@ -1,0 +1,9 @@
+uuid: 50974edd-973b-4275-847d-4caaab6102d8
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Nature Diodes'
+vid: nature_diodes
+description: ''
+hierarchy: 0
+weight: 0

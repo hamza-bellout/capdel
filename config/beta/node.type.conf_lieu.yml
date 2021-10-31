@@ -1,0 +1,18 @@
+uuid: 58593bec-b9a7-4314-b71f-ee134544a78d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Configurateur: lieu'
+type: conf_lieu
+description: ''
+help: ''
+new_revision: null
+preview_mode: 1
+display_submitted: false

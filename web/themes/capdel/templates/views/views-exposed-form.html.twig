@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Theme override for a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if form['#id'] == 'views-exposed-form-search-results-page-search-page' %}
+  {% if url('<current>')['#markup'] ends with '/search' %}
+    {% include '@capdel/views/views-exposed-form-search-search.html.twig' %}
+  {% else %}
+    {% include '@capdel/views/views-exposed-form-home-search.html.twig' %}
+  {% endif %}
+{% elseif form['#id'] == 'views-exposed-form-configurateur-view-conf-lieu'%}
+    {% include '@capdel/views/views-exposed-form-configurator.html.twig' %}
+{% else %}
+  {% include '@bootstrap_barrio/views/views-exposed-form.html.twig' %}
+{% endif %}

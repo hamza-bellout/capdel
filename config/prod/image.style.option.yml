@@ -1,0 +1,24 @@
+uuid: 0c512196-10f8-458b-81f7-0af3efaf99d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.option
+  module:
+    - crop
+name: option
+label: 'Option (275x275)'
+effects:
+  eb747a22-3377-4f1f-803b-c6b759a9a3e6:
+    uuid: eb747a22-3377-4f1f-803b-c6b759a9a3e6
+    id: crop_crop
+    weight: 2
+    data:
+      crop_type: option
+  7b302ca6-0fe9-445d-9fbd-941dbcaa5703:
+    uuid: 7b302ca6-0fe9-445d-9fbd-941dbcaa5703
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 275
+      height: 275

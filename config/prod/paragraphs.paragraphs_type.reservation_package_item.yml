@@ -1,0 +1,9 @@
+uuid: 4016c790-7c9a-40b4-8ef9-149a99d22739
+langcode: en
+status: true
+dependencies: {  }
+id: reservation_package_item
+label: 'Reservation package item'
+icon_uuid: null
+description: 'This is used to keep reservation items in the package entity.'
+behavior_plugins: {  }

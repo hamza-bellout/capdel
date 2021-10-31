@@ -1,0 +1,29 @@
+uuid: 4259cee2-5450-4940-b4c0-3c143df0e1b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search_results_page
+  module:
+    - system
+    - views
+  theme:
+    - capdel
+id: exposedformsearch__search_search_form
+theme: capdel
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:search_results_page-search_page'
+settings:
+  id: 'views_exposed_filter_block:search_results_page-search_page'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /search
+    negate: false
+    context_mapping: {  }

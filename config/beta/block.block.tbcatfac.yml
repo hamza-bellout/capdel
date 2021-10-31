@@ -1,0 +1,29 @@
+uuid: 3c2feadd-6c8f-4f30-9c6d-3ed8906ea9d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.tb_cat_fac
+  module:
+    - facets
+    - system
+  theme:
+    - capdel
+id: tbcatfac
+theme: capdel
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:tb_cat_fac'
+settings:
+  id: 'facet_block:tb_cat_fac'
+  label: '[Conf][Tb]tb categories'
+  provider: facets
+  label_display: '0'
+  block_id: tbcatfac
+visibility:
+  request_path:
+    id: request_path
+    pages: /configurateur/activites
+    negate: false
+    context_mapping: {  }

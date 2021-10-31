@@ -1,0 +1,24 @@
+uuid: 23e7e2d9-0bb1-4bcd-a92b-b9fb864dee1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-bottom-menu
+  module:
+    - system
+  theme:
+    - capdel
+id: capdel_footerbottommenu
+theme: capdel
+region: footer_fifth
+weight: -12
+provider: null
+plugin: 'system_menu_block:footer-bottom-menu'
+settings:
+  id: 'system_menu_block:footer-bottom-menu'
+  label: 'Footer bottom menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

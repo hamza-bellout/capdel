@@ -1,0 +1,42 @@
+uuid: 72a543a5-8aad-4f8d-a439-6b2db53248b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_hold_header
+    - field.field.block_content.block_hold_header.body
+    - field.field.block_content.block_hold_header.field_block_hold_header_image
+    - field.field.block_content.block_hold_header.field_block_hold_header_title
+  module:
+    - image
+    - text
+id: block_content.block_hold_header.default
+targetEntityType: block_content
+bundle: block_hold_header
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_block_hold_header_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_block_hold_header_title:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

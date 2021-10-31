@@ -1,0 +1,9 @@
+uuid: 47a630cf-fad7-44ec-a2fd-dce4882d6bee
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Key accounts'
+vid: key_accounts
+description: ''
+hierarchy: 0
+weight: 0

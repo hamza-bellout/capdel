@@ -1,0 +1,20 @@
+uuid: d29fd705-7b85-4d5a-9d13-e5de3186cb2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - capdel
+id: userlogin
+theme: capdel
+region: highlighted
+weight: -18
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: '0'
+visibility: {  }

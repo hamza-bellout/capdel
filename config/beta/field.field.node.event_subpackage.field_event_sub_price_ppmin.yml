@@ -1,0 +1,23 @@
+uuid: ff307a38-e690-45bf-bfcb-0caea62be076
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_sub_price_ppmin
+    - node.type.event_subpackage
+id: node.event_subpackage.field_event_sub_price_ppmin
+field_name: field_event_sub_price_ppmin
+entity_type: node
+bundle: event_subpackage
+label: 'Price per person min'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

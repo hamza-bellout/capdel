@@ -1,0 +1,21 @@
+uuid: 733ad0f2-6f74-4466-bb51-2a6f271b0874
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_hold
+    - field.storage.block_content.field_block_hold_title
+  module:
+    - text
+id: block_content.block_hold.field_block_hold_title
+field_name: field_block_hold_title
+entity_type: block_content
+bundle: block_hold
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,18 @@
+uuid: 1a6927e9-4cef-4e6e-a779-a7af0e6aeecc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.key_accounts
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.key_accounts
+target_entity_type_id: taxonomy_term
+target_bundle: key_accounts
+default_langcode: fr
+language_alterable: false

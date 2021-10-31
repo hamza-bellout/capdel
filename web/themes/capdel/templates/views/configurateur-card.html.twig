@@ -1,0 +1,365 @@
+{#
+/**
+ * @file
+ * Event card
+ *
+ * Available variables:
+ * - badge
+ * -- label : badge text
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+
+{% set query = getQueryParams() %}
+{% set priceCount = query['raw']['participant'] %}
+{% set selectedPlace = query['raw']['sel_place'] %}
+{% set selectedTB = query['raw']['sel_tb'] %}
+
+{# if the item is the menu item, pass the place entity to get proper price #}
+{% if item.bundle == 'configurateur_statics' %}
+    {% set itemEnt = getConfigurateurEntityInfo(item,selectedPlace) %}
+{% else %}
+    {% set itemEnt = getConfigurateurEntityInfo(item) %}
+{% endif %}
+
+{% if (priceCount is not null)  %}
+    {# get number of participants and transform it to proper price group,
+     with transp. to int and align to 0 array count #}
+    {% set priceCount = (((priceCount/10)|round(0,'floor')|number_format) - 1) %}
+{% else %}
+    {# set first price group #}
+    {% set priceCount = 0 %}
+{% endif %}
+
+{# check if availability - if the price = 0, we do not display the item #}
+{% if item.bundle != 'conf_lieu' and itemEnt['price'] %}
+  {% if priceCount == 0 or ((itemEnt['price'] is iterable) and itemEnt['price'][priceCount]['value'] == 0) or (itemEnt['price'] == 0)  %}
+      {% set display = false %}
+  {% else %}
+      {% set display = true %}
+  {% endif %}
+{% else %}
+    {% set display = true %}
+{% endif %}
+
+{% if display == true %}
+<article class="info-post flip">
+  <div class="info-wrap">
+      {% if itemEnt['bundle'] == 'conf_lieu' %}
+      {% set urlPath = getNodeAlias(item.nid.value) %}
+            <a href="{{  urlPath  }}{{ query['params'] }}" class="conf-place-anchor">
+      {% endif %}
+   {# {% if badge %}
+      <div class="article-badge">{{ badge.label }}</div>
+    {% endif %}#}
+      <figure class="img-holder">
+        {% if itemEnt['images'] is not empty %}
+          <div class="img-wrap">
+              {% if itemEnt['bundle'] == 'configurateur_statics' %}
+                <img class='b-lazy' src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ itemEnt['images'][0]['url']['option'] }}" alt="{{ itemEnt['images'][0]['alt'] }}">
+              {% else %}
+                <img class='b-lazy' src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ itemEnt['images'][0]['url']['search'] }}" alt="{{ itemEnt['images'][0]['alt'] }}">
+              {% endif %}
+          </div>
+            <div class="img-description">
+                {{ itemEnt['description'] }}
+            </div>
+        {% endif %}
+
+        <figcaption class="row caption">
+          {% if itemEnt['destination'] is not empty %}
+          <div class="col-6"><div class="info-location">{{ itemEnt['destination'] }}</div></div>
+          {% endif %}
+          {% if itemEnt['price'] %}
+              {% if itemEnt['price'] is iterable %}
+                  {% if priceCount < 9 and (itemEnt['price'][priceCount]['value'] is not empty) %}
+                      <div class="col-6">
+                          <span class="price-info">à partir de <strong class="price">{{ itemEnt['price'][priceCount]['value'] }} €</strong></span>
+                      </div>
+                  {% endif %}
+              {% else %}
+                  <div class="col-6">
+                      <span class="price-info">à partir de <strong class="price">{{ itemEnt['price'] }} €</strong></span>
+                  </div>
+              {% endif %}
+          {% endif %}
+        </figcaption>
+      </figure>
+      <div class="description">
+        {% if show_category %}<span class="category">{{ itemEnt['category'] }}</span>{% endif %}
+        <h3>{{ item.fields['title'].value }}</h3>
+          {% if (selectedPlace is not empty or selectedTB is not empty) %}
+              {% if(itemEnt['distances'] is not empty and
+                  itemEnt['distances'][selectedPlace] and
+                  itemEnt['distances'][selectedPlace] > 0 and
+                  itemEnt['distances'][selectedPlace] < 1500) %}
+                  {% if(itemEnt['distances'][selectedPlace] > 1000) %}
+                      <p class="distance-blue">
+                          <span class="ico icon-arrow-left2"></span>
+                          <span class="ico icon-arrow-right2"></span>
+                          <strong>{{ (itemEnt['distances'][selectedPlace]/1000)|round(2,'floor')  }}km </strong>
+                           de votre lieu
+                      </p>
+                  {% else %}
+                      <p class="distance-blue">
+                          <span class="ico icon-arrow-left2"></span>
+                          <span class="ico icon-arrow-right2"></span>
+                          <strong>{{ (itemEnt['distances'][selectedPlace])|round(0,'floor')  }}m </strong>
+                          de votre lieu
+                      </p>
+                  {% endif %}
+              {% elseif (itemEnt['distances'] is not empty and
+                  itemEnt['distances'][selectedTB] and
+                  itemEnt['distances'][selectedTB] > 0 and
+                  itemEnt['distances'][selectedTB] < 1500) %}
+                  {% if(itemEnt['distances'][selectedTB] > 1000) %}
+                      <p class="distance-blue">
+                          <span class="ico icon-arrow-left2"></span>
+                          <span class="ico icon-arrow-right2"></span>
+                          <strong>{{ (itemEnt['distances'][selectedTB]/1000)|round(2,'floor')  }}km </strong>
+                          de votre team building
+                      </p>
+                  {% else %}
+                      <p class="distance-blue">
+                          <span class="ico icon-arrow-left2"></span>
+                          <span class="ico icon-arrow-right2"></span>
+                          <strong>{{ (itemEnt['distances'][selectedTB])|round(0,'floor')  }}m </strong>
+                          de votre team building
+                      </p>
+                  {% endif %}
+              {% endif %}
+          {% endif %}
+          {% set text = itemEnt['short_description'] %}
+          {{ text }}
+          <div class="clearfix mt-2">
+              <div class="selection-remove hidden" {{ attributes.setAttribute('data-id',item.nid.value) }}>
+                  <div class="float-right">
+                      <a href="#" class="link-more align-middle action"
+                         {{ attributes.setAttribute('data-id',item.nid.value) }}
+                         {{ attributes.setAttribute('data-bundle',itemEnt['bundle']) }}
+                              {% if itemEnt['bundle'] == 'configurateur_statics' and itemEnt['is_countable'] %}
+                                  {{ create_attribute({'data-countable': 'true'}) }}
+                              {% else %}
+                                  {{ create_attribute({'data-countable': 'false'}) }}
+                              {% endif %}
+                          {{ create_attribute({'data-action': 'remove'}) }}
+                          {% if itemEnt['price'] %}
+                              {% if itemEnt['price'] is iterable %}
+                                  {% if priceCount < 9 and (itemEnt['price'][priceCount]['value'] is not empty) %}
+                                      {{ create_attribute({'data-price': itemEnt['price'][priceCount]['value']}) }}
+                                  {% endif %}
+                              {% else %}
+                                  {{ create_attribute({'data-price': itemEnt['price']}) }}
+                              {% endif %}
+                          {% endif %}
+                          {% if itemEnt['default_price'] %}
+                              {{ create_attribute({'data-defaultprice': itemEnt['default_price']}) }}
+                          {% endif %}
+                          {{ create_attribute({'data-title': item.fields['title'].value}) }}
+                          {{ create_attribute({'data-category': itemEnt['category']}) }}
+
+                          {% if itemEnt['destination'] is not empty %}
+                              {{ create_attribute({'data-destination': itemEnt['destination']}) }}
+                          {% endif %}
+
+                          {% if type %}
+                              {{ create_attribute({'data-type': type }) }}
+                          {% endif %}
+
+                        >Retirer <span class="icon-close"
+                          {{ attributes.setAttribute('data-id',item.nid.value) }}
+                          {{ attributes.setAttribute('data-bundle',itemEnt['bundle']) }}
+                          {% if itemEnt['bundle'] == 'configurateur_statics' and itemEnt['is_countable'] %}
+                            {{ create_attribute({'data-countable': 'true'}) }}
+                          {% else %}
+                            {{ create_attribute({'data-countable': 'false'}) }}
+                          {% endif %}
+                          {{ create_attribute({'data-action': 'remove'}) }}
+                                  {% if itemEnt['price'] %}
+                                      {% if itemEnt['price'] is iterable %}
+                                          {% if priceCount < 9 and (itemEnt['price'][priceCount]['value'] is not empty) %}
+                                              {{ create_attribute({'data-price': itemEnt['price'][priceCount]['value']}) }}
+                                          {% endif %}
+                                      {% else %}
+                                          {{ create_attribute({'data-price': itemEnt['price']}) }}
+                                      {% endif %}
+                                  {% endif %}
+                                  {% if itemEnt['default_price'] %}
+                                      {{ create_attribute({'data-defaultprice': itemEnt['default_price']}) }}
+                                  {% endif %}
+                                  {{ create_attribute({'data-title': item.fields['title'].value}) }}
+                          {{ create_attribute({'data-category': itemEnt['category']}) }}
+
+                          {% if itemEnt['destination'] is not empty %}
+                            {{ create_attribute({'data-destination': itemEnt['destination']}) }}
+                          {% endif %}
+
+                          {% if type %}
+                            {{ create_attribute({'data-type': type }) }}
+                          {% endif %}></span></a>
+                  </div>
+                  <span class="text-selected">
+                  <i class="icon-check"></i> Sélectionné
+              </span>
+              </div>
+              <div class="selection-add" {{ attributes.setAttribute('data-id',item.nid.value) }}>
+                  <a href="#" class="link-more align-middle action"
+                      {{ attributes.setAttribute('data-id',item.nid.value) }}
+                      {{ attributes.setAttribute('data-bundle',itemEnt['bundle']) }}
+                          {% if itemEnt['bundle'] == 'configurateur_statics' and itemEnt['is_countable'] %}
+                              {{ create_attribute({'data-countable': 'true'}) }}
+                          {% else %}
+                              {{ create_attribute({'data-countable': 'false'}) }}
+                          {% endif %}
+                      {{ attributes.removeAttribute('data-action') }}
+                      {{ create_attribute({'data-action': 'add'}) }}
+                          {% if itemEnt['price'] %}
+                              {% if itemEnt['price'] is iterable %}
+                                  {% if priceCount < 9 and (itemEnt['price'][priceCount]['value'] is not empty) %}
+                                      {{ create_attribute({'data-price': itemEnt['price'][priceCount]['value']}) }}
+                                  {% endif %}
+                              {% else %}
+                                  {{ create_attribute({'data-price': itemEnt['price']}) }}
+                              {% endif %}
+                          {% endif %}
+                          {% if itemEnt['default_price'] %}
+                              {{ create_attribute({'data-defaultprice': itemEnt['default_price']}) }}
+                          {% endif %}
+                      {{ create_attribute({'data-title': item.fields['title'].value}) }}
+                      {{ create_attribute({'data-category': itemEnt['category']}) }}
+
+                      {% if itemEnt['destination'] is not empty %}
+                          {{ create_attribute({'data-destination': itemEnt['destination']}) }}
+                      {% endif %}
+
+                      {% if type %}
+                          {{ create_attribute({'data-type': type }) }}
+                      {% endif %}
+                  >Ajouter à la sélection <span class="icon-plus"
+
+                      {{ attributes.setAttribute('data-id',item.nid.value) }}
+                      {{ attributes.setAttribute('data-bundle',itemEnt['bundle']) }}
+                      {% if itemEnt['bundle'] == 'configurateur_statics' and itemEnt['is_countable'] %}
+                        {{ create_attribute({'data-countable': 'true'}) }}
+                      {% else %}
+                        {{ create_attribute({'data-countable': 'false'}) }}
+                      {% endif %}
+                      {{ attributes.removeAttribute('data-action') }}
+                      {{ create_attribute({'data-action': 'add'}) }}
+                      {% if itemEnt['price'] %}
+                        {% if itemEnt['price'] is iterable %}
+                          {% if priceCount < 9 and (itemEnt['price'][priceCount]['value'] is not empty) %}
+                            {{ create_attribute({'data-price': itemEnt['price'][priceCount]['value']}) }}
+                          {% endif %}
+                        {% else %}
+                          {{ create_attribute({'data-price': itemEnt['price']}) }}
+                        {% endif %}
+                      {% endif %}
+                      {{ create_attribute({'data-title': item.fields['title'].value}) }}
+                      {{ create_attribute({'data-category': itemEnt['category']}) }}
+
+                      {% if itemEnt['destination'] is not empty %}
+                        {{ create_attribute({'data-destination': itemEnt['destination']}) }}
+                      {% endif %}
+
+                      {% if type %}
+                        {{ create_attribute({'data-type': type }) }}
+                      {% endif %}
+                    ></span></a>
+              </div>
+          </div>
+      </div>
+    {% if itemEnt['bundle'] == 'conf_lieu' %}
+        </a>
+    {% endif %}
+  </div>
+    {% if itemEnt['bundle'] == 'configurateur_statics' and itemEnt['is_countable'] %}
+    <div class="counter">
+        <a class="btn-counter icon-minus-o col-4 action" href="#"
+                {{ attributes.setAttribute('data-id',item.nid.value) }}
+                {{ create_attribute({'data-action': 'count-minus'}) }}
+
+                {{ attributes.setAttribute('data-id',item.nid.value) }}
+                {{ attributes.setAttribute('data-bundle',itemEnt['bundle']) }}
+                {{ create_attribute({'data-countable': 'true'}) }}
+                {% if itemEnt['price'] %}
+                    {% if itemEnt['price'] is iterable %}
+                        {% if priceCount < 9 and (itemEnt['price'][priceCount]['value'] is not empty) %}
+                            {{ create_attribute({'data-price': itemEnt['price'][priceCount]['value']}) }}
+                        {% endif %}
+                    {% else %}
+                        {{ create_attribute({'data-price': itemEnt['price']}) }}
+                    {% endif %}
+                {% endif %}
+                {% if itemEnt['default_price'] %}
+                    {{ create_attribute({'data-defaultprice': itemEnt['default_price']}) }}
+                {% endif %}
+                {{ create_attribute({'data-title': item.fields['title'].value}) }}
+                {{ create_attribute({'data-category': itemEnt['category']}) }}
+
+                {% if itemEnt['destination'] is not empty %}
+                    {{ create_attribute({'data-destination': itemEnt['destination']}) }}
+                {% endif %}
+
+                {% if type %}
+                    {{ create_attribute({'data-type': type }) }}
+                {% endif %}
+        ></a>
+        <input class="col-4 count-value" type="text" value="1"
+                {{ attributes.setAttribute('data-id',item.nid.value) }}>
+        <a class="btn-counter icon-plus-o col-4 action" href="#"
+                {{ attributes.setAttribute('data-id',item.nid.value) }}
+                {{ create_attribute({'data-action': 'count-add'}) }}
+
+                {{ attributes.setAttribute('data-id',item.nid.value) }}
+                {{ attributes.setAttribute('data-bundle',itemEnt['bundle']) }}
+                {{ create_attribute({'data-countable': 'true'}) }}
+                {% if itemEnt['price'] %}
+                    {% if itemEnt['price'] is iterable %}
+                        {% if priceCount < 9 and (itemEnt['price'][priceCount]['value'] is not empty) %}
+                            {{ create_attribute({'data-price': itemEnt['price'][priceCount]['value']}) }}
+                        {% endif %}
+                    {% else %}
+                        {{ create_attribute({'data-price': itemEnt['price']}) }}
+                    {% endif %}
+                {% endif %}
+                {% if itemEnt['default_price'] %}
+                    {{ create_attribute({'data-defaultprice': itemEnt['default_price']}) }}
+                {% endif %}
+                {{ create_attribute({'data-title': item.fields['title'].value}) }}
+                {{ create_attribute({'data-category': itemEnt['category']}) }}
+
+                {% if itemEnt['destination'] is not empty %}
+                    {{ create_attribute({'data-destination': itemEnt['destination']}) }}
+                {% endif %}
+
+                {% if type %}
+                    {{ create_attribute({'data-type': type }) }}
+                {% endif %}
+        ></a>
+    </div>
+    {% endif %}
+</article>
+{% endif %}

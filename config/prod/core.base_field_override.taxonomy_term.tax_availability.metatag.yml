@@ -1,0 +1,18 @@
+uuid: 4b5de564-1d8d-45e6-b7e5-dadae273802c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_availability
+id: taxonomy_term.tax_availability.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: tax_availability
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

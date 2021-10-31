@@ -1,0 +1,30 @@
+uuid: e477e007-dda4-488e-b472-73a55cab96cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view._home_selection
+  module:
+    - system
+    - views
+  theme:
+    - capdel
+id: capdel_views_block___home_selection_block_1
+theme: capdel
+region: content
+weight: -17
+provider: null
+plugin: 'views_block:_home_selection-block_1'
+settings:
+  id: 'views_block:_home_selection-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

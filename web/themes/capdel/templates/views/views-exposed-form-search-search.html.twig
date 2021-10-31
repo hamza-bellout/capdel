@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Theme override for a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+{{ q }}
+{% endif %}
+<h2 class="white">Votre recherche</h2>
+{% for field_name,field in form['#info'] %}
+  {% if field['value'] == 'evenement_prix' %}
+    {% include '@capdel/form/form-search-search--field_event_sub_price_ppmin.html.twig' %}
+  {% elseif field['value'] == 'evenement_tous' %}
+    <div class="visually-hidden">
+      {{ field['value'] }}
+    </div>
+  {% elseif field['value'] == 'date' %}
+    {% include '@capdel/form/form-search--field_event_sub_tax_availability.html.twig' %}
+  {% else %}
+    {{ form[field['value']] }}
+  {% endif %}
+{% endfor %}
+
+{{ form.actions.submit }}
+
+<script type="text/javascript">
+    //override for cache loaded form issue
+    jcf.replaceAll();
+    initSearchForm();
+</script>

@@ -1,0 +1,12 @@
+uuid: ce51b734-9327-41f4-a05c-b7198c11ce63
+langcode: en
+status: true
+dependencies: {  }
+label: 'Search (405x228)'
+id: search
+description: ''
+aspect_ratio: '405:228'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

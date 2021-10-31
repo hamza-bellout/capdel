@@ -1,0 +1,16 @@
+uuid: f0608e89-cfc1-4438-906d-847f2a93ddca
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.configurateur_statics
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.configurateur_statics
+target_entity_type_id: node
+target_bundle: configurateur_statics
+default_langcode: fr
+language_alterable: false

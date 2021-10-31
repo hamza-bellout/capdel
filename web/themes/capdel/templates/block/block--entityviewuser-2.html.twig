@@ -1,0 +1,147 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="icon-close"></span>
+        </button>
+
+        <h1 class="modal-title">Créez <span>votre compte</span></h1>
+        {% set form = getUserRegistrationForm() %}
+
+        <form class="user-register-form user-form" data-user-info-from-browser="" data-drupal-selector="user-register-form"
+              action="/" onsubmit="updateRegisterForm()" method="post" id="user-register-form" accept-charset="UTF-8"
+              data-drupal-form-fields="edit-mail,edit-name--2,edit-pass-pass1,edit-pass-pass2,edit-field-company-0-value,edit-field-civility,edit-field-phone-0-value,edit-field-last-name-0-value,edit-field-first-name-0-value,edit-field-function-0-value,edit-field-newsletter-subscription-value,edit-submit--2">
+          {{ form.form_build_id }}
+          {{ form.form_token }}
+          {{ form.form_id }}
+          {{ form.url }}
+          {{ form.honeypot_time }}
+
+          <input type="hidden" name="destination" value="{{ getRequestUri() }}"/>
+          <input type="hidden" name="name" value=""/>
+
+          <div class="form-row">
+            <div class="col-md-6 col-md-12">
+             {{ form.field_company }}
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="civility">Civilité</label>
+              <div class="btn-group-sm btn-group-toggle mt-2" data-toggle="buttons">
+                <label class="btn btn-outline active mr-2">
+                  <input type="radio" name="field_civility" id="option1" value="Mr" autocomplete="off" checked> {{ 'Mr'|t }}
+                </label>
+                <label class="btn btn-outline">
+                  <input type="radio" name="field_civility" id="option2" value="Mrs" autocomplete="off"> {{ 'Mme'|t }}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6">
+              {{ form.field_last_name }}
+            </div>
+            <div class="col-md-6">
+               {{ form.field_first_name }}
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-6">
+              {{ form.field_function }}
+            </div>
+            <div class="col-md-6">
+              {{ form.field_phone }}
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-6">
+              {{ form.account.mail }}
+            </div>
+            <div class="col-md-6">
+              <fieldset class="form">
+                <label for="confirm-email">{{ 'Confirmer votre email'|t }}</label>
+                <input type="email" class="form-control" id="confirm-email" required>
+              </fieldset>
+            </div>
+          </div>
+
+          <div id="emailNotMatch" class="help-block text-red text-center mb-3 hidden">
+            {{ 'Les emails ne correspondent pas'|t }}
+          </div>
+
+          <div id="emailExists" class="help-block text-red text-center mb-3 hidden">
+            {{ 'Cet email existe déjà'|t }}
+          </div>
+
+          {% if form.account.pass is not empty  %}
+          <div class="form-row">
+            {{ form.account.pass }}
+          </div>
+          {% endif %}
+
+          <div class="form-group">
+            {{ form.field_newsletter_subscription }}
+          </div>
+
+          <div id="notAllFields" class="help-block text-red text-center mb-3 hidden">
+            {{ 'Attention, vous n’avez pas rempli tous les champs'|t }}
+          </div>
+
+          <div class="mb-3 text-center">
+            {{ form.actions }}
+          </div>
+          <div class="separate-or">
+            <span>ou</span>
+          </div>
+          <div class="text-center">
+            {{ 'Déjà un compte ?'|t }}
+            <a href="#" class="link" data-dismiss="modal" data-toggle="modal" data-target="#loginModal" onclick="loginTo('/')"><strong>{{ 'Connectez-vous !'|t }}</strong></a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  //override for cache loaded form issue
+  setTimeout(function(){
+    jcf.replaceAll();
+  }, 500);
+</script>

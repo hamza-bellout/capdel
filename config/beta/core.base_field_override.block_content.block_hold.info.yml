@@ -1,0 +1,18 @@
+uuid: 78febb2b-a826-4912-b8e8-772e781c214a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_hold
+id: block_content.block_hold.info
+field_name: info
+entity_type: block_content
+bundle: block_hold
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 397587bb-b37e-4d78-9279-a7860c46fbe3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_lieu_max_par
+    - node.type.conf_lieu
+id: node.conf_lieu.field_conf_lieu_max_par
+field_name: field_conf_lieu_max_par
+entity_type: node
+bundle: conf_lieu
+label: 'Max participants'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

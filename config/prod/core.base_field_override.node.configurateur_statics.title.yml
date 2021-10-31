@@ -1,0 +1,18 @@
+uuid: 64e3d584-b757-4f74-9f19-72254d17aab1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.configurateur_statics
+id: node.configurateur_statics.title
+field_name: title
+entity_type: node
+bundle: configurateur_statics
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 10cbe143-e389-4f38-9594-4fb9640bb1b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tax_legacy_id
+    - taxonomy.vocabulary.tax_destination
+id: taxonomy_term.tax_destination.field_tax_legacy_id
+field_name: field_tax_legacy_id
+entity_type: taxonomy_term
+bundle: tax_destination
+label: 'Legacy ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

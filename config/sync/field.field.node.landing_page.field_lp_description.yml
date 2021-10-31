@@ -1,0 +1,22 @@
+uuid: 4ac53f27-4388-480c-84b8-a9ee56a03068
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lp_description
+    - node.type.landing_page
+  module:
+    - text
+id: node.landing_page.field_lp_description
+field_name: field_lp_description
+entity_type: node
+bundle: landing_page
+label: Description
+description: 'Please fill in the description text for the landing page'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

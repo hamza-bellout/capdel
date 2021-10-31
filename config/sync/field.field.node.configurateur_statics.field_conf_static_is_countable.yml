@@ -1,0 +1,23 @@
+uuid: 6cc46538-3191-4404-953f-cdae19a80750
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_static_is_countable
+    - node.type.configurateur_statics
+id: node.configurateur_statics.field_conf_static_is_countable
+field_name: field_conf_static_is_countable
+entity_type: node
+bundle: configurateur_statics
+label: 'Is countable'
+description: 'If the user should select quantity of the option or not'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,112 @@
+{#
+/**
+ * @file
+ * Theme override for a form element.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - errors: (optional) Any errors for this form element, may not be set.
+ * - prefix: (optional) The form element prefix, may not be set.
+ * - suffix: (optional) The form element suffix, may not be set.
+ * - required: The required marker, or empty if the associated form element is
+ *   not required.
+ * - type: The type of the element.
+ * - name: The name of the element.
+ * - label: A rendered label element.
+ * - label_display: Label display setting. It can have these values:
+ *   - before: The label is output before the element. This is the default.
+ *     The label includes the #title and the required marker, if #required.
+ *   - after: The label is output after the element. For example, this is used
+ *     for radio and checkbox #type elements. If the #title is empty but the
+ *     field is #required, the label will contain only the required marker.
+ *   - invisible: Labels are critical for screen readers to enable them to
+ *     properly navigate through forms but can be visually distracting. This
+ *     property hides the label for everyone except screen readers.
+ *   - attribute: Set the title attribute on the element to create a tooltip but
+ *     output no label element. This is supported only for checkboxes and radios
+ *     in \Drupal\Core\Render\Element\CompositeFormElementTrait::preRenderCompositeFormElement().
+ *     It is used where a visual label is not needed, such as a table of
+ *     checkboxes where the row and column provide the context. The tooltip will
+ *     include the title and required marker.
+ * - description: (optional) A list of description properties containing:
+ *    - content: A description of the form element, may not be set.
+ *    - attributes: (optional) A list of HTML attributes to apply to the
+ *      description content wrapper. Will only be set when description is set.
+ * - description_display: Description display setting. It can have these values:
+ *   - before: The description is output before the element.
+ *   - after: The description is output after the element. This is the default
+ *     value.
+ *   - invisible: The description is output after the element, hidden visually
+ *     but available to screen readers.
+ * - disabled: True if the element is disabled.
+ * - title_display: Title display setting.
+ *
+ * @see template_preprocess_form_element()
+ */
+#}
+
+{#FIXME: Limit the template to only one ID, as now it grabs every 'form-element' it finds #}
+{#FIXME: Add the layout case for search in the sidebar (on search result page), currently is implemented as a top bar for home page #}
+{% if url('<current>')['#markup'] ends with '/home' %}
+  {% if type == "radio" %}
+    <label class="btn btn-outline mr-2">
+      {{ children }} {{ label }}
+    </label>
+  {% elseif type == "checkbox" %}
+    {{ children }} {{ label }}
+  {% elseif 'name' in name or 'pass' in name %}
+    {% include '@capdel/form/form-login.html.twig' %}
+  {% else %}
+      {% if name == 'format_date' or
+          name == 'destination' or
+          name == 'participant'
+      %}
+          {% include '@capdel/form/form-element--base.html.twig' with {
+              'custom_classes' : 'col-md-6 col-lg-3 d-none d-sm-block',
+          } %}
+      {% elseif name == 'type_evenement' %}
+          {% include '@capdel/form/form-element--base.html.twig' with {
+              'custom_classes' : 'col-md-6 col-lg-3',
+          } %}
+      {% else %}
+          {% include '@capdel/form/form-element--base.html.twig' %}
+      {% endif %}
+    {% endif %}
+{% elseif url('<current>')['#markup'] matches '/.*configurateur.*/' %}
+    {% include '@capdel/form/form-element--base.html.twig' with {
+        'custom_classes' : 'col-md-6 col-xl form-group',
+    } %}
+{% elseif url('<current>')['#markup'] ends with '/search' %}
+  {%  if 'name' in name or 'pass' in name %}
+    {% include '@capdel/form/form-login.html.twig' %}
+  {% else %}
+    {% include '@capdel/form/form-element--base.html.twig' %}
+  {% endif %}
+{% elseif url('<current>')['#markup'] matches '/.*profileedit.*/' %}
+  {% if type == "radio" %}
+    {% if element['#attributes']['checked'] ==  'checked'%}
+      <label class="btn btn-outline active mr-2">
+    {% else %}
+        <label class="btn btn-outline mr-2">
+    {% endif %}
+      {{ children }} {{ label }}
+    </label>
+  {% elseif type == "checkbox" %}
+    {{ children }} {{ label }}
+  {% else %}
+    <div class="form-group custom-formatted {% if type == 'hidden' %}d-none {% endif %}">
+      <label>{{ label }}</label>
+      {{ children }}
+    </div>
+  {% endif %}
+{% else %}
+  {% if type == "radio" %}
+    <label class="btn btn-outline mr-2">
+      {{ children }} {{ label }}
+    </label>
+  {% elseif type == "checkbox" %}
+    {{ children }} {{ label }}
+  {% else %}
+    {% include '@bootstrap_barrio/form/form-element.html.twig' %}
+  {% endif %}
+{% endif %}

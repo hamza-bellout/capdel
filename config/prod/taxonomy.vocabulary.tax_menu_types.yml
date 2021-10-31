@@ -1,0 +1,9 @@
+uuid: d82fccbf-5b16-41b7-9a45-28bbc9597ddf
+langcode: en
+status: true
+dependencies: {  }
+name: 'Menu Types'
+vid: tax_menu_types
+description: 'First level of the Filters taxonomy e.g. SOIREE D''ENTREPRISE'
+hierarchy: 1
+weight: 0

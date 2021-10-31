@@ -1,0 +1,18 @@
+uuid: bf01465d-0f31-41c5-b66e-2b678be8a1c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.package
+id: node.package.created
+field_name: created
+entity_type: node
+bundle: package
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

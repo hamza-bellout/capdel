@@ -1,0 +1,16 @@
+uuid: 514e6570-6065-4459-8b51-68c44fc2cbb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.configurateur_tb_and_anim
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.configurateur_tb_and_anim
+target_entity_type_id: node
+target_bundle: configurateur_tb_and_anim
+default_langcode: fr
+language_alterable: false

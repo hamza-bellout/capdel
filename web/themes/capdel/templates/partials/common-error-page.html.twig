@@ -1,0 +1,41 @@
+{% set menu = getMenu('error-page-links',0) %}
+{% set user = getUserID() %}
+
+<main id="main" class="mt-0">
+  <div class="container content-holder">
+    <div class="row justify-content-center mt-4 error_page">
+      <div class="col-auto">
+        <img src="/themes/capdel/images/img_error_404.svg">
+      </div>
+      <div class="w-100"></div>
+      <div class="col text-center mt-5">
+        <div class="heading-title">
+          <h1>
+            <span>{{ 'Page introuvable.'|t }}</span>
+          </h1>
+        </div>
+        <p>{{ 'Oups votre page est actuellement en séminaire à Lyon. Nous sommes navrés pour cette erreur.'|t }}</p>
+        <div id="error-page-links">
+          <p>{{ 'Voici quelques liens indispensables :'|t }}</p>
+          <ul>
+            {% for item in menu %}
+              {% if item['key'] == 'configurator' %}
+                {% if user == 0 %}
+                  <li>
+                    <a href="{{ item['url'] }}" data-toggle="modal" data-target="#loginModal" onclick="loginTo('/configurateur')">{{ item['title'] }}</a>
+                  </li>
+                {% else %}
+                  <li>
+                    <a href="{{ item['url'] }}">{{ item['title'] }}</a>
+                  </li>
+                {% endif %}
+              {% else %}
+                <li><a href="{{ item['url'] }}">{{ item['title'] }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

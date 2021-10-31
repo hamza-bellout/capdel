@@ -1,0 +1,29 @@
+uuid: aa2c268c-b2ee-4610-8bf1-7271b58c6d28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_tax_duration_type
+    - node.type.event
+    - taxonomy.vocabulary.event_duration_type
+id: node.event.field_event_tax_duration_type
+field_name: field_event_tax_duration_type
+entity_type: node
+bundle: event
+label: 'Event Duration type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_duration_type: event_duration_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

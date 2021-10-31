@@ -1,0 +1,19 @@
+uuid: 19ec34d7-d39e-4d98-a549-95ed6e690a3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_lieu_geo_params
+    - node.type.conf_lieu
+id: node.conf_lieu.field_conf_lieu_geo_params
+field_name: field_conf_lieu_geo_params
+entity_type: node
+bundle: conf_lieu
+label: 'Location coordinates'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: da48c437-34f6-49c3-8cd8-078a0174e538
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_static_is_drink_item
+    - node.type.configurateur_statics
+id: node.configurateur_statics.field_conf_static_is_drink_item
+field_name: field_conf_static_is_drink_item
+entity_type: node
+bundle: configurateur_statics
+label: 'Drink type'
+description: 'Check if the item is the menu type and it should be drink'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

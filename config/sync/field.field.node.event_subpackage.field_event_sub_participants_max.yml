@@ -1,0 +1,23 @@
+uuid: 9fffb005-221d-41c9-a26c-2da66f0d84fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_sub_participants_max
+    - node.type.event_subpackage
+id: node.event_subpackage.field_event_sub_participants_max
+field_name: field_event_sub_participants_max
+entity_type: node
+bundle: event_subpackage
+label: 'Number of max participants'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

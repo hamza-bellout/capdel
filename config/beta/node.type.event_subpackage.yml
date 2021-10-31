@@ -1,0 +1,17 @@
+uuid: 174ce2e1-1132-4c32-a40a-ed1641956d35
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Event Subpackage'
+type: event_subpackage
+description: 'The event variants'
+help: ''
+new_revision: null
+preview_mode: 1
+display_submitted: false

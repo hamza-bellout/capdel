@@ -1,0 +1,25 @@
+uuid: f501c29f-15a0-4c9b-81a4-5629eaaeb477
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_room_capacity_rang
+    - paragraphs.paragraphs_type.configurator_place_room
+id: paragraph.configurator_place_room.field_room_capacity_rang
+field_name: field_room_capacity_rang
+entity_type: paragraph
+bundle: configurator_place_room
+label: 'Room capacity: Rang'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

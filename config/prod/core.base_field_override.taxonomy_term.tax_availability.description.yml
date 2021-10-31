@@ -1,0 +1,20 @@
+uuid: 1456575b-0565-4d53-aa24-00f51cde0910
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_availability
+  module:
+    - text
+id: taxonomy_term.tax_availability.description
+field_name: description
+entity_type: taxonomy_term
+bundle: tax_availability
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

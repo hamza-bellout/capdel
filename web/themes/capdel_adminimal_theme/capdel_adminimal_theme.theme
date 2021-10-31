@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Adminimal theme.
+ */
+
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Form\FormState;
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ */
+function capdel_adminimal_theme_preprocess_html(&$variables) {
+
+  // Add adminimal class to the body.
+  $variables['attributes']['class'][] = 'adminimal';
+
+}
+
+function capdel_adminimal_theme_form_node_event_edit_form_alter(&$form, FormState $form_state, $form_id) {
+
+  $form['#pre_render'][] = 'capdel_adminimal_theme_node_event_edit_prerender';
+}
+
+function capdel_adminimal_theme_node_event_edit_prerender($form){
+  $route_match = \Drupal::service('current_route_match');
+  $node = $route_match->getParameter('node');
+  $node_id = $node->id();
+
+  $form['actions']['price_wizard'] = array(
+    '#type' => 'button',
+    '#value' => t('Price Wizard'),
+    '#weight' => -1,
+    '#attributes' => array(
+      'onclick' => 'window.location = "/node/'.$node_id.'/price_wizard"; return false;',
+      'class' => ['btn', 'btn-outline-primary', 'ml-0']
+    ),
+  );
+
+  return $form;
+}

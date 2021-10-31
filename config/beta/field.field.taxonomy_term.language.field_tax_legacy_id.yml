@@ -1,0 +1,23 @@
+uuid: fde1676f-d4c5-431c-8178-329b13316e52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tax_legacy_id
+    - taxonomy.vocabulary.language
+id: taxonomy_term.language.field_tax_legacy_id
+field_name: field_tax_legacy_id
+entity_type: taxonomy_term
+bundle: language
+label: 'Legacy ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

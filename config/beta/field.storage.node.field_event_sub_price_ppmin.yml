@@ -1,0 +1,22 @@
+uuid: 61a9fd67-953d-4815-9873-6c3cf29a3aa4
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_event_sub_price_ppmin
+field_name: field_event_sub_price_ppmin
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 16
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

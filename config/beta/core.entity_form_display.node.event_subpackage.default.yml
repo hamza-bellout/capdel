@@ -1,0 +1,281 @@
+uuid: 7e1bb55b-33f4-4ec7-bc60-eca3a8660add
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event_subpackage.field_event_sub_accomtype
+    - field.field.node.event_subpackage.field_event_sub_address
+    - field.field.node.event_subpackage.field_event_sub_belongs_to
+    - field.field.node.event_subpackage.field_event_sub_city
+    - field.field.node.event_subpackage.field_event_sub_detail_comments
+    - field.field.node.event_subpackage.field_event_sub_geo_params
+    - field.field.node.event_subpackage.field_event_sub_google_maps_visi
+    - field.field.node.event_subpackage.field_event_sub_is_valid
+    - field.field.node.event_subpackage.field_event_sub_legacy_id
+    - field.field.node.event_subpackage.field_event_sub_origin
+    - field.field.node.event_subpackage.field_event_sub_participants_max
+    - field.field.node.event_subpackage.field_event_sub_participants_min
+    - field.field.node.event_subpackage.field_event_sub_price
+    - field.field.node.event_subpackage.field_event_sub_price_extra
+    - field.field.node.event_subpackage.field_event_sub_price_info
+    - field.field.node.event_subpackage.field_event_sub_price_ppmin
+    - field.field.node.event_subpackage.field_event_sub_price_taxes
+    - field.field.node.event_subpackage.field_event_sub_price_type
+    - field.field.node.event_subpackage.field_event_sub_tax_availability
+    - field.field.node.event_subpackage.field_event_sub_tax_destination
+    - field.field.node.event_subpackage.field_event_sub_tax_lang
+    - field.field.node.event_subpackage.field_event_sub_zip
+    - field.field.node.event_subpackage.field_field_sub_tax_type
+    - node.type.event_subpackage
+  module:
+    - content_moderation
+    - path
+id: node.event_subpackage.default
+targetEntityType: node
+bundle: event_subpackage
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_sub_accomtype:
+    weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_sub_address:
+    weight: 131
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_sub_belongs_to:
+    weight: 143
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_event_sub_city:
+    weight: 133
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_sub_detail_comments:
+    weight: 140
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_event_sub_geo_params:
+    weight: 134
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_sub_google_maps_visi:
+    weight: 135
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_event_sub_is_valid:
+    weight: 136
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_event_sub_legacy_id:
+    weight: 138
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_event_sub_origin:
+    weight: 139
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_sub_participants_max:
+    weight: 124
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_event_sub_participants_min:
+    weight: 123
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_event_sub_price:
+    weight: 125
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_event_sub_price_extra:
+    weight: 128
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_event_sub_price_info:
+    weight: 126
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_sub_price_ppmin:
+    weight: 127
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_event_sub_price_taxes:
+    weight: 130
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_sub_price_type:
+    weight: 129
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_sub_tax_availability:
+    weight: 142
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_event_sub_tax_destination:
+    weight: 137
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_event_sub_tax_lang:
+    weight: 141
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_event_sub_zip:
+    weight: 132
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_field_sub_tax_type:
+    weight: 144
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    weight: 145
+    settings: {  }
+    third_party_settings: {  }
+    type: moderation_state_default
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

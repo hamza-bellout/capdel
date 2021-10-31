@@ -1,0 +1,31 @@
+uuid: 002f082d-d175-4d34-aa3d-f82522bd3add
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.configurateur_lieu_category.field_tax_conf_lieu_cat_icon
+    - taxonomy.vocabulary.configurateur_lieu_category
+  module:
+    - options
+    - text
+id: taxonomy_term.configurateur_lieu_category.default
+targetEntityType: taxonomy_term
+bundle: configurateur_lieu_category
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tax_conf_lieu_cat_icon:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  langcode: true

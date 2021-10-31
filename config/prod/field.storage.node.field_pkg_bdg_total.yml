@@ -1,0 +1,22 @@
+uuid: 128fb8c7-d096-4e7f-8429-3152ef02bdb4
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_pkg_bdg_total
+field_name: field_pkg_bdg_total
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

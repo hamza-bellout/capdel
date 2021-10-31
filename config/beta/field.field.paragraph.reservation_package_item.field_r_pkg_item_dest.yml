@@ -1,0 +1,19 @@
+uuid: 1ca52bcb-307d-4219-a8d6-d8543124a47d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_r_pkg_item_dest
+    - paragraphs.paragraphs_type.reservation_package_item
+id: paragraph.reservation_package_item.field_r_pkg_item_dest
+field_name: field_r_pkg_item_dest
+entity_type: paragraph
+bundle: reservation_package_item
+label: 'Item: destination'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

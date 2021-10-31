@@ -1,0 +1,18 @@
+uuid: 85ce0a7f-c663-452a-9a77-639e59ea854e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_availability
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.tax_availability
+target_entity_type_id: taxonomy_term
+target_bundle: tax_availability
+default_langcode: fr
+language_alterable: true

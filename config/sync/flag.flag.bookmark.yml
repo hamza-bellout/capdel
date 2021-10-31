@@ -1,0 +1,42 @@
+uuid: 4fa1581f-f433-4ffa-9ed1-816d25caa606
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - flag_bookmark
+  module:
+    - node
+_core:
+  default_config_hash: vuzrLaRZ3xV-FmT127t2gLy_p8JDLMWtsKsnCwdWR2Y
+id: bookmark
+label: Bookmark
+bundles:
+  - event
+  - event_subpackage
+entity_type: node
+global: false
+weight: 0
+flag_short: 'Bookmark this'
+flag_long: ' '
+flag_message: ' '
+unflag_short: 'Remove bookmark'
+unflag_long: ' '
+unflag_message: ' '
+unflag_denied_text: ''
+flag_type: 'entity:node'
+link_type: ajax_link
+flagTypeConfig:
+  show_in_links:
+    full: full
+    rss: rss
+    search_index: search_index
+    search_result: search_result
+    teaser: teaser
+    token: token
+  show_as_field: false
+  show_on_form: false
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+linkTypeConfig: {  }

@@ -1,0 +1,23 @@
+uuid: 46b7ddea-3867-46ad-90fc-633c8d79a595
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pkg_is_anonym
+    - node.type.package
+id: node.package.field_pkg_is_anonym
+field_name: field_pkg_is_anonym
+entity_type: node
+bundle: package
+label: 'Is placed by anonymous user'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

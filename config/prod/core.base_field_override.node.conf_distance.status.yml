@@ -1,0 +1,22 @@
+uuid: 20ec0c60-74ac-4da9-82e6-73da2613cfd7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.conf_distance
+id: node.conf_distance.status
+field_name: status
+entity_type: node
+bundle: conf_distance
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

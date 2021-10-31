@@ -1,0 +1,25 @@
+label: Profile
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Anwenden
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
+      arguments:
+        uid:
+          exception:
+            title: Alle
+        type:
+          exception:
+            title: Alle
+        status:
+          exception:
+            title: Alle
+      title: Profile
+  user_view:
+    display_title: 'Benutzer Ansicht'

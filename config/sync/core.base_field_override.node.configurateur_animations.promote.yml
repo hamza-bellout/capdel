@@ -1,0 +1,22 @@
+uuid: 1be52001-1fc0-4e38-9da5-ff3e8d76d059
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.configurateur_animations
+id: node.configurateur_animations.promote
+field_name: promote
+entity_type: node
+bundle: configurateur_animations
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

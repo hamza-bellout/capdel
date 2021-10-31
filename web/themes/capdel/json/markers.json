@@ -1,0 +1,22 @@
+[
+    {
+        "location": [48.862091, 2.339811],
+        "icon": "images/ico-pin.svg"
+    },
+    {
+        "location": [48.860046, 2.346287],
+        "icon": "images/ico-pin.svg"
+    },
+    {
+        "location": [48.857047, 2.310747],
+        "icon": "images/ico-pin.svg"
+    },
+    {
+        "location": [48.854661, 2.329242],
+        "icon": "images/ico-pin.svg"
+    },
+    {
+        "location": [48.848831, 2.345976],
+        "icon": "images/ico-pin.svg"
+    }
+]

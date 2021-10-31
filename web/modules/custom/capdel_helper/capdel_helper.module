@@ -1,0 +1,579 @@
+<?php
+use Drupal\capdel_helper\Helpers\HookHelper;
+use Drupal\capdel_helper\Helpers\LandingPageHelper;
+use Drupal\capdel_helper\Helpers\RequestHelper;
+use Drupal\capdel_helper\Plugin\QueueWorker\OdooIntegrationQueueWorker;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+
+function capdel_helper_update_8001() {
+  //Password reset
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID.
+      '9eada259-5529-4058-8468-349a5b2e514a' => [
+        'original' => [
+          'type' => 'basic',
+          'info' => 'Password reset',
+          'body' => '',
+        ],
+      ],
+    ],
+  ];
+  capdel_helper_create_content($default_content);
+
+  //Password recovery
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID.
+      'b3fa8795-0bda-4c66-96e9-a284d5136158' => [
+        'original' => [
+          'type' => 'basic',
+          'info' => 'Password recovery',
+          'body' => '',
+        ],
+      ],
+    ],
+  ];
+  capdel_helper_create_content($default_content);
+
+  //Account created
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID.
+      '8eeb8ae0-c656-4b94-ace5-e180f8e0db5a' => [
+        'original' => [
+          'type' => 'basic',
+          'info' => 'Account created',
+          'body' => '',
+        ],
+      ],
+    ],
+  ];
+  capdel_helper_create_content($default_content);
+}
+
+function capdel_helper_update_8002()
+{
+  //Change password
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID.
+      'e400fa31-fe18-42db-903c-1963f6a0513d' => [
+        'original' => [
+          'type' => 'basic',
+          'info' => 'Change password',
+          'body' => '',
+        ],
+      ],
+    ],
+  ];
+  capdel_helper_create_content($default_content);
+}
+
+function capdel_helper_update_8003()
+{
+  //Password reset requested
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID.
+      '7766463b-30e5-4ffe-9ea7-9ff8375595f8' => [
+        'original' => [
+          'type' => 'basic',
+          'info' => 'Password reset requested',
+          'body' => '',
+        ],
+      ],
+    ],
+  ];
+  capdel_helper_create_content($default_content);
+}
+
+function capdel_helper_update_8004()
+{
+  //Password changed
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID.
+      '09a200a0-8344-4495-bf78-6a4bfc691d63' => [
+        'original' => [
+          'type' => 'basic',
+          'info' => 'Password changed',
+          'body' => '',
+        ],
+      ],
+    ],
+  ];
+  capdel_helper_create_content($default_content);
+}
+
+// DB update to create custom taxonomy block on the home page
+// All other configuration is updated via .yaml files
+function capdel_helper_update_8005()
+{
+    //Password changed
+    $default_content = [
+        // Keyed by entity type.
+      'block_content' => [
+          // Then by UUID.
+        '9b1517ae-c806-44e3-ac5c-4b82ead32b31' => [
+          'original' => [
+            'type' => 'taxonomy_block',
+            'info' => '[Home] Taxonomy block',
+            'body' => '',
+          ],
+        ],
+      ],
+    ];
+    capdel_helper_create_content($default_content);
+}
+
+function capdel_helper_update_8006()
+{
+  //Create password
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID.
+      '291c700c-c983-49e0-9e6f-f220151dcd54' => [
+        'original' => [
+          'type' => 'basic',
+          'info' => 'Create password',
+          'body' => '',
+        ],
+      ],
+    ],
+  ];
+  capdel_helper_create_content($default_content);
+
+  //Password created
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID.
+      'a690115c-cddb-4a51-b03c-caafa605d414' => [
+        'original' => [
+          'type' => 'basic',
+          'info' => 'Password created',
+          'body' => '',
+        ],
+      ],
+    ],
+  ];
+  capdel_helper_create_content($default_content);
+}
+
+function capdel_helper_update_8007()
+{
+  //[Home] Top slider
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID.
+      '6c6c9179-ba6b-4206-aa2b-d97ba0af6136' => [
+        'original' => [
+          'type' => 'slider_block',
+          'info' => '[Home] Top slider',
+          'body' => '',
+        ],
+      ],
+    ],
+  ];
+  capdel_helper_create_content($default_content);
+}
+
+function capdel_helper_update_8009()
+{
+    //[Home] Top slider
+    $default_content = [
+        // Keyed by entity type.
+      'block_content' => [
+          // Then by UUID (BLOCK CONTENT) .
+          // e.g. block_content:03b06789-71e0-42cf-95c0-626adcfa6afa.
+        '03b06789-71e0-42cf-95c0-626adcfa6afa' => [
+          'original' => [
+            'type' => 'basic',
+            'info' => 'Post event reservation modal',
+            'body' => '',
+          ],
+        ],
+      ],
+    ];
+    capdel_helper_create_content($default_content);
+}
+
+function capdel_helper_update_8010() {
+  $config_installer = \Drupal::service('config.installer');
+  $config_installer->installDefaultConfig('module', 'capdel_helper');
+}
+
+function capdel_helper_update_8012()
+{
+  //[Home] Top slider
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID (BLOCK CONTENT) .
+      // e.g. block_content:03b06789-71e0-42cf-95c0-626adcfa6afa.
+      'b781ef7e-1a50-44ba-8459-7519f57a2f87' => [
+        'original' => [
+          'type' => 'basic',
+          'info' => 'Top screen banner block',
+          'body' => '',
+        ],
+      ],
+    ],
+  ];
+  capdel_helper_create_content($default_content);
+}
+
+/**
+ * Creates install content.
+ *
+ * @param array $content
+ *   Content keyed by entity-type and UUID.
+ */
+function capdel_helper_create_content(array $content)
+{
+  foreach ($content as $entity_type_id => $items) {
+    $storage = \Drupal::entityTypeManager()->getStorage($entity_type_id);
+    foreach ($items as $uuid => $item) {
+      $original = $item['original'];
+      $entity = $storage->create($original + ['uuid' => $uuid]);
+      $entity->save();
+      $translations = $item['translations'];
+      if(!empty($translations)) {
+        foreach ($translations as $langcode => $content) {
+          $translation = $entity->addTranslation($langcode, $content);
+          $translation->save();
+        }
+      }
+    }
+  }
+}
+
+function capdel_helper_search_api_query_alter(\Drupal\search_api\Query\QueryInterface &$query) {
+  //add parameter for facets to be visible on landing page
+  if(RequestHelper::isLandingPage()){
+    $node = \Drupal::routeMatch()->getParameter('node');
+    LandingPageHelper::addReferencedTaxonomieRequestParam($node);
+  }
+
+  //save min participants pax value in cookie
+  $participant = \Drupal::request()->query->get('participant');
+  if(!empty($participant)) {
+      user_cookie_save(['pax_participants' => $participant]);
+      $_COOKIE['Drupal_visitor_pax_participants'] = $participant;
+  } else {
+    unset($_COOKIE['Drupal_visitor_pax_participants']);
+    user_cookie_delete('pax_participants');
+  }
+
+  //modify participants number condition based on selected range
+  $conditionGroup = capdel_helper_find_condition_group($query->getConditionGroup(), 'field_event_sub_participants_min');
+  if($conditionGroup != null) {
+    foreach ($conditionGroup->getConditions() as $idx => $condition) {
+      if ($condition->getField() == 'field_event_sub_participants_min') {
+        list($min, $max) = explode('-', $condition->getValue());
+
+        if ($min != null & $max == null) {
+            unset($conditionGroup->getConditions()[$idx]);
+        } else {
+          $condition->setOperator('<=');
+          $condition->setValue($max);
+
+          $conditionGroup->addCondition('field_event_sub_participants_max', $min, '>=');
+        }
+
+        $conditionGroup->addCondition('field_event_sub_participants_max', $min, '>=');
+      }
+    }
+  }
+
+  //ignore price filter when set to 0
+  $conditionGroup = capdel_helper_find_condition_group($query->getConditionGroup(), 'field_event_sub_price_ppmin');
+  if($conditionGroup != null) {
+    foreach ($conditionGroup->getConditions() as $idx => $condition) {
+      if ($condition->getField() == 'field_event_sub_price_ppmin') {
+        if ($condition->getValue() == 0) {
+          unset($conditionGroup->getConditions()[$idx]);
+        }
+      }
+    }
+  }
+
+  $conditionGroup = capdel_helper_find_condition_group($query->getConditionGroup(), 'field_event_sub_price_ppmin');
+  if($conditionGroup != null) {
+    // price search in specifix pax
+    if($min != null) {
+      foreach ($conditionGroup->getConditions() as $idx => $condition) {
+        if ($condition->getField() == 'field_event_sub_price_ppmin') {
+          $paxPriceIndex = floor($min / 10);
+          $paxPriceField = 'pax_price';
+          if ($paxPriceIndex > 0) {
+            $paxPriceField .= '_' . $paxPriceIndex;
+          }
+          $condition->setField($paxPriceField);
+        }
+      }
+    // price search regardless pax
+    } else {
+      foreach ($conditionGroup->getConditions() as $idx => $condition) {
+        if ($condition->getField() == 'field_event_sub_price_ppmin') {
+          $condition->setValue(array(1, intval($condition->getValue())));
+          $condition->setOperator('BETWEEN');
+        }
+      }
+    }
+  }
+
+  $conditionGroup = capdel_helper_find_condition_group($query->getConditionGroup(), 'field_event_tax_menu_types');
+  if($conditionGroup != null) {
+    foreach ($conditionGroup->getConditions() as $idx => $condition) {
+      if ($condition->getField() == 'field_event_tax_menu_types') {
+        $term = \Drupal\capdel_helper\Helpers\TaxonomieHelper::getTermById($condition->getValue()[0]);
+        if($term != null) {
+          $topTerm = \Drupal\capdel_helper\Helpers\TaxonomieHelper::getTopTerm($term);
+          user_cookie_save(['event_type' => $topTerm->tid->value]);
+          $_COOKIE['Drupal_visitor_event_type'] = $topTerm->tid->value;
+        }
+      }
+    }
+  }
+}
+
+function capdel_helper_find_condition_group(\Drupal\search_api\Query\ConditionGroup $conditionGroup, $conditionField) {
+  foreach($conditionGroup->getConditions() as $condition) {
+    if($condition instanceof \Drupal\search_api\Query\ConditionGroup) {
+      return capdel_helper_find_condition_group($condition, $conditionField);
+    }
+    if($condition->getField() == $conditionField) {
+      return $conditionGroup;
+    }
+  }
+}
+
+
+function capdel_helper_system_breadcrumb_alter(\Drupal\Core\Breadcrumb\Breadcrumb &$breadcrumb, \Drupal\Core\Routing\RouteMatchInterface $route_match, array $context) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node && !\Drupal\capdel_helper\Helpers\RequestHelper::isAdminUrl()) {
+    \Drupal\capdel_helper\Helpers\BreadcrumbHelper::buildNodeBreadcrumb($breadcrumb, $route_match, $node);
+  }
+}
+
+// moved the hook logic into custom class, as the hooks are in global namespace for 8.5
+// follow https://www.drupal.org/node/1972304 for more details
+function capdel_helper_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+    HookHelper::capdel_helper_entity_presave($entity);
+}
+
+function capdel_helper_theme($existing, $type, $theme, $path){
+  return [
+    'price_wizard' => [
+      'template' => 'price-wizard',
+      'variables' => [
+        'event' => NULL,
+        'variants' => NULL,
+        'update_action' => NULL
+      ],
+    ],
+    'event_variant_location_form' => [
+      'template' => 'event-variant-location-form',
+      'variables' => [
+        'event' => NULL,
+        'variant' => NULL,
+        'update_action' => NULL
+      ],
+    ],
+    'event_variant_location_delete' => [
+      'template' => 'event-variant-location-delete',
+      'variables' => [
+        'event' => NULL,
+        'variant' => NULL,
+        'update_action' => NULL
+      ],
+    ]
+  ];
+}
+
+
+function capdel_helper_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    // landing page edit form or landing page create form
+    if($form_id === "node_landing_page_edit_form" || $form_id === "node_landing_page_form") {
+        $form['#validate'][] = 'lp_fields_validator';
+    } elseif($form_id ==='media_image_add_form' || $form_id ==='media_image_edit_form') {
+        $form['actions']['submit']['#submit'][] = 'capdel_helper_media_image_form_images_check';
+    }
+}
+
+function lp_fields_validator(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+    \Drupal\capdel_helper\Helpers\LandingPageHelper::validateLandingPageForms($form, $form_state);
+}
+
+function capdel_helper_media_image_form_images_check(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $media = $form_state->getFormObject()->getEntity();
+  \Drupal\capdel_helper\Helpers\ImagesHelper::fixMissingImageStyles($media);
+}
+
+function capdel_helper_mail($key, &$message, $params)
+{
+  if($key == 'custom_email') {
+    if(array_key_exists('from', $params)) {
+      $message['headers']['From'] = $message['headers']['Sender'] = $params['from'];
+    }
+    $message['subject'] = $params['subject'];
+    $message['body'][] = $params['body'];
+  }
+}
+
+function capdel_helper_entity_operation(EntityInterface $entity)
+{
+  if ($entity->getEntityTypeId() == 'media' && $entity->bundle() == 'image') {
+
+    return [
+      'clone' => [
+        'title' => t('Clone'),
+        'weight' => 50,
+        'url' => Url::fromRoute('capdel_helper.image.clone', ['media' => $entity->id()]),
+      ],
+    ];
+  }
+}
+
+function capdel_helper_cron() {
+    //$interval = 7200; // Interval - 2 h = 2 x 60 x 60 secs
+    $interval = 7200; // Interval - 3 min DEV
+
+    // We usually don't want to act every time cron runs (which could be every
+    // minute) so keep a time for the next run in the site state.
+
+    $next_execution = \Drupal::state()->get('cron_capdel_helper_menu.next_execution');
+    $next_execution = !empty($next_execution) ? $next_execution : 0;
+    if (REQUEST_TIME >= $next_execution) {
+        $query = \Drupal::entityQuery('node');
+        $query->condition('type','configurateur_statics');
+        $query->condition('field_conf_static_is_menu',1);
+        $query->condition('status',1);
+
+        $entity_ids = $query->execute();
+
+        \Drupal::logger('cron:menu:cron')->notice('Found Menu items with given IDS: @ent',['@ent' => implode(",",$entity_ids)]);
+
+        foreach ($entity_ids as $rev => $id) {
+            $queue_factory = \Drupal::service('queue');
+            $queue = $queue_factory->get('cron_menu_adder');
+
+            $item = new \stdClass();
+            $item->id = $id;
+
+            $queue->createItem($item);
+            \Drupal::logger('cron:menu:cron')->notice('Added Menu item (ID: @id) to the queue ',['@id' => $id]);
+        }
+
+        \Drupal::logger('capdel_helper_cron')->notice('capdel_helper_cron: "menu add" ran');
+        \Drupal::state()->set('cron_capdel_helper_menu.next_execution', REQUEST_TIME + $interval);
+    }
+    else {
+        \Drupal::logger('capdel_helper_cron')->notice('capdel_helper_cron: "menu add" not run, too little interval between cron runs');
+    }
+
+    $next_execution_tb = \Drupal::state()->get('cron_capdel_helper_tb.next_execution');
+    $next_execution_tb = !empty($next_execution_tb) ? $next_execution_tb : 0;
+    if (REQUEST_TIME >= $next_execution_tb) {
+        $query = \Drupal::entityQuery('node');
+        $query->condition('type','configurateur_tb_and_anim');
+        $query->condition('status',1);
+
+        $entity_ids = $query->execute();
+
+        \Drupal::logger('cron:tb:cron')->notice('Found TB items with given IDS: @ent',['@ent' => implode(",",$entity_ids)]);
+
+        foreach ($entity_ids as $rev => $id) {
+            $queue_factory = \Drupal::service('queue');
+            $queue = $queue_factory->get('cron_tb_adder');
+
+            $item = new \stdClass();
+            $item->id = $id;
+
+            $queue->createItem($item);
+            \Drupal::logger('cron:tb:cron')->notice('Added TB item (ID: @id) to the queue ',['@id' => $id]);
+        }
+
+        \Drupal::logger('capdel_helper_cron')->notice('capdel_helper_cron: "tb add" ran');
+        \Drupal::state()->set('cron_capdel_helper_tb.next_execution', REQUEST_TIME + $interval);
+    }
+    else {
+        \Drupal::logger('capdel_helper_cron')->notice('capdel_helper_cron: "tb add" not run, too little interval between cron runs');
+    }
+
+    $next_execution_odoo = \Drupal::state()->get('cron_capdel_helper_odoo2.next_execution');
+    $next_execution_odoo = !empty($next_execution_odoo) ? $next_execution_odoo : 0;
+    if (REQUEST_TIME >= $next_execution_odoo) {
+        $query = \Drupal::entityQuery('node');
+        $query->condition('type','package');
+        $query->condition('created', strtotime('2018-12-06'), '>');
+        $query->sort('created');
+
+        // field_pkg_odoo_id notExists or 0
+        $orCondition = $query->orConditionGroup();
+        $orCondition->notExists('field_pkg_odoo_id');
+        $orCondition->condition('field_pkg_odoo_id','0');
+        $query->condition($orCondition);
+
+        $entity_ids = $query->execute();
+
+        \Drupal::logger('cron:odoo:cron')->notice('Found items with given IDS: @ent',['@ent' => implode(",",$entity_ids)]);
+
+        foreach ($entity_ids as $rev => $id) {
+            $queue_factory = \Drupal::service('queue');
+            $queue = $queue_factory->get('cron_odoo_integrator');
+            $item = new \stdClass();
+            $item->id = $id;
+            $item->type = OdooIntegrationQueueWorker::TYPE_RESERVATION;
+            $queue->createItem($item);
+            \Drupal::logger('cron:odoo:cron')->notice('Added item (ID: @id) to the queue ',['@id' => $id]);
+        }
+
+        \Drupal::logger('capdel_helper_cron')->notice('capdel_helper_cron: "odoo integration" ran');
+        \Drupal::state()->set('cron_capdel_helper_odoo.next_execution', REQUEST_TIME + $interval);
+    }
+    else {
+        \Drupal::logger('capdel_helper_cron')
+          ->notice('cron_capdel_helper_odoo: "odoo integration" not run, too little interval between cron runs');
+    }
+
+    $next_execution_geo_place_tb = \Drupal::state()->get('cron_capdel_helper_geo_dist2.next_execution');
+    $next_execution_geo_place_tb = !empty($next_execution_geo_place_tb) ? $next_execution_geo_place_tb : 0;
+    if (REQUEST_TIME >= $next_execution_geo_place_tb) {
+        $query = \Drupal::entityQuery('node');
+        $query->condition('type','conf_lieu');
+        $query->condition('status',1);
+
+        $entity_ids = $query->execute();
+
+        \Drupal::logger('cron:geo_dist:cron')->notice('Found Place items with given IDS: @ent',['@ent' => implode(",",$entity_ids)]);
+
+        foreach ($entity_ids as $rev => $id) {
+            $queue_factory = \Drupal::service('queue');
+            $queue = $queue_factory->get('cron_geo_dist_place_tb');
+
+            $item = new \stdClass();
+            $item->id = $id;
+
+            $queue->createItem($item);
+            \Drupal::logger('cron:geo_dist:cron')->notice('Added Place item (ID: @id) to the queue ',['@id' => $id]);
+        }
+
+        \Drupal::logger('capdel_helper_cron')->notice('capdel_helper_cron: "geo_dist" ran');
+        \Drupal::state()->set('cron_capdel_helper_geo_dist2.next_execution', REQUEST_TIME + $interval);
+    }
+    else {
+        \Drupal::logger('capdel_helper_cron')->notice('capdel_helper_cron: "geo_dist" not run, too little interval between cron runs');
+    }
+}

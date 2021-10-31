@@ -1,0 +1,23 @@
+uuid: 82ab4f2c-339b-4b17-b3fe-2079a038e0f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_activity_outdoor
+    - node.type.event
+id: node.event.field_event_activity_outdoor
+field_name: field_event_activity_outdoor
+entity_type: node
+bundle: event
+label: 'Is this outdoor activity'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

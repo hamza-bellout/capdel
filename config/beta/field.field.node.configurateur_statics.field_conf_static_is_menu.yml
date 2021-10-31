@@ -1,0 +1,23 @@
+uuid: 35fa5694-29ce-4c96-b83c-c09c1c6e2eef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_static_is_menu
+    - node.type.configurateur_statics
+id: node.configurateur_statics.field_conf_static_is_menu
+field_name: field_conf_static_is_menu
+entity_type: node
+bundle: configurateur_statics
+label: 'Is this a menu item? '
+description: 'If checked it will display in Menus & Boissons tab'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

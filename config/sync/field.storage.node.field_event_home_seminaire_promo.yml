@@ -1,0 +1,22 @@
+uuid: e15fb7ee-66c6-4f8c-b2da-4bb297b0687f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_event_home_seminaire_promo
+field_name: field_event_home_seminaire_promo
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

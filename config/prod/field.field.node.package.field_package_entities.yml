@@ -1,0 +1,38 @@
+uuid: 3b0ca95f-f5f3-4750-9384-4eacb3419588
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_package_entities
+    - node.type.conf_lieu
+    - node.type.configurateur_animations
+    - node.type.configurateur_statics
+    - node.type.configurateur_tb_and_anim
+    - node.type.event
+    - node.type.event_subpackage
+    - node.type.package
+id: node.package.field_package_entities
+field_name: field_package_entities
+entity_type: node
+bundle: package
+label: Items
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      conf_lieu: conf_lieu
+      configurateur_statics: configurateur_statics
+      configurateur_tb_and_anim: configurateur_tb_and_anim
+      configurateur_animations: configurateur_animations
+      event: event
+      event_subpackage: event_subpackage
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: conf_lieu
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: d3423d21-e095-470e-bd9b-fc90ece9bd8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_r_pkg_item_id
+    - paragraphs.paragraphs_type.reservation_package_item
+id: paragraph.reservation_package_item.field_r_pkg_item_id
+field_name: field_r_pkg_item_id
+entity_type: paragraph
+bundle: reservation_package_item
+label: 'Item: ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

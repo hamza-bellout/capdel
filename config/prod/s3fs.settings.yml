@@ -1,0 +1,25 @@
+access_key: ''
+secret_key: ''
+use_instance_profile: false
+credentials_file: ''
+bucket: capdel-web-prod
+region: eu-west-3
+use_cname: true
+use_customhost: false
+hostname: ''
+domain: du7s4ncx7dkxw.cloudfront.net
+cache_control_header: 'public, max-age=1728000'
+encryption: ''
+use_https: true
+ignore_cache: false
+redirect_styles_ttl: 1728000
+no_rewrite_cssjs: false
+root_folder: media
+public_folder: ''
+private_folder: ''
+presigned_urls: ''
+saveas: ''
+torrents: ''
+_core:
+  default_config_hash: XB-f-XhPo-I1_3q7Xf3WpnuGRr2ioacLa0iKWYAPwJg
+langcode: fr

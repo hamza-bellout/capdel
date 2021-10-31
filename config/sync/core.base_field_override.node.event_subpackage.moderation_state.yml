@@ -1,0 +1,18 @@
+uuid: 0644b45c-0229-4cb5-a3ff-abe31be662ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.event_subpackage
+id: node.event_subpackage.moderation_state
+field_name: moderation_state
+entity_type: node
+bundle: event_subpackage
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

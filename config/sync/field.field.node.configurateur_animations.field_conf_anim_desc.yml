@@ -1,0 +1,21 @@
+uuid: c98f82f9-2216-490b-8929-2cb1c24a9a59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_anim_desc
+    - node.type.configurateur_animations
+  module:
+    - text
+id: node.configurateur_animations.field_conf_anim_desc
+field_name: field_conf_anim_desc
+entity_type: node
+bundle: configurateur_animations
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

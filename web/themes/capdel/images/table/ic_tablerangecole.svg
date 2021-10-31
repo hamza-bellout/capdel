@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="24px" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_tablerangecole</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Web-designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="07-Capdel_Website_Fiche_Evènement_Places-Copy" transform="translate(-602.000000, -1811.000000)">
+            <g id="pourquoi" transform="translate(56.000000, 1685.000000)">
+                <g id="tableau" transform="translate(5.000000, 106.000000)">
+                    <g id="ic_tablerangecole" transform="translate(541.000000, 19.000000)">
+                        <circle id="Oval-6" fill="#000000" cx="1.69565217" cy="4.47826087" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy-6" fill="#000000" cx="1.69565217" cy="13.1304348" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy-12" fill="#000000" cx="1.69565217" cy="22.7826087" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy" fill="#000000" cx="6.2173913" cy="4.47826087" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy-8" fill="#000000" cx="6.2173913" cy="13.1304348" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy-14" fill="#000000" cx="6.2173913" cy="22.7826087" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy-4" fill="#000000" cx="13.7826087" cy="4.47826087" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy-9" fill="#000000" cx="13.7826087" cy="13.1304348" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy-15" fill="#000000" cx="13.7826087" cy="22.7826087" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy-5" fill="#000000" cx="18.3043478" cy="4.47826087" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy-11" fill="#000000" cx="18.3043478" cy="13.1304348" r="1.69565217"></circle>
+                        <circle id="Oval-6-Copy-17" fill="#000000" cx="18.3043478" cy="22.7826087" r="1.69565217"></circle>
+                        <path d="M0.5,1.5 L7.5,1.5" id="Line-5" stroke="#000000" stroke-linecap="square" fill-rule="nonzero"></path>
+                        <path d="M12.5,1.5 L19.5,1.5" id="Line-5-Copy" stroke="#000000" stroke-linecap="square" fill-rule="nonzero"></path>
+                        <path d="M0.5,10.5 L7.5,10.5" id="Line-5-Copy-3" stroke="#000000" stroke-linecap="square" fill-rule="nonzero"></path>
+                        <path d="M12.5,10.5 L19.5,10.5" id="Line-5-Copy-2" stroke="#000000" stroke-linecap="square" fill-rule="nonzero"></path>
+                        <path d="M0.5,19.5 L7.5,19.5" id="Line-5-Copy-5" stroke="#000000" stroke-linecap="square" fill-rule="nonzero"></path>
+                        <path d="M12.5,19.5 L19.5,19.5" id="Line-5-Copy-4" stroke="#000000" stroke-linecap="square" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

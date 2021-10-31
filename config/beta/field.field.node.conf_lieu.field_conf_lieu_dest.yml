@@ -1,0 +1,29 @@
+uuid: 2e55fc97-cfe6-41bc-b551-5ce82d3ab3f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_lieu_dest
+    - node.type.conf_lieu
+    - taxonomy.vocabulary.configurateur_event_destination
+id: node.conf_lieu.field_conf_lieu_dest
+field_name: field_conf_lieu_dest
+entity_type: node
+bundle: conf_lieu
+label: Destination
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      configurateur_event_destination: configurateur_event_destination
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

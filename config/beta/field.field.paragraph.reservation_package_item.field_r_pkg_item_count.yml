@@ -1,0 +1,23 @@
+uuid: 52c08b9b-c219-48e3-83ba-c991bf245855
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_r_pkg_item_count
+    - paragraphs.paragraphs_type.reservation_package_item
+id: paragraph.reservation_package_item.field_r_pkg_item_count
+field_name: field_r_pkg_item_count
+entity_type: paragraph
+bundle: reservation_package_item
+label: 'Item: Count'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

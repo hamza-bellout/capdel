@@ -1,0 +1,24 @@
+uuid: 42e2e8de-1c32-493f-bcd4-459ca1dfead3
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-fourth
+  module:
+    - system
+  theme:
+    - capdel
+id: footerfourth
+theme: capdel
+region: footer_fourth
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-fourth'
+settings:
+  id: 'system_menu_block:footer-fourth'
+  label: 'Autres événements'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

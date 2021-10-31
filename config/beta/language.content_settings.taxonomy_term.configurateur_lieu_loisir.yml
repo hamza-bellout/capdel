@@ -1,0 +1,11 @@
+uuid: 320f8637-8040-4376-9fa7-645f218e78fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.configurateur_lieu_loisir
+id: taxonomy_term.configurateur_lieu_loisir
+target_entity_type_id: taxonomy_term
+target_bundle: configurateur_lieu_loisir
+default_langcode: fr
+language_alterable: false

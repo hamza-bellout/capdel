@@ -1,0 +1,9 @@
+uuid: ec276fd4-41ea-472a-a216-2c23fa9a636a
+langcode: fr
+status: true
+dependencies: {  }
+name: Langue
+vid: language
+description: ''
+hierarchy: 0
+weight: 0

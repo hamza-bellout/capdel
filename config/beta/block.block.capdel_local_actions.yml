@@ -1,0 +1,20 @@
+uuid: 16bfbaa8-9f0d-4d51-8842-758c1bfacda5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - capdel
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: capdel_local_actions
+theme: capdel
+region: content
+weight: -22
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Capdel local actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

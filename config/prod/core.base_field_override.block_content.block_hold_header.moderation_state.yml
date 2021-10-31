@@ -1,0 +1,18 @@
+uuid: f5aaf5fc-4e29-42ea-94ca-ce66c6f1ac22
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_hold_header
+id: block_content.block_hold_header.moderation_state
+field_name: moderation_state
+entity_type: block_content
+bundle: block_hold_header
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

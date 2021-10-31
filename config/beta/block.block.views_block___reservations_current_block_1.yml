@@ -1,0 +1,30 @@
+uuid: 843be09f-dfbd-46e1-bdf7-b4e5e6cd785b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view._reservations_current
+  module:
+    - system
+    - views
+  theme:
+    - capdel
+id: views_block___reservations_current_block_1
+theme: capdel
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:_reservations_current-block_1'
+settings:
+  id: 'views_block:_reservations_current-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /reservations
+    negate: false
+    context_mapping: {  }

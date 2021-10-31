@@ -1,0 +1,85 @@
+uuid: 406a9b52-187f-4061-92e5-607506c102ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_bundle
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_category
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_count
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_dest
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_id
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_price
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_title
+    - field.field.paragraph.reservation_package_item.field_r_pkg_item_type
+    - paragraphs.paragraphs_type.reservation_package_item
+id: paragraph.reservation_package_item.default
+targetEntityType: paragraph
+bundle: reservation_package_item
+mode: default
+content:
+  field_r_pkg_item_bundle:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_r_pkg_item_category:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_r_pkg_item_count:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_r_pkg_item_dest:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_r_pkg_item_id:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_r_pkg_item_price:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_r_pkg_item_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_r_pkg_item_type:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

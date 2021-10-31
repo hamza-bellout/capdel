@@ -1,0 +1,223 @@
+uuid: d5650922-3c70-42ac-a91a-a3d4fc51de22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_add_val
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_avail
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_cat_sub
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_category
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_desc
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_destination
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_duration
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_geo_params
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_image
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_max_par
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_menu_type
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_min_par
+    - field.field.node.configurateur_tb_and_anim.field_conf_tb_price
+    - field.field.node.configurateur_tb_and_anim.field_tb_par_geo_dist
+    - field.field.node.configurateur_tb_and_anim.field_tb_ref_lieu
+    - field.field.node.configurateur_tb_and_anim.field_tb_short_desc
+    - node.type.configurateur_tb_and_anim
+  module:
+    - path
+    - text
+id: node.configurateur_tb_and_anim.default
+targetEntityType: node
+bundle: configurateur_tb_and_anim
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_conf_tb_add_val:
+    weight: 22
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_conf_tb_avail:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_conf_tb_cat_sub:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_conf_tb_category:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_conf_tb_desc:
+    weight: 19
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_conf_tb_destination:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_conf_tb_duration:
+    weight: 15
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_conf_tb_geo_params:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_conf_tb_image:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_conf_tb_max_par:
+    weight: 17
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_conf_tb_menu_type:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_conf_tb_min_par:
+    weight: 16
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_conf_tb_price:
+    weight: 12
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_tb_par_geo_dist:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_tb_ref_lieu:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_tb_short_desc:
+    weight: 23
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

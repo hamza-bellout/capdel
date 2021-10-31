@@ -1,0 +1,11 @@
+uuid: 10b98aa7-0ed1-4ecc-a805-27e9cca030ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.configurateur_lieu_format
+id: taxonomy_term.configurateur_lieu_format
+target_entity_type_id: taxonomy_term
+target_bundle: configurateur_lieu_format
+default_langcode: fr
+language_alterable: false

@@ -1,0 +1,18 @@
+uuid: 125b6bd9-7069-4a29-a697-2423df65e2e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_event_sub_is_valid
+field_name: field_event_sub_is_valid
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,63 @@
+uuid: 69516321-639f-4e9a-a6a4-a133a6cb3eb7
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.search_results_page
+  module:
+    - ctools
+    - language
+    - system
+    - user
+    - views
+  theme:
+    - capdel
+id: exposedformsearch_results_pagesearch_page
+theme: capdel
+region: footer_fifth
+weight: -11
+provider: null
+plugin: 'views_exposed_filter_block:search_results_page-search_page'
+settings:
+  id: 'views_exposed_filter_block:search_results_page-search_page'
+  label: Search
+  provider: views
+  label_display: visible
+  views_label: Search
+visibility:
+  request_path:
+    id: request_path
+    pages: ''
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      event: event
+      event_subpackage: event_subpackage
+      package: package
+      page: page
+      partner: partner
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+      replicator: replicator
+      authenticated: authenticated
+      administrator: administrator
+      editor: editor
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  language:
+    id: language
+    langcodes:
+      en: en
+      fr: fr
+      de: de
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

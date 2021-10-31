@@ -1,0 +1,33 @@
+uuid: acf65cbe-1f04-45bb-95c0-3090e8d6566f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.par_menu_prices.field_par_menu_price
+    - field.field.paragraph.par_menu_prices.field_par_ref_statics
+    - paragraphs.paragraphs_type.par_menu_prices
+id: paragraph.par_menu_prices.default
+targetEntityType: paragraph
+bundle: par_menu_prices
+mode: default
+content:
+  field_par_menu_price:
+    weight: 103
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_par_ref_statics:
+    weight: 102
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

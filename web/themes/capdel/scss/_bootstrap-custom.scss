@@ -1,0 +1,225 @@
+// custom variables and override bootstrap variables
+
+$white:  #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:  #000 !default;
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: (
+	blue: $blue,
+	indigo: $indigo,
+	purple: $purple,
+	pink: $pink,
+	red: $red,
+	orange: $orange,
+	yellow: $yellow,
+	green: $green,
+	teal: $teal,
+	cyan: $cyan,
+	white: $white,
+	gray: $gray-600,
+	gray-dark: $gray-800
+);
+
+$theme-colors: (
+	primary: $blue,
+	secondary: $gray-600,
+	success: $green,
+	info: $cyan,
+	warning: $yellow,
+	danger: $red,
+	light: $gray-100,
+	dark: $gray-800
+);
+
+$spacer:   1rem !default;
+$spacers: (
+	0: 0,
+	1: ($spacer * .25),
+	2: ($spacer * .5),
+	3: $spacer,
+	4: ($spacer * 1.5),
+	5: ($spacer * 3),
+	6: ($spacer * 4.5),
+	7: ($spacer * 6),
+	8: ($spacer * 7.5),
+	9: ($spacer * 9),
+	10: ($spacer * 10.5)
+);
+
+$base-min-width: 320px;
+
+// This is the default html and body font-size for the base rem value.
+$rem-base: 16px;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+/* custom variables */
+$black:  #000;
+$light-black: #181716;
+$blue:  #00b0ff;
+$dark-blue: darken($blue,10);
+$light-blue: #47c3cc;
+$soft-blue: #f1f8ff;
+$yellow: #fbe992;
+$soft-gray: #ddd;
+$green: #289c42;
+$red: #fa3240;
+$purple: #2e34b9;
+$light-purple: #979bf9;
+$dark-pink: darken($pink,10);
+$gold: #ff9f46;
+$dark-gold: darken($gold,10);
+$capdel-blue: #2e35b9;
+
+//Typography
+$body-bg: $white;
+$body-color: $black;
+$font-family-base: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-roboto: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-roboto-slab: 'Roboto Slab', 'Times New Roman', Times, Georgia, serif;
+$font-tex: 'TeXGyreAdventor', 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-lato: 'Lato', 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1440px
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 1240px,
+  md: 1240px,
+  lg: 1240px,
+  xl: 1240px,
+  xxl: 1240px
+);
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12;
+$grid-gutter-width:           20px;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           0;
+
+$animation: opacity,color,background, 0.2s linear;
+
+$text-muted: #778895;
+
+// Modals
+
+// Padding applied to the modal body
+$modal-content-border-color:        transparent;
+$modal-content-border-width:        $border-width;
+$modal-content-border-radius:       3px;
+$modal-content-box-shadow-xs:       -3px 0 15px 0 rgba(0,0,0,0.38);
+$modal-content-box-shadow-sm-up:    -3px 0 15px 0 rgba(0,0,0,0.38);
+
+$modal-backdrop-bg:                 $light-black;
+$modal-backdrop-opacity:            .4;
+$modal-header-border-color:         $gray-200 !default;
+$modal-footer-border-color:         $modal-header-border-color !default;
+$modal-header-border-width:         $modal-content-border-width !default;
+$modal-footer-border-width:         $modal-header-border-width !default;
+$modal-header-padding:              1rem !default;
+
+$modal-lg:                          680px;
+$modal-md:                          540px;
+$modal-sm:                          400px;
+
+
+$icon-envelope: "\e939";
+$icon-share-email: "\e900";
+$icon-share-link: "\e901";
+$icon-share-linkedin: "\e902";
+$icon-share-twitter: "\e903";
+$icon-share-facebook: "\e904";
+$icon-share-google-plus: "\e905";
+$icon-plus: "\e906";
+$icon-close: "\e907";
+$icon-heart2: "\e908";
+$icon-search: "\e909";
+$icon-destination: "\e90a";
+$icon-pencil: "\e90b";
+$icon-share: "\e90c";
+$icon-phone: "\e90d";
+$icon-chevron-with-circle-up: "\e90e";
+$icon-chevron-with-circle-right: "\e90f";
+$icon-chevron-with-circle-left: "\e910";
+$icon-chevron-with-circle-down: "\e911";
+$icon-chevron-right: "\e912";
+$icon-chevron-down: "\e913";
+$icon-chevron-left: "\e914";
+$icon-chevron-up: "\e915";
+$icon-star: "\e916";
+$icon-facebook: "\e917";
+$icon-top-view: "\e918";
+$icon-heart-o: "\e919";
+$icon-heart: "\e91a";
+$icon-chat: "\e91b";
+$icon-check: "\e91c";
+$icon-calendar: "\e91d";
+$icon-star-o: "\e91e";
+$icon-angle-down: "\e91f";
+$icon-angle-up: "\e920";
+$icon-angle-right: "\e921";
+$icon-angle-left: "\e922";
+$icon-twitter: "\e923";
+$icon-linkedin: "\e924";
+$icon-pin: "\e925";
+$icon-eye: "\e926";
+$icon-team: "\e927";
+$icon-ambiance: "\e928";
+$icon-animation: "\e929";
+$icon-config: "\e92a";
+$icon-details: "\e92b";
+$icon-equipements: "\e92c";
+$icon-home: "\e92d";
+$icon-wallet: "\e92e";
+$icon-plus-o: "\e92f";
+$icon-minus-o: "\e930";
+$icon-timer: "\e931";
+$icon-language: "\e932";
+$icon-person: "\e933";
+$icon-visible_active: "\e934";
+$icon-loisir: "\e935";
+$icon-restaurant: "\e936";
+$icon-sliders: "\e937";
+$icon-config_grid: "\e938";
+$icon-email: "\e939";
+$icon-ic_config_black: "\e93a";
+$icon-arrow-right2: "\ea3c";
+$icon-arrow-left2: "\ea40";

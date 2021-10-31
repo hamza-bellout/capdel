@@ -1,0 +1,23 @@
+uuid: 4915ac73-1c68-4ce2-a749-845889775eb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_static_is_menu_item
+    - node.type.configurateur_statics
+id: node.configurateur_statics.field_conf_static_is_menu_item
+field_name: field_conf_static_is_menu_item
+entity_type: node
+bundle: configurateur_statics
+label: 'Menu type'
+description: 'Check this is the item is menu type and it should be menu item.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

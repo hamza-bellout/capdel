@@ -1,0 +1,27 @@
+<!-- SLIDER -->
+<section class="bg-dark bg-img account-banner" style="background-image: url({{ file_url(directory ~ '/images/img4.jpg') }});">
+  <div class="container">
+    <!-- BREADCRUMB -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Mon compte</li>
+      </ol>
+    </nav>
+    <!-- END BREADCRUMB -->
+    <div class="block-hold">
+      <div class="wrap">
+        <div class="intro-caption">
+          <h1 class="white">Bonjour <i class="fw300">{{ userInfo.civility|t }} {{ userInfo.last_name }}</i></h1>
+          <p class="subtitle fw300">nous sommes ravis de vous retrouver</p>
+        </div>
+      </div>
+    </div>
+
+    <ul class="tabs">
+      <li class="{% if active == 'profile' %}active{% endif %}"><a href="/profileinfo">Mes informations personnelles</a></li>
+      <li class="{% if active == 'reservations' %}active{% endif %}"><a href="/reservations">Mes demandes</a></li>
+    </ul>
+  </div>
+</section>
+<!-- END SLIDER -->

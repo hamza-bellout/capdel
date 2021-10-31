@@ -1,0 +1,97 @@
+uuid: b4c79c71-c9d3-4aa6-99a4-03e81e0c5bb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.configurator_place_room.field_room_cap_reunion
+    - field.field.paragraph.configurator_place_room.field_room_capacity_banquet
+    - field.field.paragraph.configurator_place_room.field_room_capacity_cabaret
+    - field.field.paragraph.configurator_place_room.field_room_capacity_cocktail
+    - field.field.paragraph.configurator_place_room.field_room_capacity_conf
+    - field.field.paragraph.configurator_place_room.field_room_capacity_lum
+    - field.field.paragraph.configurator_place_room.field_room_capacity_rang
+    - field.field.paragraph.configurator_place_room.field_room_capacity_u
+    - field.field.paragraph.configurator_place_room.field_room_name
+    - field.field.paragraph.configurator_place_room.field_room_size
+    - paragraphs.paragraphs_type.configurator_place_room
+id: paragraph.configurator_place_room.default
+targetEntityType: paragraph
+bundle: configurator_place_room
+mode: default
+content:
+  field_room_cap_reunion:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_room_capacity_banquet:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_room_capacity_cabaret:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_room_capacity_cocktail:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_room_capacity_conf:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_room_capacity_lum:
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_room_capacity_rang:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_room_capacity_u:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_room_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_room_size:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

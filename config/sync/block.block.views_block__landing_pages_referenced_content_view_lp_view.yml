@@ -1,0 +1,33 @@
+uuid: 3dcd4944-2c2d-44b8-8ac9-0f83b11b371b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.landing_pages_referenced_content_view
+  module:
+    - ctools
+    - views
+  theme:
+    - capdel
+id: views_block__landing_pages_referenced_content_view_lp_view
+theme: capdel
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:landing_pages_referenced_content_view-lp_view'
+settings:
+  id: 'views_block:landing_pages_referenced_content_view-lp_view'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      landing_page: landing_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,534 @@
+{
+    "cid": "Drupal\\search_api\\Commands\\SearchApiCommands",
+    "data": {
+        "setLogger": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "setLogger",
+            "mtime": 1552330226,
+            "injected_classes": []
+        },
+        "listCommand": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "listCommand",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:list",
+            "description": "Lists all search indexes.",
+            "help": "",
+            "aliases": [
+                "sapi-l",
+                "search-api-list"
+            ],
+            "annotations": {
+                "command": "search-api:list",
+                "field-labels": "\n   id: ID\n   name: Name\n   server: Server ID\n   serverName: Server name\n   types: Type IDs\n   typeNames: Type names\n   status: Status\n   limit: Limit",
+                "default-fields": "id,name,serverName,typeNames,status,limit",
+                "throws": "\\Drupal\\search_api\\SearchApiException\n   Thrown if an index has a server which couldn't be loaded."
+            },
+            "example_usages": {
+                "drush search-api:list": "List all search indexes."
+            },
+            "return_type": "\\Consolidation\\OutputFormatters\\StructuredData\\RowsOfFields",
+            "arguments": [],
+            "options": []
+        },
+        "enable": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "enable",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:enable",
+            "description": "Enables one disabled search index.",
+            "help": "",
+            "aliases": [
+                "sapi-en",
+                "search-api-enable"
+            ],
+            "annotations": {
+                "command": "search-api:enable",
+                "throws": "\\Drupal\\search_api\\ConsoleException\n   Thrown if no indexes could be loaded."
+            },
+            "example_usages": {
+                "drush search-api:enable node_index": "Enable the search index with the ID node_index."
+            },
+            "return_type": null,
+            "arguments": {
+                "indexId": {
+                    "description": "A search index ID."
+                }
+            },
+            "options": []
+        },
+        "enableAll": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "enableAll",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:enable-all",
+            "description": "Enables all disabled search indexes.",
+            "help": "",
+            "aliases": [
+                "sapi-ena",
+                "search-api-enable-all"
+            ],
+            "annotations": {
+                "command": "search-api:enable-all",
+                "throws": "\\Drupal\\search_api\\ConsoleException\n   Thrown if no indexes could be loaded."
+            },
+            "example_usages": {
+                "drush search-api:enable-all": "Enable all disabled indexes.",
+                "drush sapi-ena": "Alias to enable all disabled indexes."
+            },
+            "return_type": null,
+            "arguments": [],
+            "options": []
+        },
+        "disable": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "disable",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:disable",
+            "description": "Disables one or more enabled search indexes.",
+            "help": "",
+            "aliases": [
+                "sapi-dis",
+                "search-api-disable"
+            ],
+            "annotations": {
+                "command": "search-api:disable",
+                "throws": "\\Exception\n   If no indexes are defined or no index has been passed."
+            },
+            "example_usages": {
+                "drush search-api:disable node_index": "Disable the search index with the ID node_index.",
+                "drush sapi-dis node_index": "Alias to disable the search index with the ID node_index."
+            },
+            "return_type": null,
+            "arguments": {
+                "indexId": {
+                    "description": "A search index ID."
+                }
+            },
+            "options": []
+        },
+        "disableAll": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "disableAll",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:disable-all",
+            "description": "Disables all enabled search indexes.",
+            "help": "",
+            "aliases": [
+                "sapi-disa",
+                "search-api-disable-all"
+            ],
+            "annotations": {
+                "command": "search-api:disable-all",
+                "throws": "\\Drupal\\search_api\\ConsoleException\n   Thrown if no indexes could be loaded."
+            },
+            "example_usages": {
+                "drush search-api:disable-all": "Disable all enabled indexes.",
+                "drush sapi-disa": "Alias to disable all enabled indexes."
+            },
+            "return_type": null,
+            "arguments": [],
+            "options": []
+        },
+        "status": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "status",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:status",
+            "description": "Shows the status of one or all search indexes.",
+            "help": "",
+            "aliases": [
+                "sapi-s",
+                "search-api-status"
+            ],
+            "annotations": {
+                "command": "search-api:status",
+                "field-labels": "\n   id: ID\n   name: Name\n   complete: % Complete\n   indexed: Indexed\n   total: Total",
+                "throws": "\\Drupal\\search_api\\SearchApiException\n   Thrown if one of the affected indexes had an invalid tracker set."
+            },
+            "example_usages": {
+                "drush search-api:status": "Show the status of all search indexes.",
+                "drush sapi-s": "Alias to show the status of all search indexes.",
+                "drush sapi-s node_index": "Show the status of the search index with the ID node_index."
+            },
+            "return_type": "\\Consolidation\\OutputFormatters\\StructuredData\\RowsOfFields",
+            "arguments": {
+                "indexId": {
+                    "description": "(optional) A search index ID, or NULL to show the status of all indexes.",
+                    "default": null
+                }
+            },
+            "options": []
+        },
+        "index": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "index",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:index",
+            "description": "Indexes items for one or all enabled search indexes.",
+            "help": "",
+            "aliases": [
+                "sapi-i",
+                "search-api-index"
+            ],
+            "annotations": {
+                "command": "search-api:index",
+                "throws": "\\Exception\n   If a batch process could not be created."
+            },
+            "example_usages": {
+                "drush search-api:index": "Index all items for all enabled indexes.",
+                "drush sapi-i": "Alias to index all items for all enabled indexes.",
+                "drush sapi-i node_index": "Index all items for the index with the ID node_index.",
+                "drush sapi-i node_index 100": "Index a maximum number of 100 items for the index with the ID node_index.",
+                "drush sapi-i node_index 100 10": "Index a maximum number of 100 items (10 items per batch run) for the index with the ID node_index."
+            },
+            "return_type": null,
+            "arguments": {
+                "indexId": {
+                    "description": "(optional) A search index ID, or NULL to index items for all enabled indexes.",
+                    "default": null
+                }
+            },
+            "options": {
+                "limit": {
+                    "description": "The maximum number of items to index. Set to 0 to index all items. Defaults to 0 (index all)."
+                },
+                "batch-size": {
+                    "description": "The maximum number of items to index per batch run. Set to 0 to index all items at once. Defaults to the \"Cron batch size\" setting of the index."
+                }
+            }
+        },
+        "resetTracker": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "resetTracker",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:reset-tracker",
+            "description": "Marks one or all indexes for reindexing without deleting existing data.",
+            "help": "",
+            "aliases": [
+                "search-api-mark-all",
+                "search-api-reindex",
+                "sapi-r",
+                "search-api-reset-tracker"
+            ],
+            "annotations": {
+                "command": "search-api:reset-tracker",
+                "throws": "\\Drupal\\search_api\\SearchApiException\n   Thrown if one of the affected indexes had an invalid tracker set, or some\n   other internal error occurred."
+            },
+            "example_usages": {
+                "drush search-api:reset-tracker": "Schedule all search indexes for reindexing.",
+                "drush sapi-r": "Alias to schedule all search indexes for reindexing .",
+                "drush sapi-r node_index": "Schedule the search index with the ID node_index for reindexing."
+            },
+            "return_type": null,
+            "arguments": {
+                "indexId": {
+                    "description": "The machine name of an index. Optional. If missed, will schedule all search indexes for reindexing.",
+                    "default": null
+                }
+            },
+            "options": {
+                "entity-types": {
+                    "description": "List of entity type ids to reset tracker for.",
+                    "default": []
+                }
+            }
+        },
+        "clear": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "clear",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:clear",
+            "description": "Clears one or all search indexes and marks them for reindexing.",
+            "help": "",
+            "aliases": [
+                "sapi-c",
+                "search-api-clear"
+            ],
+            "annotations": {
+                "command": "search-api:clear",
+                "throws": "\\Drupal\\search_api\\SearchApiException\n   Thrown if one of the affected indexes had an invalid tracker set, or some\n   other internal error occurred."
+            },
+            "example_usages": {
+                "drush search-api:clear": "Clear all search indexes.",
+                "drush sapi-c": "Alias to clear all search indexes.",
+                "drush sapi-c node_index": "Clear the search index with the ID node_index."
+            },
+            "return_type": null,
+            "arguments": {
+                "indexId": {
+                    "description": "The machine name of an index. Optional. If missed all search indexes will be cleared.",
+                    "default": null
+                }
+            },
+            "options": []
+        },
+        "search": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "search",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:search",
+            "description": "Searches for a keyword or phrase in a given index.",
+            "help": "",
+            "aliases": [
+                "sapi-search",
+                "search-api-search"
+            ],
+            "annotations": {
+                "command": "search-api:search",
+                "field-labels": "\n   id: ID\n   label: Label",
+                "throws": [
+                    "\\Drupal\\search_api\\ConsoleException\n   Thrown if searching failed for any reason.",
+                    "\\Drupal\\search_api\\SearchApiException\n   Thrown if no search query could be created for the given index, for\n   example because it is disabled or its server could not be loaded."
+                ]
+            },
+            "example_usages": {
+                "drush search-api:search node_index title": "Search for \"title\" inside the \"node_index\" index.",
+                "drush sapi-search node_index title": "Alias to search for \"title\" inside the \"node_index\" index."
+            },
+            "return_type": "\\Consolidation\\OutputFormatters\\StructuredData\\RowsOfFields",
+            "arguments": {
+                "indexId": {
+                    "description": "The machine name of an index."
+                },
+                "keyword": {
+                    "description": "The keyword to look for."
+                }
+            },
+            "options": []
+        },
+        "serverList": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "serverList",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:server-list",
+            "description": "Lists all search servers.",
+            "help": "",
+            "aliases": [
+                "sapi-sl",
+                "search-api-server-list"
+            ],
+            "annotations": {
+                "command": "search-api:server-list",
+                "field-labels": "\n   id: ID\n   name: Name\n   status: Status",
+                "throws": "\\Drupal\\search_api\\ConsoleException\n   Thrown if no servers could be loaded."
+            },
+            "example_usages": {
+                "drush search-api:server-list": "List all search servers.",
+                "drush sapi-sl": "Alias to list all search servers."
+            },
+            "return_type": "\\Consolidation\\OutputFormatters\\StructuredData\\RowsOfFields",
+            "arguments": [],
+            "options": []
+        },
+        "serverEnable": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "serverEnable",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:server-enable",
+            "description": "Enables a search server.",
+            "help": "",
+            "aliases": [
+                "sapi-se",
+                "search-api-server-enable"
+            ],
+            "annotations": {
+                "command": "search-api:server-enable",
+                "throws": [
+                    "\\Drupal\\search_api\\ConsoleException\n   Thrown if the server couldn't be loaded.",
+                    "\\Drupal\\Core\\Entity\\EntityStorageException\n   Thrown if an internal error occurred when saving the server."
+                ]
+            },
+            "example_usages": {
+                "drush search-api:server-enable my_solr_server": "Enable the my_solr_server search server.",
+                "drush sapi-se my_solr_server": "Alias to enable the my_solr_server search server."
+            },
+            "return_type": null,
+            "arguments": {
+                "serverId": {
+                    "description": "The machine name of a server."
+                }
+            },
+            "options": []
+        },
+        "serverDisable": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "serverDisable",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:server-disable",
+            "description": "Disables a search server.",
+            "help": "",
+            "aliases": [
+                "sapi-sd",
+                "search-api-server-disable"
+            ],
+            "annotations": {
+                "command": "search-api:server-disable",
+                "throws": [
+                    "\\Drupal\\search_api\\ConsoleException\n   Thrown if the server couldn't be loaded.",
+                    "\\Drupal\\Core\\Entity\\EntityStorageException\n   Thrown if an internal error occurred when saving the server."
+                ]
+            },
+            "example_usages": {
+                "drush search-api:server-disable": "Disable the my_solr_server search server.",
+                "drush sapi-sd": "Alias to disable the my_solr_server search server."
+            },
+            "return_type": null,
+            "arguments": {
+                "serverId": {
+                    "description": "The machine name of a server."
+                }
+            },
+            "options": []
+        },
+        "serverClear": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "serverClear",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:server-clear",
+            "description": "Clears all search indexes on the given search server.",
+            "help": "",
+            "aliases": [
+                "sapi-sc",
+                "search-api-server-clear"
+            ],
+            "annotations": {
+                "command": "search-api:server-clear",
+                "throws": [
+                    "\\Drupal\\search_api\\ConsoleException\n   Thrown if the server couldn't be loaded.",
+                    "\\Drupal\\search_api\\SearchApiException\n   Thrown if one of the affected indexes had an invalid tracker set, or some\n   other internal error occurred."
+                ]
+            },
+            "example_usages": {
+                "drush search-api:server-clear my_solr_server": "Clear all search indexes on the search server my_solr_server.",
+                "drush sapi-sc my_solr_server": "Alias to clear all search indexes on the search server my_solr_server."
+            },
+            "return_type": null,
+            "arguments": {
+                "serverId": {
+                    "description": "The machine name of a server."
+                }
+            },
+            "options": []
+        },
+        "setIndexServer": {
+            "schema": 4,
+            "class": "Drupal\\search_api\\Commands\\SearchApiCommands",
+            "method_name": "setIndexServer",
+            "mtime": 1552330226,
+            "injected_classes": [],
+            "name": "search-api:set-index-server",
+            "description": "Sets the search server used by a given index.",
+            "help": "",
+            "aliases": [
+                "sapi-sis",
+                "search-api-set-index-server"
+            ],
+            "annotations": {
+                "command": "search-api:set-index-server",
+                "throws": "\\Exception\n   If no index or no server were passed or passed values are invalid."
+            },
+            "example_usages": {
+                "drush search-api:set-index-server default_node_index my_solr_server": "Set the default_node_index index to used the my_solr_server server.",
+                "drush sapi-sis default_node_index my_solr_server": "Alias to set the default_node_index index to used the my_solr_server server."
+            },
+            "return_type": null,
+            "arguments": {
+                "indexId": {
+                    "description": "The machine name of an index."
+                },
+                "serverId": {
+                    "description": "The machine name of a server."
+                }
+            },
+            "options": []
+        },
+        "setProcessManager": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setProcessManager",
+            "mtime": 1552412184,
+            "injected_classes": []
+        },
+        "processManager": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "processManager",
+            "mtime": 1552412184,
+            "injected_classes": []
+        },
+        "hasProcessManager": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "hasProcessManager",
+            "mtime": 1552412184,
+            "injected_classes": []
+        },
+        "getConfig": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "getConfig",
+            "mtime": 1553592948,
+            "injected_classes": []
+        },
+        "setConfig": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setConfig",
+            "mtime": 1553018839,
+            "injected_classes": []
+        },
+        "parentgetconfig": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "parentgetconfig",
+            "mtime": 1553018839,
+            "injected_classes": []
+        },
+        "setInput": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setInput",
+            "mtime": 1553018839,
+            "injected_classes": []
+        },
+        "setOutput": {
+            "schema": 4,
+            "class": "Drush\\Commands\\DrushCommands",
+            "method_name": "setOutput",
+            "mtime": 1553018839,
+            "injected_classes": []
+        }
+    },
+    "created": 1605276927,
+    "expire": 0
+}

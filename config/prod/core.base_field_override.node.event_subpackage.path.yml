@@ -1,0 +1,20 @@
+uuid: d9208a40-2873-4cad-8626-35040e7190d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.event_subpackage
+  module:
+    - path
+id: node.event_subpackage.path
+field_name: path
+entity_type: node
+bundle: event_subpackage
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

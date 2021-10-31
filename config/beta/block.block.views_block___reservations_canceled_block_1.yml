@@ -1,0 +1,30 @@
+uuid: fdb5c8c0-2538-444d-b9d1-e21afbc5194e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view._reservations_canceled
+  module:
+    - system
+    - views
+  theme:
+    - capdel
+id: views_block___reservations_canceled_block_1
+theme: capdel
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:_reservations_canceled-block_1'
+settings:
+  id: 'views_block:_reservations_canceled-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /reservations
+    negate: false
+    context_mapping: {  }

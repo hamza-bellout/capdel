@@ -1,0 +1,29 @@
+uuid: 67036945-8fc8-45d4-936f-8bfd8ef9c5d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+  theme:
+    - capdel
+id: entityviewuser
+theme: capdel
+region: content
+weight: -12
+provider: null
+plugin: 'entity_view:user'
+settings:
+  id: 'entity_view:user'
+  label: 'Entity view (User)'
+  provider: ctools
+  label_display: '0'
+  view_mode: default
+  context_mapping:
+    entity: '@user.current_user_context:current_user'
+visibility:
+  request_path:
+    id: request_path
+    pages: /profileinfo
+    negate: false
+    context_mapping: {  }

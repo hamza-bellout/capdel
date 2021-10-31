@@ -1,0 +1,8 @@
+uuid: d36e7d13-8892-4342-9c74-bdb107b3de73
+langcode: en
+status: true
+dependencies: {  }
+id: footer-third
+label: 'Footer third'
+description: Région
+locked: false

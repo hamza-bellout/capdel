@@ -1,0 +1,10 @@
+uuid: fab21ab8-0e1f-4096-8590-1171ef17c696
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.token
+label: Token
+targetEntityType: menu_link_content
+cache: true

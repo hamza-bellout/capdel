@@ -1,0 +1,25 @@
+uuid: ca306043-1949-4154-8917-2337bb28e0ba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_par_lieu_tb_geo_dist
+    - node.type.conf_distance
+id: node.conf_distance.field_par_lieu_tb_geo_dist
+field_name: field_par_lieu_tb_geo_dist
+entity_type: node
+bundle: conf_distance
+label: Distance
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

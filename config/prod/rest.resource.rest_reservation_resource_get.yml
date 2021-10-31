@@ -1,0 +1,21 @@
+uuid: db6aafdc-39ff-43d5-9b89-c30e11aea146
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - custom_rest
+    - serialization
+    - user
+id: rest_reservation_resource_get
+plugin_id: rest_reservation_resource_get
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    2: json
+    3: xml
+  authentication:
+    - basic_auth
+    - cookie

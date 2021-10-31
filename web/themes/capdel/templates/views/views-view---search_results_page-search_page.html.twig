@@ -1,0 +1,156 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+    set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+]
+%}
+
+<div class="{{ dom_id ? 'js-view-dom-id-' ~ dom_id }}">
+    {{ title_prefix }}
+    {% if title %}
+        {{ title }}
+    {% endif %}
+    {{ title_suffix }}
+    {% if header %}
+        <div class="view-header heading-title">
+          {% if(isCategoryListPage()) %}
+            {% set term = getTermById(pager['#parameters']['evenement_tous']) %}
+            <div class="h1 title-tex">{{ term.getName() }}</div>
+          {% endif %}
+          <div class="h1">
+            {% if rows is empty %}
+              <span>0 offre</span> correspondante
+            {% else %}
+              {% set query = getQueryParams() %}
+              {% set filterSearch = query['raw']['f'] %}
+              {% if (filterSearch is not null)  %}
+                {# we have filtered search, do not count LP there #}
+                  {% if view.total_rows == 1 %}
+                    <span>1 offre</span> correspondante
+                  {% else %}
+                    {{ header }}
+                  {% endif %}
+              {% else %}
+                {# we DO NOT have filtered search, DO count LP there #}
+                {% set headerCount = getSearchAndLPresults(pager['#parameters']) %}
+                {% if(headerCount) == false %}
+                  {% if view.total_rows == 1 %}
+                    <span>1 offre</span> correspondante
+                  {% else %}
+                    {{ header }}
+                  {% endif %}
+                {% else %}
+                  <span>{{ headerCount }} offres</span> correspondantes
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+    {% endif %}
+    {% if exposed %}
+        <div class="view-filters">
+            {{ exposed }}
+        </div>
+    {% endif %}
+    {% if attachment_before %}
+        <div class="attachment attachment-before">
+            {{ attachment_before }}
+        </div>
+    {% endif %}
+    {% if rows %}
+        <div class="row">
+            {% set coords = extractCoordinatesFromSearch(rows[0]['#rows']) %}
+            {% set coordJson %}
+              [
+              {% for coord in coords %}
+                {
+                "location": [{{ coord }}],
+                "icon": "{{ file_url(directory ~ '/images/ico-pin.svg') }}"
+                }
+                {% if not loop.last %},{% endif %}
+              {% endfor %}
+              ]
+            {% endset %}
+            <div class="col-xxl-3 order-xxl-2">
+                <div class="google-map" style="background-image: url({{ file_url(directory ~ '/images/img-map.jpg') }}">
+                <div class="map" data-markers="{{ coordJson|escape }}" data-icon="images/ico-pin.svg"></div>
+            </div>
+            </div>
+            <input class="view_dom_id" type="hidden" value="{{ dom_id }}"/>
+            <div class="col-xxl-9 order-xxl-1">
+                <div class="row article-row">
+                    {% for row in rows[0]['#rows'] %}
+                      {% set rowEntity = resolveSearchResultRow(row['#row']) %}
+                      <div class="col-md-6">
+                        {% include '@capdel/views/event-card.html.twig' with {
+                        'event' : rowEntity,
+                            'fav' : true,
+                        } %}
+                      </div>
+                    {% endfor %}
+                </div>
+                {% if pager %}
+                    {{ pager }}
+                {% endif %}
+            </div>
+        </div>
+    {% elseif empty %}
+        <div class="view-empty">
+            {{ empty }}
+        </div>
+    {% endif %}
+
+    {% if attachment_after %}
+        <div class="attachment attachment-after">
+            {{ attachment_after }}
+        </div>
+    {% endif %}
+    {% if more %}
+        {{ more }}
+    {% endif %}
+    {% if footer %}
+        <div class="view-footer">
+            {{ footer }}
+        </div>
+    {% endif %}
+    {% if feed_icons %}
+        <div class="feed-icons">
+            {{ feed_icons }}
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,23 @@
+uuid: 3f63ac29-1a64-4d72-9ce3-868dcfd50626
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_sub_price
+    - node.type.event_subpackage
+id: node.event_subpackage.field_event_sub_price
+field_name: field_event_sub_price
+entity_type: node
+bundle: event_subpackage
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

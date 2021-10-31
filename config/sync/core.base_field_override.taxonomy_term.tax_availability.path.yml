@@ -1,0 +1,20 @@
+uuid: b969da27-77cb-4159-a441-20f3b4b3360d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_availability
+  module:
+    - path
+id: taxonomy_term.tax_availability.path
+field_name: path
+entity_type: taxonomy_term
+bundle: tax_availability
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

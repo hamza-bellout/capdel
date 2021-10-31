@@ -1,0 +1,20 @@
+uuid: 566624f3-db7f-4c8d-bb59-82520ddcd6c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_tax_legacy_id
+field_name: field_tax_legacy_id
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

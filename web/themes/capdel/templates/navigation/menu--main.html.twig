@@ -1,0 +1,124 @@
+{#
+/**
+ * @file
+ * Bootstrap Barrio's override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+<ul class="navbar-nav d-md-none">
+  <li class="nav-item">
+    <a class="nav-link" href="{{ path('<front>') }}">{{ 'Page d\'accueil'|t}}</a>
+  </li>
+</ul>
+
+{% set menu = getMenu('main') %}
+<ul class="navbar-nav">
+  {% for level_1_menu_item in menu %}
+    {% set level_1_has_children = level_1_menu_item['children'] is not empty %}
+    {% if not level_1_has_children %}
+      <li class="nav-item">
+        <a
+          class="nav-link {% if level_1_menu_item['class'] %}{{ level_1_menu_item['class'] }}{% endif %}"
+          href="{{ level_1_menu_item['url'] }}"
+          {% if level_1_menu_item['target'] %}
+            target = "{{ level_1_menu_item['target'] }}"
+          {% endif %}
+        >
+          {{ level_1_menu_item['title'] }}
+        </a>
+      </li>
+    {% else %}
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle {% if level_1_menu_item['class'] %}{{ level_1_menu_item['class'] }}{% endif %}"
+        data-toggle="dropdown"
+        href="{{ level_1_menu_item['url'] }}"
+        {% if level_1_menu_item['target'] %}
+          target = "{{ level_1_menu_item['target'] }}"
+        {% endif %}
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        {{ level_1_menu_item['title'] }}
+      </a>
+      {% if level_1_has_children %}
+      <div class="dropdown-menu">
+        <div class="row">
+          {% for level_2_menu_item in level_1_menu_item['children'] %}
+          <div class="col-md-{{ level_2_menu_item['width'] }}">
+            <strong class="nav-title">{{ level_2_menu_item['title'] }}</strong>
+            {% if(level_2_menu_item['children'] is not empty) %}
+              <div class="row">
+              {% for row in level_2_menu_item['children']|batch(level_2_menu_item['children']|length / level_2_menu_item['cols']) %}
+                <div class="col-md-{{ 12 / loop.length }}">
+                  <ul class="list-unstyled list-links">
+                    {% for column in row %}
+                      <li>
+                        <a
+                          {% if column['class'] %}
+                            class="{{ column['class'] }}"
+                          {% endif %}
+                          href="{{ column['url'] }}"
+                          {% if column['target'] %}
+                            target = "{{ column['target'] }}"
+                          {% endif %}
+                        >
+                          {{ column['title'] }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                  {% if loop.last %}
+                    <a href="{{ level_2_menu_item['url'] }}" class="link-more">{{ 'Voir tout'|t }}</a>
+                  {% endif %}
+                </div>
+              {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+{% set menu = getMenu('account', false) %}
+{% set user = getUserID() %}
+<ul class="navbar-nav d-md-none">
+  {% for item in menu %}
+    <li class="nav-item">
+      {% if '/user/login' in item['url']  %}
+        <a href="#" class="nav-link" data-toggle="modal" data-target="#loginModal" onclick="loginTo('{{ item['url'] }}')">{{ item['title'] }}</a>
+      {% elseif item['key'] == 'configurator' %}
+        {% if user == 0 %}
+          <a class="nav-link" href="{{ item['url'] }}" data-toggle="modal" data-target="#loginModal" onclick="loginTo('{{ item['url'] }}')">{{ item['title'] }}</a>
+        {% else %}
+          <a class="nav-link" href="{{ item['url'] }}">{{ item['title'] }}</a>
+        {% endif %}
+      {% elseif item['children'] is not empty %}
+        {% for child_item in item['children'] %}
+          <a class="nav-link" href="{{ child_item['url'] }}">{{ child_item['title'] }}</a>
+        {% endfor %}
+      {% else %}
+        <a class="nav-link" href="{{ item['url'] }}">{{ item['title'] }}</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

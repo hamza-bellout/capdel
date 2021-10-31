@@ -1,0 +1,24 @@
+{# extends @bootstrap_barrio/layout/block.html.twig
+/**
+ * @file
+ * Theme override for tabs.
+ */
+#}
+
+{% if url('<current>')['#markup'] matches '/.*configurateur.*/' %}
+        {% if content %}
+            <section class="steps bg-soft-blue col">
+              <div class="container">
+                <div class="row">
+                    {{ content }}
+                </div>
+              </div>
+            </section>
+        {% endif %}
+{% else %}
+        {% if content %}
+          <nav class="tabs" role="navigation" aria-label="{{ 'Tabs'|t }}">
+              {{ content }}
+          </nav>
+        {% endif %}
+{% endif %}

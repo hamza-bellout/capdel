@@ -1,0 +1,31 @@
+uuid: 603412bf-f0af-4258-9708-b9dc2744de7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lp_tax_ref
+    - node.type.landing_page
+    - taxonomy.vocabulary.tax_destination
+    - taxonomy.vocabulary.tax_menu_types
+id: node.landing_page.field_lp_tax_ref
+field_name: field_lp_tax_ref
+entity_type: node
+bundle: landing_page
+label: 'Referenced Taxonomy Term'
+description: 'In this place you choose the term for which the landing page is created '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tax_destination: tax_destination
+      tax_menu_types: tax_menu_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: tax_destination
+field_type: entity_reference

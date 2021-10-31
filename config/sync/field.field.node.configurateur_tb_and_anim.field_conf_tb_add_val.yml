@@ -1,0 +1,21 @@
+uuid: 5e67738f-98be-43a6-be2b-ce84c6b1c3d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_tb_add_val
+    - node.type.configurateur_tb_and_anim
+  module:
+    - text
+id: node.configurateur_tb_and_anim.field_conf_tb_add_val
+field_name: field_conf_tb_add_val
+entity_type: node
+bundle: configurateur_tb_and_anim
+label: 'Added value description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

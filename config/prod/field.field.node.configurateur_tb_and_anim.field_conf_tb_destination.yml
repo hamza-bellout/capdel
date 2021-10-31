@@ -1,0 +1,29 @@
+uuid: fee8c98a-b12e-42f5-9f22-8174a982a95d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conf_tb_destination
+    - node.type.configurateur_tb_and_anim
+    - taxonomy.vocabulary.tax_destination
+id: node.configurateur_tb_and_anim.field_conf_tb_destination
+field_name: field_conf_tb_destination
+entity_type: node
+bundle: configurateur_tb_and_anim
+label: Place
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tax_destination: tax_destination
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

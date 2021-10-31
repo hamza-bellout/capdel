@@ -1,0 +1,29 @@
+uuid: 329d0f3b-347a-4ed7-964f-0f21c4749aec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_sub_tax_lang
+    - node.type.event_subpackage
+    - taxonomy.vocabulary.language
+id: node.event_subpackage.field_event_sub_tax_lang
+field_name: field_event_sub_tax_lang
+entity_type: node
+bundle: event_subpackage
+label: 'Langue de référence'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      language: language
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: 5927fbb7-f0f3-4e78-b15a-8091a3ce9103
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - custom_rest
+    - serialization
+    - user
+id: rest_reservation_resource
+plugin_id: rest_reservation_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      2: json
+      3: xml
+    supported_auth:
+      - basic_auth
+      - cookie

@@ -1,0 +1,27 @@
+uuid: e4b2b130-332b-41b0-9c56-a36c182238b5
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - capdel
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: capdel_messages
+theme: capdel
+region: content
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/configurateur\r\n/configurateur/*"
+    negate: false
+    context_mapping: {  }

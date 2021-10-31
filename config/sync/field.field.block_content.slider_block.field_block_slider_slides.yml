@@ -1,0 +1,34 @@
+uuid: 46ad1a70-f1b3-44c3-b115-c8d07ca1ff47
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider_block
+    - field.storage.block_content.field_block_slider_slides
+    - paragraphs.paragraphs_type.slider_items
+  module:
+    - entity_reference_revisions
+id: block_content.slider_block.field_block_slider_slides
+field_name: field_block_slider_slides
+entity_type: block_content
+bundle: slider_block
+label: Slides
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      slider_items: slider_items
+    target_bundles_drag_drop:
+      par_menu_prices:
+        weight: 3
+        enabled: false
+      slider_items:
+        enabled: true
+        weight: 4
+field_type: entity_reference_revisions

@@ -1,0 +1,8 @@
+uuid: 4d3096b2-f98b-47a6-8fce-b546cce7ef5b
+langcode: en
+status: true
+dependencies: {  }
+id: error-page-links
+label: 'Error page links'
+description: ''
+locked: false

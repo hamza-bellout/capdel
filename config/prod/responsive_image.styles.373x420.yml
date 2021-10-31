@@ -1,0 +1,11 @@
+uuid: 77d90a6d-0ee3-4844-bc3d-af9d1b112972
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large
+id: 373x420
+label: 373x420
+image_style_mappings: {  }
+breakpoint_group: responsive_image
+fallback_image_style: large

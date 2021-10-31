@@ -1,0 +1,9 @@
+uuid: c8bd589a-e176-4b94-bc92-35529ec1ca36
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Configurateur lieu Ambiance'
+vid: configurateur_lieu_details_des_s
+description: ''
+hierarchy: 0
+weight: 0

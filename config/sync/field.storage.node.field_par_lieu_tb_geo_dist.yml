@@ -1,0 +1,24 @@
+uuid: e49c6eee-914b-462c-82ee-ada74be4e4f9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_par_lieu_tb_geo_dist
+field_name: field_par_lieu_tb_geo_dist
+entity_type: node
+type: decimal
+settings:
+  precision: 16
+  scale: 6
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

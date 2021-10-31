@@ -1,0 +1,9 @@
+uuid: ffb98cce-af10-4d56-9309-1f42ad1da8df
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Configurateur lieu hébergement'
+vid: configurateur_lieu_format
+description: ''
+hierarchy: 0
+weight: 0

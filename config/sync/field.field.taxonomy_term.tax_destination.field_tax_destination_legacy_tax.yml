@@ -1,0 +1,19 @@
+uuid: 2920c267-9319-492b-ad71-d5c4d8dcc010
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tax_destination_legacy_tax
+    - taxonomy.vocabulary.tax_destination
+id: taxonomy_term.tax_destination.field_tax_destination_legacy_tax
+field_name: field_tax_destination_legacy_tax
+entity_type: taxonomy_term
+bundle: tax_destination
+label: 'Destination legacy taxonomy name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

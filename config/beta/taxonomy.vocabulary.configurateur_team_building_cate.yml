@@ -1,0 +1,9 @@
+uuid: 5f14edb5-f748-475e-b600-e72203cd3aa6
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Configurateur team building categories'
+vid: configurateur_team_building_cate
+description: ''
+hierarchy: 0
+weight: 0

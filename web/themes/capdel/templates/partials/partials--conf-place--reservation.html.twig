@@ -1,0 +1,152 @@
+{#
+
+    Twig partial template to render
+    blue reservation box on the conf place detail page.
+    It gets the UID from the currently logged in user,
+    if empty, displays the login form
+
+#}
+
+{% set uid = getUserID() %}
+
+{{ attach_library('capdel/place-detail-reservation') }}
+
+{% set filter_pax = 0 %}
+{% set filter_type = 0 %}
+{% set filter_date = 0 %}
+{% set filter_destination = 0 %}
+{% set filter_price = 0 %}
+{% set show_block = 1 %}
+
+
+{% if(place['get_params'] is not empty and place['get_params']['participant'] is not empty) %}
+  {% set filter_pax = place['get_params']['participant'] %}
+  {% set show_block = 1 %}
+{% else %}
+    {# TODO: Get the pars from place #}
+{% endif %}
+
+{#{% if(place['get_params'] is not empty and place['get_params']['type'] is not empty) %}
+    {% set filter_type = place['get_params']['type'] %}
+    {% set show_block = 1 %}
+{% else %}
+    #}{# TODO: Get the filter_type from place #}{#
+{% endif %}#}
+
+{#{% if(place['get_params'] is not empty and place['get_params']['availablity_exact'] is not empty) %}
+    {% set filter_date = place['get_params']['availablity_exact'] %}
+    {% set show_block = 1 %}
+{% endif %}
+
+{% if(place['get_params'] is not empty and place['get_params']['field_conf_lieu_dest'] is not empty) %}
+    {% set filter_destination = place['get_params']['field_conf_lieu_dest'] %}
+    {% set show_block = 1 %}
+{% else %}
+    #}{# TODO: Get the filter_destination from place #}{#
+{% endif %}#}
+
+{% if(place['get_params'] is not empty and place['get_params']['price'] is not empty) %}
+    {% set filter_price = place['get_params']['price'] %}
+    {% set show_block = 1 %}
+{% else %}
+    {# TODO: Get the price from place #}
+{% endif %}
+
+
+<!-- SIDEBAR -->
+{% if show_block > 0 %}
+<form class="form" action="#">
+    <fieldset>
+        <div class="side-block search-block-form">
+            <h2 class="white">Réservation</h2>
+            <div class="block-row">
+                <div class="info-block mb-5">
+                    {% if filter_type > 0 %}
+                    <div class="title-block d-block white">
+                        <i class="icon-home mr-3"></i><strong>{{ filter_type }}</strong>
+                    </div>
+                    {% endif %}
+                    {% if fitler_date > 0 %}
+                    <div class="title-block d-block white">
+                        <i class="icon-calendar mr-3"></i><strong>{{ fitler_date }}</strong>
+                    </div>
+                    {% endif %}
+                    {% if filter_pax > 0 %}
+                    <div class="title-block d-block white">
+                        <i class="icon-person mr-3"></i><strong>{{ filter_pax }}</strong> participants
+                    </div>
+                    {% endif %}
+                    {% if filter_destination > 0 %}
+                    <div class="title-block d-block white">
+                        <i class="icon-pin mr-3"></i><strong>{{ filter_destination }}</strong>
+                    </div>
+                    {% endif %}
+                    {% if filter_price > 0 %}
+                    <div class="title-block d-block white">
+                        <i class="icon-wallet mr-3"></i><strong>{{ filter_price }}</strong> € par participant
+                    </div>
+                    {% endif %}
+                </div>
+                {% if uid == 0 %}
+                    <button type="submit"
+                            class="btn btn-primary login-button col-lg-12"
+                            data-toggle="modal"
+                            data-target="#loginModal"
+                            data-title="{{ node.title.value }}"
+                            data-nid="{{ node.nid.value }}"
+                            data-uid="{{ uid }}">Ajouter à la sélection
+                    </button>
+                {% else %}
+                    <button type="submit"
+                            class="btn btn-primary place-reservation-button add col-lg-12"
+                            hidden
+                            data-title="{{ node.title.value }}"
+                            data-action="add"
+                            data-nid="{{ node.nid.value }}"
+                            {% if place['destination'] is not empty %}
+                                data-destination="{{ place['destination'] | join(', ') }}"
+                            {% else %}
+                                data-destination=""
+                            {% endif %}
+                            {% if place['category'] is not empty %}
+                                data-category="{{ place['category'] }}"
+                            {% else %}
+                                data-category=""
+                            {% endif %}
+                            {% if filter_pax > 0 %}
+                                data-pax="{{ filter_pax }}"
+                            {% else %}
+                                data-pax="1"
+                            {% endif %}
+                            data-uid="{{ uid }}">Ajouter à la sélection
+                    </button>
+                    <button type="submit"
+                            class="btn btn-primary place-reservation-button remove col-lg-12"
+                            hidden
+                            data-title="{{ node.title.value }}"
+                            data-action="remove"
+                            data-nid="{{ node.nid.value }}"
+                            {% if place['destination'] is not empty %}
+                                data-destination="{{ place['destination'] | join(', ') }}"
+                            {% else %}
+                                data-destination=""
+                            {% endif %}
+                            {% if place['category'] is not empty %}
+                                data-category="{{ place['category'] }}"
+                            {% else %}
+                                data-category=""
+                            {% endif %}
+                            {% if filter_pax > 0 %}
+                                data-pax="{{ filter_pax }}"
+                            {% else %}
+                                data-pax="1"
+                            {% endif %}
+                            data-uid="{{ uid }}"> Retirer <span class="ml-2 icon-close"></span>
+                    </button>
+                {% endif %}
+            </div>
+        </div>
+    </fieldset>
+</form>
+{% endif %}
+<!-- END SIDEBAR -->

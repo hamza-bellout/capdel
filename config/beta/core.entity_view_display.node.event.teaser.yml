@@ -1,0 +1,61 @@
+uuid: dac7fb5f-89c5-4f5f-a9dc-161a670a9c81
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.field_event_activity_day
+    - field.field.node.event.field_event_activity_evening
+    - field.field.node.event.field_event_activity_indoor
+    - field.field.node.event.field_event_activity_outdoor
+    - field.field.node.event.field_event_added_value
+    - field.field.node.event.field_event_datastatus
+    - field.field.node.event.field_event_description
+    - field.field.node.event.field_event_duration
+    - field.field.node.event.field_event_duration_max
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_is_valid
+    - field.field.node.event.field_event_legacy_id
+    - field.field.node.event.field_event_meta
+    - field.field.node.event.field_event_origin
+    - field.field.node.event.field_event_price
+    - field.field.node.event.field_event_related_events
+    - field.field.node.event.field_event_tax_duration_type
+    - field.field.node.event.field_event_top_sales
+    - field.field.node.event.field_event_view_prices
+    - node.type.event
+  module:
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_event_activity_day: true
+  field_event_activity_evening: true
+  field_event_activity_indoor: true
+  field_event_activity_outdoor: true
+  field_event_added_value: true
+  field_event_datastatus: true
+  field_event_description: true
+  field_event_duration: true
+  field_event_duration_max: true
+  field_event_image: true
+  field_event_is_valid: true
+  field_event_legacy_content: true
+  field_event_legacy_id: true
+  field_event_meta: true
+  field_event_origin: true
+  field_event_price: true
+  field_event_ref_variant: true
+  field_event_related_events: true
+  field_event_tax_diodes: true
+  field_event_tax_duration_type: true
+  field_event_tax_key_accounts: true
+  field_event_top_sales: true
+  field_event_view_prices: true
+  langcode: true

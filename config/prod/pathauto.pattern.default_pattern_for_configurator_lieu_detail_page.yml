@@ -1,0 +1,22 @@
+uuid: 21f7000e-edfd-4b11-a8dd-cf9eecf36ffe
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: default_pattern_for_configurator_lieu_detail_page
+label: 'Default pattern for configurator lieu detail page'
+type: 'canonical_entities:node'
+pattern: '/conf/lieux/[node:title]'
+selection_criteria:
+  6081dad8-22a3-4c6d-9d2a-5c20a70001de:
+    id: node_type
+    bundles:
+      conf_lieu: conf_lieu
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 6081dad8-22a3-4c6d-9d2a-5c20a70001de
+selection_logic: and
+weight: -5
+relationships: {  }

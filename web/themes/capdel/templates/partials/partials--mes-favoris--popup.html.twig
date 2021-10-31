@@ -1,0 +1,15 @@
+<div class="modal fade" id="removeFavourite" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <div class="image">
+                    <img src="{{ file_url(directory ~ '/images/illu_deletefavorite.svg') }}">
+                </div>
+                <div class="modal-title h2 mb-3">Êtes-vous sûr<br>de vouloir retirer ce favori ?</div>
+                <p class="mb-5">Si vous confirmez cette action, il n’apparaitra plus dans votre liste.</p>
+                <button class="btn btn-outline-primary mt-1 mr-2" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-primary mt-1 remove-fav-button" data-dismiss="modal" href="#">Confirmer</a>
+            </div>
+        </div>
+    </div>
+</div>

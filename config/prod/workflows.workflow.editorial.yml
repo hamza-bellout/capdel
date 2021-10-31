@@ -1,0 +1,93 @@
+uuid: ac5e4205-1d8a-4773-82f0-3be814303fd0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.event
+    - node.type.event_subpackage
+  module:
+    - content_moderation
+_core:
+  default_config_hash: T_JxNjYlfoRBi7Bj1zs5Xv9xv1btuBkKp5C1tNrjMhI
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archivé
+      weight: 1
+      published: false
+      default_revision: true
+    draft:
+      published: false
+      default_revision: false
+      label: Brouillon
+      weight: -2
+    needs_review:
+      published: false
+      default_revision: false
+      label: 'Needs review'
+      weight: -1
+    published:
+      label: Publié
+      published: true
+      default_revision: true
+      weight: 0
+  transitions:
+    archive:
+      label: Archive
+      from:
+        - published
+      to: archived
+      weight: 0
+    archived_draft:
+      label: 'Restaurer en brouillon'
+      from:
+        - archived
+      to: draft
+      weight: 1
+    archived_published:
+      label: Restore
+      from:
+        - archived
+      to: published
+      weight: 2
+    create_new_draft:
+      label: 'Créer un nouveau brouillon'
+      to: draft
+      weight: -4
+      from:
+        - draft
+        - published
+    moderation_ko:
+      label: 'Moderation KO'
+      from:
+        - needs_review
+      to: draft
+      weight: 5
+    moderation_ok:
+      label: 'Moderation OK'
+      from:
+        - needs_review
+      to: published
+      weight: 4
+    needs_review:
+      label: 'Needs review'
+      from:
+        - draft
+        - needs_review
+        - published
+      to: needs_review
+      weight: 3
+    publish:
+      label: Publish
+      to: published
+      weight: -1
+      from:
+        - draft
+        - published
+  entity_types:
+    node:
+      - event
+      - event_subpackage

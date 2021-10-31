@@ -1,0 +1,92 @@
+{#
+/**
+ * @file
+ * Event card
+ *
+ * Available variables:
+ * - badge
+ * -- label : badge text
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{% if removeQuery is defined and removeQuery == true %}
+    {#
+    remove query params added to the end of the urls. This is fix to the
+    view cache issue, where wrong params are passed to the next links.
+    #}
+  {% set eventInfo = getEventInfo(event, preferableMenuType, false, true) %}
+{% else %}
+  {% set eventInfo = getEventInfo(event, preferableMenuType, true, false) %}
+{% endif %}
+
+{% set eventFav = getFavLink(event) %}
+{% set userId = getUserID() %}
+<article class="info-post">
+  {% if fav %}
+      <div class="fav-wrapper">
+        {% if userId != 0 %}
+          {{ eventFav }}
+          <a href="#" class="event-fav link-fav" data-nid="{{ event.nid.value }}"></a>
+        {% else %}
+          <a href="#" class="event-fav link-fav anonym" data-nid="{{ event.nid.value }}"></a>
+        {% endif %}
+      </div>
+  {% endif %}
+  <a class="info-wrap" href="{{ eventInfo.url }}" tabindex="0">
+    {% if badge %}
+      <div class="article-badge">{{ badge.label }}</div>
+    {% endif %}
+    <figure class="img-holder">
+      {% if eventInfo['images'] is not empty %}
+        <div class="img-wrap"><img class='b-lazy' data-src="{{ eventInfo['images'][0]['urls']['search'] }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{{ eventInfo['images'][0]['alt'] }}"></div>
+      {% endif %}
+      <figcaption class="row caption">
+        {% if eventInfo['locations'] is not empty %}
+        <div class="col-6"><div class="info-location">{{ eventInfo['locations'] | join(', ') }}</div></div>
+        {% endif %}
+
+        {% if eventInfo['price'] %}
+        <div class="col-6">
+          <span class="price-info">à partir de <strong class="price">{{ eventInfo['price'] }} €</strong></span>
+        </div>
+        {% endif %}
+      </figcaption>
+    </figure>
+    <div class="description">
+      <span class="category">{{ eventInfo['menu_type'] }}</span>
+      {#
+          If SEO param is set, the description is set to h3 and title to h2
+          Ref: CAP-526
+      #}
+      {% if seohtags %}
+        <h2 class="h3 seo-opt">{{ event.fields['title'].value }}</h2>
+        <h3 class="p seo-opt">{{ eventInfo['summary'] }}</h3>
+      {% else %}
+        <h3>{{ event.fields['title'].value }}</h3>
+        <p>{{ eventInfo['summary'] }}</p>
+      {% endif %}
+    </div>
+  </a>
+</article>

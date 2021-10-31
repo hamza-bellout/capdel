@@ -1,0 +1,30 @@
+uuid: fcb972fc-91d1-4b6e-b033-2af69711936b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view._home_partners
+  module:
+    - system
+    - views
+  theme:
+    - capdel
+id: views_block___home_partners_block_1
+theme: capdel
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:_home_partners-block_1'
+settings:
+  id: 'views_block:_home_partners-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

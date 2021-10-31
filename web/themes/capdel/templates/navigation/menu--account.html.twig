@@ -1,0 +1,85 @@
+{#
+/**
+ * @file
+ * Bootstrap Barrio's override to display Menu Account.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+
+{% set menu = getMenu('account',0) %}
+{% set user = getUserID() %}
+<ul class="list-inline list-header d-none d-md-block">
+  {% for item in menu %}
+    {% if item['key'] == 'configurator' %}
+      {% if user == 0 %}
+        <li>
+          <a href="{{ item['url'] }}" data-toggle="modal" data-target="#loginModal" onclick="loginTo('{{ item['url'] }}')">
+            <span class="text">{{ item['title'] }}</span>
+            <span class="ico icon-pencil"></span>
+          </a>
+        </li>
+      {% else %}
+        <li>
+          <a href="{{ item['url'] }}">
+            <span class="text">{{ item['title'] }}</span>
+            <span class="ico icon-pencil"></span>
+          </a>
+        </li>
+      {% endif %}
+      <li class="separator" />
+    {% elseif item['key'] == 'user.favourite' %}
+      <li>
+        <a href="{{ item['url'] }}">
+          <span class="ico icon-heart2"></span>
+        {% if user == 0 %}
+          <span class="counter fav-counter-badge-anonym">{{ favCount }}</span>
+        {% else %}
+            {% if favCount == 0 %}
+              <span class="counter fav-counter-badge hidden">{{ favCount }}</span>
+            {% else %}
+              <span class="counter fav-counter-badge">{{ favCount }}</span>
+            {% endif %}
+        {% endif %}
+        </a>
+      </li>
+    {% elseif item['key'] == 'user.search' %}
+      <li>
+        <a class="search-icon" href="{{ item['url'] }}">
+          <span class="ico icon-search"></span>
+        </a>
+      </li>
+    {% elseif item['key'] == 'user.logout' %}
+      {% if '/user/login' in item['url'] %}
+        <li><a href="{{ item['url'] }}" class="btn btn-default white" data-toggle="modal" data-target="#loginModal" onclick="loginTo('/')">{{ item['title'] }}</a></li>
+      {% elseif '/user/logout' in item['url'] %}
+        <li class="dropdown">
+          <a href="#" data-toggle="dropdown" class="btn btn-default white">{{ item['title'] }}</a>
+          {% if item['children'] is not empty %}
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            {% for child_item in item['children'] %}
+              <a class="dropdown-item" href="{{ child_item['url'] }}">{{ child_item['title'] }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </li>
+      {% else %}
+        <li><a href="{{ item['url'] }}">{{ item['title'] }}</a></li>
+      {% endif %}
+    {% else %}
+      <li><a href="{{ item['url'] }}">{{ item['title'] }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

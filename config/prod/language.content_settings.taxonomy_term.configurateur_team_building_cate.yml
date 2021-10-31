@@ -1,0 +1,11 @@
+uuid: 5a2b602f-57d4-4ffb-85ba-a027560c25fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.configurateur_team_building_cate
+id: taxonomy_term.configurateur_team_building_cate
+target_entity_type_id: taxonomy_term
+target_bundle: configurateur_team_building_cate
+default_langcode: fr
+language_alterable: false

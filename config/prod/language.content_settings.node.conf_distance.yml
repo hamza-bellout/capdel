@@ -1,0 +1,11 @@
+uuid: a99327ff-88bb-4d92-abac-dc997da58917
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.conf_distance
+id: node.conf_distance
+target_entity_type_id: node
+target_bundle: conf_distance
+default_langcode: site_default
+language_alterable: false

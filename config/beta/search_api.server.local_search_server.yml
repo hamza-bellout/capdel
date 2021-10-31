@@ -1,0 +1,17 @@
+uuid: 14214fd5-01a7-430b-9cad-4fd0f3ea2c46
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: local_search_server
+name: 'Local search server'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 2
+  matching: partial
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true

@@ -1,0 +1,12 @@
+uuid: 91becdab-1c12-4754-94a2-b2010df116af
+langcode: en
+status: true
+dependencies: {  }
+label: 'Option (275x275)'
+id: option
+description: ''
+aspect_ratio: '1:1'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

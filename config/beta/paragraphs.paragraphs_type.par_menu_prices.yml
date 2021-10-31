@@ -1,0 +1,9 @@
+uuid: 7361ea62-701e-48b7-9aa4-c36e1ed4f63b
+langcode: en
+status: true
+dependencies: {  }
+id: par_menu_prices
+label: 'Menu prices'
+icon_uuid: null
+description: 'This is the entity to keep menu item attached with its price'
+behavior_plugins: {  }

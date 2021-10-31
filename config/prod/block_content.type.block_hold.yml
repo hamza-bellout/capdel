@@ -1,0 +1,8 @@
+uuid: 2b7ebd4c-6a0d-4aeb-a2cd-511d2ecee27f
+langcode: en
+status: true
+dependencies: {  }
+id: block_hold
+label: 'Block hold'
+revision: 1
+description: 'Wide image block with title, image, text and button'

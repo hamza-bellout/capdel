@@ -1,0 +1,23 @@
+uuid: c9ef9ee2-175e-4814-b65f-4d14d1ba5e11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_duration
+    - node.type.event
+id: node.event.field_event_duration
+field_name: field_event_duration
+entity_type: node
+bundle: event
+label: 'Event duration'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

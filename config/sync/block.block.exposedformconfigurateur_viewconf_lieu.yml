@@ -1,0 +1,29 @@
+uuid: 6a39ed6e-6454-4850-a161-f8e7a83e0858
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.configurateur_view
+  module:
+    - system
+    - views
+  theme:
+    - capdel
+id: exposedformconfigurateur_viewconf_lieu
+theme: capdel
+region: breadcrumb
+weight: -24
+provider: null
+plugin: 'views_exposed_filter_block:configurateur_view-conf_lieu'
+settings:
+  id: 'views_exposed_filter_block:configurateur_view-conf_lieu'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: "/configurateur\r\n/configurateur/*"
+    negate: false
+    context_mapping: {  }

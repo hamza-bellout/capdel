@@ -1,0 +1,78 @@
+{#
+/**
+ * @file
+ * Event card
+ *
+ * Available variables:
+ * - badge
+ * -- label : badge text
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{% set packageInfo = getPackageInfo(package) %}
+
+{% if packageInfo is not empty %}
+<div class="slide">
+  <article class="info-post">
+    <a class="info-wrap" href="{{ packageInfo['url'] }}"
+       {% if packageInfo['source'] == 'configurator'%} {{ create_attribute({'data-package-id': packageInfo['id']}) }}{% endif %}>
+      <figure class="img-holder">
+        {% if packageInfo['images'] is not empty %}
+          <div class="img-wrap"><img class='b-lazy' src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ packageInfo['images'][0]['urls']['search'] }}" alt="{{ packageInfo['images'][0]['alt'] }}"></div>
+        {% endif %}
+        {% if packageInfo['locations'] is not empty %}
+        <figcaption class="row caption">
+          <div class="col-6"><div class="info-location">{{ packageInfo['locations'] | join(', ') }}</div></div>
+        </figcaption>
+        {% endif %}
+      </figure>
+      <div class="description">
+        {% if packageInfo['menu_type'] %}
+        <span class="category">{{ packageInfo['menu_type'] }}</span>
+        {% endif %}
+        <h3>{{ package.fields['title'].value }}</h3>
+        {% if packageInfo['participants'] or packageInfo['date'] %}
+        <ul class="details">
+          {% if packageInfo['participants'] %}
+          <li>
+            <i class="icon-person mr-2"></i> {{ packageInfo['participants'] }} pers.
+          </li>
+          {% endif %}
+          {% if packageInfo['date'] %}
+          <li>
+            <i class="icon-calendar mr-2"></i> {{ packageInfo['date'] }}
+          </li>
+          {% endif %}
+        </ul>
+        {% endif %}
+
+      </div>
+      <span class="more">Détails <i class="icon-angle-right ml-2"></i></span>
+    </a>
+  </article>
+</div>
+{% else %}
+  {{ row }}
+{% endif %}

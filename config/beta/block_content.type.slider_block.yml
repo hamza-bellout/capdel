@@ -1,0 +1,8 @@
+uuid: 27b7c0a1-3a70-45e7-bb65-27afef165633
+langcode: en
+status: true
+dependencies: {  }
+id: slider_block
+label: 'Slider block'
+revision: 1
+description: 'Block containing images with description. An image can be clickable with a link to a page.'

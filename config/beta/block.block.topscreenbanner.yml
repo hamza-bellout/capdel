@@ -1,0 +1,31 @@
+uuid: 5cd182a7-22ec-4c3b-92d6-0500906dd831
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:b781ef7e-1a50-44ba-8459-7519f57a2f87'
+  module:
+    - block_content
+    - system
+  theme:
+    - capdel
+id: topscreenbanner
+theme: capdel
+region: screen_top
+weight: 0
+provider: null
+plugin: 'block_content:b781ef7e-1a50-44ba-8459-7519f57a2f87'
+settings:
+  id: 'block_content:b781ef7e-1a50-44ba-8459-7519f57a2f87'
+  label: 'Top screen banner'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

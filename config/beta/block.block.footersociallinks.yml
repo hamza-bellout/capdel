@@ -1,0 +1,24 @@
+uuid: bae74de9-67c6-40cf-b1aa-b372e8767218
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-social-links
+  module:
+    - system
+  theme:
+    - capdel
+id: footersociallinks
+theme: capdel
+region: footer_fourth
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-social-links'
+settings:
+  id: 'system_menu_block:footer-social-links'
+  label: 'Nous suivre sur'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 1
+visibility: {  }

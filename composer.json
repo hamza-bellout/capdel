@@ -1,0 +1,152 @@
+{
+    "name": "drupal-composer/drupal-project",
+    "description": "Project template for Drupal 8 projects with composer",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Przemyslaw Kubicki",
+            "role": "Dev"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "dinbror/blazy",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "blazy"
+                },
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/dinbror/blazy",
+                    "reference": "1.8.2"
+                }
+            }
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.6",
+        "cweagans/composer-patches": "^1.6",
+        "dinbror/blazy": "1.8.2",
+        "drupal-composer/drupal-scaffold": "^2.2",
+        "drupal/addtoany": "^1.10",
+        "drupal/admin_menu": "3.x-dev",
+        "drupal/adminimal_theme": "^1.3",
+        "drupal/advagg": "^3.5",
+        "drupal/better_exposed_filters": "^3.0@alpha",
+        "drupal/bootstrap_library": "^1.11",
+        "drupal/console": "^1.0.2",
+        "drupal/content_moderation_notifications": "^3.0@RC",
+        "drupal/context_metadata": "^2.0",
+        "drupal/core": "^8.5.11",
+        "drupal/deploy": "^1.0@beta",
+        "drupal/diff": "^1.0@RC",
+        "drupal/easy_breadcrumb": "^1.7",
+        "drupal/entity_browser": "^1.5",
+        "drupal/eu_cookie_compliance": "^1.2",
+        "drupal/facets": "^1.2",
+        "drupal/field_permissions": "^1.0@RC",
+        "drupal/flag": "^4.0@alpha",
+        "drupal/flag_search_api": "^1.2",
+        "drupal/flood_unblock": "^1.5",
+        "drupal/google_analytics": "^2.3",
+        "drupal/health_check": "^1.0",
+        "drupal/honeypot": "^1.28",
+        "drupal/image_widget_crop": "^2.2",
+        "drupal/imagemagick": "~2.0",
+        "drupal/lazy": "^1.0",
+        "drupal/link_attributes": "^1.9",
+        "drupal/mailsystem": "^4.1",
+        "drupal/memcache": "^2.0@RC",
+        "drupal/memory_profiler": "1.x-dev",
+        "drupal/metatag": "^1.5",
+        "drupal/minifyhtml": "^1.3",
+        "drupal/multiversion": "^1.0@beta",
+        "drupal/paragraphs": "^1.3",
+        "drupal/pathauto": "^1.1",
+        "drupal/profile": "^1.0@RC",
+        "drupal/redirect": "^1.2",
+        "drupal/relaxed": "^1.0@beta",
+        "drupal/replication": "^1.0@beta",
+        "drupal/restui": "^1.15",
+        "drupal/rules": "^3.0@alpha",
+        "drupal/s3fs": "^3.0@alpha",
+        "drupal/schema_metatag": "^1.3",
+        "drupal/search_api": "^1.8",
+        "drupal/simple_sitemap": "^2.12",
+        "drupal/smtp": "^1.0@beta",
+        "drupal/token": "^1.1",
+        "drupal/workbench": "^1.0",
+        "drush/drush": "^9.0.0",
+        "vlucas/phpdotenv": "^2.4",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3"
+    },
+    "require-dev": {
+        "drupal/twig_xdebug": "^1.0",
+        "webflo/drupal-core-require-dev": "~8.5.11"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": ["load.environment.php"]
+    },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/core": {
+                "Drupal Content Translation Manager patch": "https://www.drupal.org/files/issues/content_translation_config-2868294-2.patch",
+                "View entity null" : "https://www.drupal.org/files/issues/entity-field-get-value-null-2913971-1.patch",
+                "PO translations fix": "https://www.drupal.org/files/issues/2018-05-24/2449895-38.patch",
+                "Views MultipleAjax: Trigger RefreshView ": "https://www.drupal.org/files/issues/2018-07-16/views_multiple_refresh_fix-2986041-2.patch",
+                "Media entity delete patch":"https://www.drupal.org/files/issues/2018-04-29/possibility_to_delete_file_entities-2949017-18.patch",
+                "Drupal Core View module getCacheTags fix": "https://www.drupal.org/files/issues/2018-08-10/2738051-10.patch",
+                "Views pager not shown patch" : "https://www.drupal.org/files/issues/2833734-allow-attachment-pager-16.patch"
+            },
+            "drupal/facets": {
+                "Landing page facet links" : "./patches/facet.patch"
+            },
+            "drupal/context_metadata": {
+                "Fix context_metadata for robots" : "./patches/Fix_context_metadata_for_robots.patch"
+            }
+        }
+    }
+}

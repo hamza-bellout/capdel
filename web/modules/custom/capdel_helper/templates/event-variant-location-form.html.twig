@@ -1,0 +1,39 @@
+{% if variant is not empty %}
+  {% if variant.id() is not empty %}
+    <h2>{{ 'Event Variant: '|t }}<a href="/node/{{ variant.id }}/edit">{{ variant.title.value }}</a></h2>
+  {% endif %}
+
+  <form method="post" action="{{ update_action }}" id="event-variant-location-form">
+    <input data-drupal-selector="edit-node-event-subpackage-edit-form-form-token" type="hidden" name="token" value="{{ token }}"/>
+
+    <div class="form-item">
+      <label for="edit-location">{{ 'City'|t }}</label>
+      <input class="text-full form-text" type="text" id="edit-location" name="field_event_sub_city" value="{{ variant.field_event_sub_city.value }}"
+             size="60" maxlength="255" placeholder="">
+    </div>
+
+    <div class="form-item">
+      <label for="edit-address">{{ 'Address'|t }}</label>
+      <input class="text-full form-text" type="text" id="edit-address" name="field_event_sub_address" value="{{ variant.field_event_sub_address.value }}"
+             size="60" maxlength="255" placeholder="">
+    </div>
+
+    <div class="form-item">
+      <label for="edit-zip">{{ 'Zip code'|t }}</label>
+      <input class="text-full form-text" type="text" id="edit-zip" name="field_event_sub_zip" value="{{ variant.field_event_sub_zip.value }}"
+             size="60" maxlength="255" placeholder="">
+    </div>
+
+    <div class="form-item">
+      <label for="edit-geo-params">{{ 'Geolocation parameters'|t }}</label>
+      <input class="text-full form-text" type="text" id="edit-geo-params" name="field_event_sub_geo_params" value="{{ variant.field_event_sub_geo_params.value }}"
+             size="60" maxlength="255" placeholder="">
+    </div>
+
+    <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+      <input type="submit" class="button button--primary js-form-submit form-submit" value="{{ 'Save'|t }}"/>
+      <a href="/node/{{ event.id }}/price_wizard" class="button js-form-submit form-submit">{{ 'Cancel'|t }}</a>
+    </div>
+
+  </form>
+{% endif %}

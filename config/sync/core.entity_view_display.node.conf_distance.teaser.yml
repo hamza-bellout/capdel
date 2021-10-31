@@ -1,0 +1,23 @@
+uuid: 89f6791a-97cb-4d5d-8c08-f049830c6d0b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.conf_distance
+  module:
+    - user
+id: node.conf_distance.teaser
+targetEntityType: node
+bundle: conf_distance
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  addtoany: true
+  field_par_lieu_tb_geo_dist: true
+  field_par_lieu_tb_geo_lieu: true
+  field_par_lieu_tb_geo_tb: true
+  langcode: true
